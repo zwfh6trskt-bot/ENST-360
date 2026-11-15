@@ -39,6 +39,13 @@ GitHub's own Pages workflow; it does not stop a deployment and can be ignored.
 - Forms: `formulaires/` (Word + PDF), listed in the procedures page (`var FORMS`).
 - Timetable: live "right now / next class" indicator, refreshed every 30 s, based on the device clock.
 
+## News (Actualités)
+
+Automatic import from Facebook is not possible for a static site without a Meta app approved for the ENSTP page.
+News are managed by hand: in `index.html`, search `var NEWS = [` and add a line at the top:
+`['AAAA-MM-JJ', 'titre fr|title en|عنوان', 'résumé fr|summary en|ملخص', 'image URL or images/news/file.jpg', 'link to the original post', 'source']`.
+The home page shows the 3 most recent; the News page shows all of them. Initial items come from enstp.edu.dz.
+
 ## Settings
 
 Open `index.html`, search for `var CFG` — four values:

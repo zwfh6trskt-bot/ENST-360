@@ -733,6 +733,43 @@ html.dark .x-ft-brand>a{background:#fff;padding:10px 14px}
 @media(max-width:380px){.x-logo{height:30px}}
 @media(min-width:420px) and (max-width:640px){.x-card{flex-direction:column;align-items:flex-start}.x-card-go{display:none}}
 
+/* ---------- actualités ---------- */
+.x-sec-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;max-width:none;flex-wrap:wrap}
+.x-sec-row>div{max-width:640px}
+.x-more{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.x-more:hover{text-decoration:underline;text-decoration-color:var(--saffron);text-underline-offset:4px}
+.nw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.nw-grid-page{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
+.nw-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .2s,box-shadow .2s}
+.nw-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.nw-img{position:relative;display:grid;place-items:center;aspect-ratio:16/9;background:var(--pine);color:rgb(255 255 255 / .55);overflow:hidden}
+.nw-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nw-body{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px;flex:1}
+.nw-body time{font-size:13px;font-weight:700;color:var(--peach-ink)}
+.nw-body h3{font-size:16.5px;line-height:1.4;font-weight:750;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nw-body h3 a:after{content:'';position:absolute;inset:0}
+.nw-card{position:relative}
+.nw-img{z-index:1}
+.nw-body p{font-size:14.5px!important;line-height:1.55!important;color:var(--muted-foreground)}
+.nw-src{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:var(--muted-foreground)}
+.nw-follow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;background:var(--pine-tint)}
+.nw-follow span{font-weight:800;color:var(--ink);margin-inline-end:4px}
+.nw-follow a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--border);font-size:14px;font-weight:700;color:var(--ink)}
+.nw-follow a:hover{border-color:var(--saffron)}
+#actualites{scroll-margin-top:90px}
+/* nous trouver */
+.fu{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.fu iframe{width:100%;min-height:280px;height:100%;border:0;border-radius:var(--r-m);background:var(--muted)}
+.fu-info{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:20px;border:1px solid var(--border);border-radius:var(--r-m);background:var(--card)}
+.fu-info p{font-size:15px!important;color:var(--foreground)!important}
+.fu-info a:not(.btn){display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:700}
+/* pied de page : 4 colonnes */
+.x-ft-in{grid-template-columns:1.3fr 1fr 1fr 1.1fr}
+.x-ft-addr{font-size:14.5px;color:rgb(255 255 255 / .72);line-height:1.5}
+@media(max-width:1100px){.nw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nw-grid>.nw-card:nth-child(3){display:none}}
+@media(max-width:900px){.x-ft-in{grid-template-columns:1fr 1fr}.fu{grid-template-columns:1fr}.fu iframe{min-height:240px}}
+@media(max-width:640px){.nw-grid,.nw-grid-page{grid-template-columns:1fr}.nw-grid>.nw-card:nth-child(3){display:flex}.x-ft-in{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -983,10 +1020,10 @@ function langSwitch() {
     return '<button type="button" class="' + (lang === l.c ? 'on' : '') + '" aria-pressed="' + (lang === l.c) + '" data-lang="' + l.c + '" lang="' + l.c + '" title="' + esc(l.n) + '"><span class="x-flag" aria-hidden="true">' + l.f + '</span><span>' + l.l + '</span></button>';
   }).join('') + '</div>';
 }
-var NAVL = { fr: ['L’École', 'Plan', 'Études', 'Démarches', 'Vie pratique', 'Vie étudiante', 'Alger'], en: ['The School', 'Campus map', 'Studies', 'Procedures', 'Everyday life', 'Student life', 'Algiers'], ar: ['المدرسة', 'المخطط', 'الدراسة', 'الإجراءات', 'الحياة اليومية', 'الحياة الطلابية', 'الجزائر'] };
+var NAVL = { fr: ['L’École', 'Actualités', 'Plan', 'Études', 'Démarches', 'Vie pratique', 'Vie étudiante', 'Alger'], en: ['The School', 'News', 'Campus map', 'Studies', 'Procedures', 'Everyday life', 'Student life', 'Algiers'], ar: ['المدرسة', 'الأخبار', 'المخطط', 'الدراسة', 'الإجراءات', 'الحياة اليومية', 'الحياة الطلابية', 'الجزائر'] };
 function navLinks(r) {
   var cur = r.name === 'guide' ? r.slug : '', L = NAVL[lang] || NAVL.fr;
-  return [['#/ecole', ''], [gl('campus'), 'campus'], [gl('salles'), 'salles'], [gl('services'), 'services'], [gl('pratique'), 'pratique'], [gl('vie-etudiante'), 'vie-etudiante'], [gl('alger'), 'alger']].map(function (i, k) {
+  return [['#/ecole', ''], [gl('actualites'), 'actualites'], [gl('campus'), 'campus'], [gl('salles'), 'salles'], [gl('services'), 'services'], [gl('pratique'), 'pratique'], [gl('vie-etudiante'), 'vie-etudiante'], [gl('alger'), 'alger']].map(function (i, k) {
     return '<a href="' + i[0] + '"' + (i[1] && i[1] === cur ? ' class="on" aria-current="page"' : '') + '>' + esc(L[k]) + '</a>';
   }).join('');
 }
@@ -996,9 +1033,9 @@ function header(r) {
   if (st.menu) {
     var gs = guides();
     mobile = '<nav id="header-mobile-nav" class="x-drawer" aria-label="' + esc(x.menu) + '"><div class="x-drawer-in">' +
-      '<a href="#/">' + ic('home', 18) + esc(x.home) + '</a><a href="#/ecole">' + ic('graduation', 18) + esc(x.ecole) + '</a>' +
+      '<a href="#/">' + ic('home', 18) + esc(x.home) + '</a><a href="#/ecole">' + ic('graduation', 18) + esc(x.ecole) + '</a><a href="' + gl('actualites') + '">' + ic('news', 18) + esc(L2(NEWSL).nav) + '</a>' +
       CARDS.map(function (c) { return '<a href="' + gl(c[1]) + '">' + ic(c[2], 18) + esc(x.cards[c[0]][0]) + '</a>'; }).join('') +
-      '<p class="x-drawer-h">' + esc(x.allH) + '</p><div class="x-drawer-more">' + gs.filter(function (g) { return ['campus', 'salles', 'services', 'pratique', 'vie-etudiante', 'residence', 'stages', 'alger'].indexOf(g.slug) === -1; }).map(function (g) { return '<a href="' + gl(g.slug) + '">' + esc(g.short) + '</a>'; }).join('') + '</div>' +
+      '<p class="x-drawer-h">' + esc(x.allH) + '</p><div class="x-drawer-more">' + gs.filter(function (g) { return ['campus', 'salles', 'services', 'pratique', 'vie-etudiante', 'residence', 'stages', 'alger', 'actualites'].indexOf(g.slug) === -1; }).map(function (g) { return '<a href="' + gl(g.slug) + '">' + esc(g.short) + '</a>'; }).join('') + '</div>' +
       '<div class="x-drawer-foot">' + langSwitch() + '<button type="button" class="x-dbtn" data-profile="1">' + ic('user', 17) + esc(profile ? profile.name : x.profile) + '</button><button type="button" class="x-dbtn" data-theme="1" aria-pressed="' + dark + '">' + ic(dark ? 'sun' : 'moon', 17) + esc(x.theme) + '</button></div></div></nav>';
   }
   return '<header class="x-hd"><div class="x-hd-in">' +
@@ -1018,9 +1055,10 @@ function footer() {
   var t = T(), x = XT();
   return '<footer class="x-ft"><div class="x-ft-in"><div class="x-ft-brand"><a href="#/" aria-label="ENSTP 360">' + brandFull() + '</a><p>' + esc(x.fDesc) + '</p><p class="x-ft-tag">' + esc(t.footerTag) + '</p></div>' +
     '<nav aria-label="' + esc(x.fRub) + '"><h2>' + esc(x.fRub) + '</h2>' + CARDS.map(function (c) { return '<a href="' + gl(c[1]) + '">' + esc(x.cards[c[0]][0]) + '</a>'; }).join('') + '</nav>' +
-    '<nav aria-label="' + esc(x.fRes) + '"><h2>' + esc(x.fRes) + '</h2><a href="#/ecole">' + esc(x.ecole) + '</a><a href="' + gl('aide') + '">' + esc(x.helpLink) + '</a><button type="button" data-asst-open="1">' + esc(x.helpBtn) + '</button>' +
-    '<a href="https://enstp.edu.dz/" target="_blank" rel="noreferrer">' + esc(t.official) + ' ' + ic('arrow-up-right', 13) + '</a>' +
-    (profile ? '<button type="button" data-profile="1">' + esc(L2(PF).btn) + '</button>' : '') + '</nav></div>' +
+    '<nav aria-label="' + esc(x.fRes) + '"><h2>' + esc(x.fRes) + '</h2><a href="#/ecole">' + esc(x.ecole) + '</a><a href="' + gl('actualites') + '">' + esc(L2(NEWSL).nav) + '</a><a href="' + gl('aide') + '">' + esc(x.helpLink) + '</a><button type="button" data-asst-open="1">' + esc(x.helpBtn) + '</button>' +
+    (profile ? '<button type="button" data-profile="1">' + esc(L2(PF).btn) + '</button>' : '') + '</nav>' +
+    '<nav aria-label="Contact"><h2>Contact</h2><span class="x-ft-addr">' + esc(CONTACT.addr) + '</span><a href="tel:+21323701904">' + ic('phone', 14) + ' <bdi dir="ltr">' + esc(CONTACT.tel) + '</bdi></a><a href="mailto:' + CONTACT.mail + '">' + ic('mail', 14) + ' ' + esc(CONTACT.mail) + '</a>' +
+    '<a href="https://enstp.edu.dz/" target="_blank" rel="noreferrer">' + esc(t.official) + ' ' + ic('arrow-up-right', 13) + '</a><a href="' + FB_URL + '" target="_blank" rel="noopener noreferrer">' + ic('facebook', 14) + ' Facebook ' + ic('arrow-up-right', 13) + '</a>' + '</nav></div>' +
     '<div class="x-ft-bot"><span>© ' + new Date().getFullYear() + ' ENSTP 360</span><span>' + esc(t.footerNote) + '</span></div></footer>';
 }
 function hsResults() {
@@ -1051,6 +1089,7 @@ function home() {
     '<section class="x-wrap x-sec" id="rubriques" aria-labelledby="rub-h"><header class="x-sec-head"><h2 id="rub-h">' + esc(x.cH) + '</h2><p>' + esc(x.cP) + '</p></header><div class="x-cards">' +
     CARDS.map(function (c) { var k = x.cards[c[0]]; return '<a class="x-card" href="' + gl(c[1]) + '"><span class="x-card-ic">' + ic(c[2], 24, '', 1.7) + '</span><span class="x-card-t"><h3>' + esc(k[0]) + '</h3><p>' + esc(k[1]) + '</p></span><span class="x-card-go" aria-hidden="true">' + ic('arrow-right', 18, 'rtl-flip') + '</span></a>'; }).join('') +
     '</div></section>' +
+    newsHome() +
     cursusHtml() +
     '</main>';
 }
@@ -1362,11 +1401,12 @@ function guidePage(slug) {
   if (slug === 'manger') sections = foodHtml();
   if (slug === 'impression') sections = printHtml();
   if (slug === 'alger') sections = algHtml() + '<section class="detail-section">' + hubCards([[gl('loisirs'), 'sun', gShort('loisirs')[0], gShort('loisirs')[1]]]) + '</section>';
-  if (slug === 'campus') sections = cmHtml() + planNoteHtml();
+  if (slug === 'campus') sections = cmHtml() + findUsHtml() + planNoteHtml();
   if (slug === 'sport') sections = spHtml();
   if (slug === 'loisirs') sections = loisHtml();
   if (slug === 'services') sections = svcHtml() + formsHtml();
   if (slug === 'stages') sections = stagesHtml(g);
+  if (slug === 'actualites') sections = newsPage();
   var side = '';
   if (shown) {
     side += '<h3>' + esc(t.onMap) + '</h3><div class="loc-cards">' + g.searches.map(function (s) {
@@ -1688,6 +1728,65 @@ function cursusHtml() {
   var E = L2(ECO);
   return '<section class="x-wrap x-sec x-cur" id="cursus" aria-labelledby="cur-h"><header class="x-sec-head"><h2 id="cur-h">' + esc(E.cur) + '</h2></header><div class="eco-cur"><article><b>' + esc(E.c1) + '</b><p>' + esc(E.c1p) + '</p></article><article><b>' + esc(E.c2) + '</b><p><strong>DIB</strong> — ' + esc(E.dib) + '<br><strong>DMS</strong> — ' + esc(E.dms) + '</p></article></div></section>';
 }
+
+/* ===== ENSTP 360 · actualités (gestion manuelle : ajoutez une ligne en haut de NEWS) =====
+   [date AAAA-MM-JJ, 'titre fr|en|ar', 'résumé fr|en|ar (ou vide)', image (URL ou chemin local, ou vide), lien vers la publication d'origine, source] */
+var NEWS = [
+  ['2026-11-14', 'Semaine mondiale de l’entrepreneuriat (Global Entrepreneurship Week)|Global Entrepreneurship Week|الأسبوع العالمي لريادة الأعمال', 'Programme de l’ENSTP pour la Global Entrepreneurship Week.|ENSTP’s programme for Global Entrepreneurship Week.|برنامج المدرسة للأسبوع العالمي لريادة الأعمال.', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-11/GEW-Programme%20l%27ENSTP.png?itok=gqk-FRW7', 'https://enstp.edu.dz/index.php/en/global-entrepreneurship-week', 'enstp.edu.dz'],
+  ['2026-11-14', 'DIGITs’26 change de dates : du 12 au 14 décembre 2026|DIGITs’26 moves to 12–14 December 2026|تغيير موعد DIGITs’26: من 12 إلى 14 ديسمبر 2026', 'Nouvelles dates pour DIGITs’26 : du 12 au 14 décembre 2026.|New dates for DIGITs’26: 12–14 December 2026.|المواعيد الجديدة لـ DIGITs’26: من 12 إلى 14 ديسمبر 2026.', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-11/1-DIGITs26_Nouvelles_dates_Annonce.jpg_1.jpeg?itok=tEGwL_Lr', 'https://enstp.edu.dz/index.php/en/digits26-change-de-dates-du-12-au-14-decembre-2026', 'enstp.edu.dz'],
+  ['2026-10-31', 'Second appel à résumés : DIGITs 26, Digital Innovation in Geotechnics and Intelligent Technologies|Second call for abstracts: DIGITs 26, Digital Innovation in Geotechnics and Intelligent Technologies|النداء الثاني للملخصات: DIGITs 26 حول الابتكار الرقمي في الجيوتقنية والتقنيات الذكية', 'Premier séminaire national, ENSTP, Kouba.|First national seminar/workshop, ENSTP, Kouba.|الملتقى الوطني الأول، المدرسة، القبة.', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-10/1-DIGITs26_Second_Call_0.png?itok=hWc-D1E3', 'https://enstp.edu.dz/en/second-call-abstracts-first-national-seminarworkshop-digital-innovation-geotechnics-and-intelligent', 'enstp.edu.dz'],
+  ['2026-10-25', 'DIGITs26 : sessions de formation|DIGITs26: training sessions|DIGITs26: الدورات التكوينية', 'Document interactif consacré aux sessions de formation de DIGITs26.|Interactive document about the DIGITs26 training sessions.|وثيقة تفاعلية خاصة بالدورات التكوينية لـ DIGITs26.', '', 'https://enstp.edu.dz/en/digits26-training-sessions', 'enstp.edu.dz'],
+  ['2026-10-21', 'Soutenance de thèse de doctorat de M. GHRIBI Zakaria : « Étude de la vulnérabilité sismique des tunnels »|Doctoral thesis defence of Mr GHRIBI Zakaria: “Study of the seismic vulnerability of tunnels”|مناقشة أطروحة دكتوراه السيد غريبي زكرياء: «دراسة الهشاشة الزلزالية للأنفاق»', '', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-10/Affichage.jpg?itok=8nolL2p8', 'https://enstp.edu.dz/en/doctoral-thesis-defense-mr-ghribi-zakaria-study-seismic-vulnerability-tunnels', 'enstp.edu.dz'],
+  ['2026-09-28', 'DIGITs26|DIGITs26|DIGITs26', '', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-09/DIGITs26_Depliant.jpg?itok=euioUOE_', 'https://enstp.edu.dz/en/digits26', 'enstp.edu.dz'],
+  ['2026-09-16', 'Rentrée universitaire 2026–2027 : mardi 22 septembre 2026|Start of the 2026–2027 academic year: Tuesday 22 September 2026|الدخول الجامعي 2026–2027: الثلاثاء 22 سبتمبر 2026', '', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-09/RENTR%C3%89E.jpg?itok=lYAnsohI', 'https://enstp.edu.dz/en/re-entry-and-start-date-2026-2027-academic-year-tuesday-september-22-2026', 'enstp.edu.dz'],
+  ['2026-09-16', 'Avis de recrutement par reprise après l’opération de mutation|Recruitment announcement after the transfer operation|إعلان توظيف بعد عملية التحويل', '', 'https://enstp.edu.dz/sites/default/files/styles/640_x_360/public/2026-09/doc00762320260915112941_page-0001.jpg?itok=ayyF2Z_0', 'https://enstp.edu.dz/en/recruitment-announcement-through-takeover-after-transfer-operation', 'enstp.edu.dz']
+];
+var FB_URL = 'https://www.facebook.com/ENSTP.ecole';
+var NEWSL = {
+  fr: { nav: 'Actualités', h: 'Actualités', p: 'Les dernières publications de l’ENSTP. Chaque actualité renvoie vers sa publication d’origine.', all: 'Toutes les actualités', read: 'Voir la publication', src: 'Source', fb: 'Page Facebook officielle', site: 'Site officiel de l’ENSTP', follow: 'Suivre l’ENSTP', empty: 'Aucune actualité pour le moment.' },
+  en: { nav: 'News', h: 'News', p: 'The latest ENSTP announcements. Each item links to its original publication.', all: 'All news', read: 'View the publication', src: 'Source', fb: 'Official Facebook page', site: 'Official ENSTP website', follow: 'Follow ENSTP', empty: 'No news yet.' },
+  ar: { nav: 'الأخبار', h: 'الأخبار', p: 'آخر منشورات المدرسة. كل خبر يحيل إلى منشوره الأصلي.', all: 'كل الأخبار', read: 'عرض المنشور', src: 'المصدر', fb: 'صفحة فيسبوك الرسمية', site: 'الموقع الرسمي للمدرسة', follow: 'تابع المدرسة', empty: 'لا توجد أخبار حاليًا.' }
+};
+Object.assign(P, { news: '<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>', facebook: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>', mail: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>' });
+D.guides.push({ slug: 'actualites', title: 'Actualités de l’ENSTP', short: 'Actualités', description: 'Les dernières annonces et événements de l’école, avec un lien vers chaque publication d’origine.', icon: 'news', tone: 'mint', group: 'Actualités', sections: [] });
+D.tr.en.actualites = { title: 'ENSTP news', short: 'News', description: 'The school’s latest announcements and events, each linked to its original publication.', sections: [] };
+D.tr.ar.actualites = { title: 'أخبار المدرسة', short: 'الأخبار', description: 'آخر إعلانات وفعاليات المدرسة، مع رابط لكل منشور أصلي.', sections: [] };
+D.ui.fr.groups['Actualités'] = 'Actualités'; D.ui.en.groups['Actualités'] = 'News'; D.ui.ar.groups['Actualités'] = 'الأخبار';
+function newsSorted() { return NEWS.slice().sort(function (a, b) { return a[0] < b[0] ? 1 : a[0] > b[0] ? -1 : 0; }); }
+function newsDate(d) { try { return new Date(d + 'T12:00:00').toLocaleDateString(lang === 'ar' ? 'ar-DZ' : lang === 'en' ? 'en-GB' : 'fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return d; } }
+function newsCard(n) {
+  var N = L2(NEWSL), d = n[2] ? LP(n[2]) : '';
+  return '<article class="nw-card"><a class="nw-img" href="' + esc(n[4]) + '" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">' + gi('news') + (n[3] ? '<img src="' + esc(n[3]) + '" alt="" loading="lazy" onerror="this.remove()">' : '') + '</a>' +
+    '<div class="nw-body"><time datetime="' + n[0] + '">' + esc(newsDate(n[0])) + '</time><h3><a href="' + esc(n[4]) + '" target="_blank" rel="noopener noreferrer">' + esc(LP(n[1])) + '</a></h3>' + (d ? '<p>' + esc(d) + '</p>' : '') +
+    '<span class="nw-src">' + esc(N.src) + ' : ' + esc(n[5] || '') + ' ' + ic('arrow-up-right', 13) + '</span></div></article>';
+}
+function newsFollow() {
+  var N = L2(NEWSL);
+  return '<div class="nw-follow"><span>' + esc(N.follow) + '</span><a href="' + FB_URL + '" target="_blank" rel="noopener noreferrer">' + ic('facebook', 15) + ' ' + esc(N.fb) + '</a><a href="https://enstp.edu.dz/" target="_blank" rel="noreferrer">' + ic('arrow-up-right', 15) + ' ' + esc(N.site) + '</a></div>';
+}
+function newsPage() {
+  var N = L2(NEWSL), l = newsSorted();
+  return '<section class="detail-section">' + newsFollow() + (l.length ? '<div class="nw-grid nw-grid-page">' + l.map(newsCard).join('') + '</div>' : '<p>' + esc(N.empty) + '</p>') + '</section>';
+}
+function newsHome() {
+  var N = L2(NEWSL), l = newsSorted().slice(0, 3);
+  if (!l.length) return '';
+  return '<section class="x-wrap x-sec" id="actualites" aria-labelledby="nw-h"><header class="x-sec-head x-sec-row"><div><h2 id="nw-h">' + esc(N.h) + '</h2><p>' + esc(N.p) + '</p></div><a class="x-more" href="#/guide/actualites">' + esc(N.all) + ' ' + ic('arrow-right', 15, 'rtl-flip') + '</a></header><div class="nw-grid">' + l.map(newsCard).join('') + '</div></section>';
+}
+
+/* ===== ENSTP 360 · contact officiel et compléments (sources : enstp.edu.dz, ENSTP 360 Atlas) ===== */
+var CONTACT = { addrL: 'BP 32 Rue Sidi Garidi, Kouba, 16006 Alger|BP 32 Rue Sidi Garidi, Kouba, 16006 Algiers|ص.ب 32 شارع سيدي قاريدي، القبة، 16006 الجزائر', get addr() { return LP(this.addrL); }, tel: '+213 23 70 19 04', mail: 'enstp@enstp.edu.dz' };
+function findUsHtml() {
+  var ll = GMP.school.join(',');
+  return '<section class="detail-section" id="nous-trouver"><h2>' + esc(L3('Nous trouver', 'Find us', 'موقعنا')) + '</h2>' +
+    '<div class="fu"><iframe title="' + esc(L3('Carte : ENSTP, Kouba', 'Map: ENSTP, Kouba', 'خريطة: المدرسة، القبة')) + '" src="https://maps.google.com/maps?q=' + ll + '&z=16&hl=' + (lang === 'ar' ? 'ar' : lang) + '&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+    '<div class="fu-info"><p><b>' + esc(L3('École Nationale Supérieure des Travaux Publics « Francis Jeanson »', 'École Nationale Supérieure des Travaux Publics “Francis Jeanson”', 'المدرسة الوطنية العليا للأشغال العمومية « فرانسيس جانسون »')) + '</b><br>' + esc(CONTACT.addr) + '</p>' +
+    '<p><a href="tel:+21323701904">' + ic('phone', 15) + ' <bdi dir="ltr">' + esc(CONTACT.tel) + '</bdi></a><br><a href="mailto:' + CONTACT.mail + '">' + ic('mail', 15) + ' ' + esc(CONTACT.mail) + '</a></p>' +
+    '<a class="btn btn-default" href="https://www.google.com/maps/dir/?api=1&destination=' + ll + '" target="_blank" rel="noopener noreferrer">' + ic('map-pin', 15) + ' ' + esc(L3('Itinéraire', 'Directions', 'الاتجاهات')) + '</a></div></div></section>';
+}
+NP.push(['Cyber & Impression ETUSA', 'Face station ETUSA, Kouba', '', 'prt', 'print', 'Impression, photocopies, reliure et mémoires.|Printing, photocopies, binding and theses.|طباعة، نسخ، تجليد ومذكرات التخرج.'],
+  ['Photocopie & Cyber Station Kouba', 'Face station ETUSA, Kouba', '', 'prt', 'print', 'Scan, impression et fournitures papier.|Scanning, printing and paper supplies.|مسح ضوئي، طباعة ولوازم ورقية.']);
+SVC.splice(1, 0, ['classroom', 'Compte PROGRES (WebEtu)|PROGRES account (WebEtu)|حساب PROGRES (WebEtu)', ['Application du ministère pour consulter vos notes et déposer un recours.|The ministry’s app to check your grades and file an appeal.|تطبيق الوزارة للاطلاع على النقاط وتقديم الطعون.', 'Identifiant : votre adresse @enstp.edu.dz|Username: your @enstp.edu.dz address|اسم المستخدم: عنوانك @enstp.edu.dz', 'Mot de passe : celui inscrit sur votre relevé de notes du bac|Password: the one printed on your baccalaureate transcript|كلمة المرور: المكتوبة في كشف نقاط البكالوريا', 'Votre adresse @enstp.edu.dz sert aussi pour Classroom, la bibliothèque et pour écrire aux enseignants.|Your @enstp.edu.dz address is also used for Classroom, the library and to email teachers.|يُستعمل عنوانك @enstp.edu.dz أيضًا في Classroom والمكتبة ومراسلة الأساتذة.']]);
 
 /* ===== static additions (theme, profile, école, timetable, help) ===== */
 /* Site settings — edit here, nothing else to configure. */
@@ -2030,6 +2129,8 @@ function aideHtml(g) {
     var byW = {}; STG.forEach(function (x) { (byW[x[0]] = byW[x[0]] || []).push(x[1]); });
     Object.keys(byW).forEach(function (w) { add(SG.recH + ' · ' + wilName(w), LP('Stages recommandés|Recommended internships|تربصات موصى بها') + ' (' + wilName(w) + (w ? ', wilaya ' + w : '') + ') : ' + byW[w].join(', ') + '.', gl('stages'), { cat: '§intern' }); });
     FORMS.forEach(function (f) { add(LP(f[1]), LP(f[2]) + ' ' + L2(FORML).p, gl('services'), { cat: '§certif' }); });
+    NEWS.forEach(function (n) { add(LP(n[1]), newsDate(n[0]) + (n[2] ? ' — ' + LP(n[2]) : '') + ' · ' + L2(NEWSL).h, gl('actualites')); });
+    add(L3('Contact de l’ENSTP', 'ENSTP contact', 'الاتصال بالمدرسة'), CONTACT.addr + ' · ' + L3('Téléphone', 'Phone', 'الهاتف') + ' : ' + CONTACT.tel + ' · Email : ' + CONTACT.mail + '.', gl('campus'));
     d.forEach(function (e) { if (e.cat) e.tt.push(e.cat); });
     var df = {}; d.forEach(function (e) { var seen = {}; e.tt.concat(e.xt).forEach(function (w) { if (!seen[w]) { seen[w] = 1; df[w] = (df[w] || 0) + 1; } }); });
     return (IDX[lang] = { d: d, df: df, n: d.length });
