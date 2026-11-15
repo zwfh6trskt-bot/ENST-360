@@ -3,13 +3,11 @@
 Everything in `` is the finished site. `index.html` is the whole app
 (guide, school presentation, timetables, campus map, assistant) — no build step, no Node.
 
-## Publish (2 steps)
+## Publish
 
-1. Put the `` folder at the root of the repository `zwfh6trskt-bot/ENST-360` and push
-   (GitHub Desktop, or `git add docs && git commit -m "Static site" && git push`).
-   The web uploader only accepts 100 files at a time and this folder has about 260, so use Git / GitHub Desktop.
-2. On GitHub: **Settings → Pages → Build and deployment → Source: "Deploy from a branch"**,
-   Branch `main`, folder **`/docs`** → Save.
+The site files are at the root of the repository `zwfh6trskt-bot/ENST-360`.
+On GitHub: **Settings → Pages → Source: "Deploy from a branch"**, Branch `main`, folder **`/ (root)`** → Save.
+To update the site, change the files and push (GitHub Desktop or `git push`).
 
 The site appears at https://zwfh6trskt-bot.github.io/ENST-360/ after a minute or two.
 
