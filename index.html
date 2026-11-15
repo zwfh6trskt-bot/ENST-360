@@ -706,6 +706,33 @@ html.dark .stg-table thead th{background:#123528}
 .frm-dl{transform:rotate(90deg)}
 @media(max-width:560px){.frm{flex-direction:column}.frm-acts .btn{flex:1}}
 
+/* ---------- round 3 : rubriques compactes, cursus, pied de page bleu ---------- */
+.x-cards{gap:14px}
+.x-card{flex-direction:row;align-items:center;gap:14px;min-height:0;padding:16px 18px;border-radius:14px}
+.x-card-ic{width:46px;height:46px;border-radius:12px}
+.x-card-ic svg{width:22px;height:22px}
+.x-card-t{flex:1;min-width:0}
+.x-card h3{margin-top:0!important;font-size:16px;line-height:1.3}
+.x-card p{margin-top:3px!important;font-size:13.5px;line-height:1.45}
+.x-card-go{margin-top:0;padding-top:0;flex-shrink:0}
+.x-cur{padding-bottom:96px}
+.x-cur .eco-cur article{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow-s)}
+.x-ft{background:#0F2A4F;border-top:0;color:#fff}
+.x-ft-brand>a{display:inline-block;background:#fff;border-radius:14px;padding:10px 14px}
+.x-logo-ft{width:170px}
+.x-ft-brand p{color:rgb(255 255 255 / .72)}
+.x-ft-brand .x-ft-tag{color:#fff}
+.x-ft h2{color:#fff}
+.x-ft nav a,.x-ft nav button{color:rgb(255 255 255 / .72)}
+.x-ft nav a:hover,.x-ft nav button:hover{color:#fff}
+.x-ft-bot{border-top-color:rgb(255 255 255 / .14);color:rgb(255 255 255 / .6)}
+html.dark .x-ft{background:#0B1F3A}
+html.dark .x-ft-brand>a{background:#fff;padding:10px 14px}
+.x-logo{height:42px}
+@media(max-width:640px){.x-logo{height:34px}.x-card{padding:14px;gap:12px}.x-card p{font-size:13px}.x-cur{padding-bottom:64px}}
+@media(max-width:380px){.x-logo{height:30px}}
+@media(min-width:420px) and (max-width:640px){.x-card{flex-direction:column;align-items:flex-start}.x-card-go{display:none}}
+
 </style>
 </head>
 <body>
@@ -949,7 +976,7 @@ var X = {
 function XT() { return X[lang] || X.fr; }
 var CARDS = [['plan', 'campus', 'map'], ['etudes', 'salles', 'calendar'], ['demarches', 'services', 'file'], ['pratique', 'pratique', 'coffee'], ['vie', 'vie-etudiante', 'users'], ['residence', 'residence', 'home'], ['stages', 'stages', 'briefcase'], ['alger', 'alger', 'landmark']];
 function brandImg(cls) { return '<img class="x-logo" src="' + LOGO + '" alt="ENSTP 360" width="429" height="200">'; }
-function brandFull() { return '<img class="x-logo-ft" src="' + LOGO_FULL + '" alt="ENSTP 360 · Une vision, sans angle mort." width="565" height="300" loading="lazy">'; }
+function brandFull() { return '<img class="x-logo-ft" src="' + LOGO_FULL + '" alt="ENSTP 360 · Une vision, sans angle mort." width="565" height="300">'; }
 function langSwitch() {
   var t = T();
   return '<div class="x-lang" role="group" aria-label="' + esc(t.language) + '">' + LANGS.map(function (l) {
@@ -1020,15 +1047,11 @@ function home() {
     '<button type="submit" class="x-sbtn">' + esc(x.sBtn) + '</button></form>' +
     '<div class="x-sugg"><span>' + esc(x.sTry) + '</span>' + x.chips.map(function (c) { return '<button type="button" data-hs="' + esc(c) + '">' + esc(c) + '</button>'; }).join('') + '</div>' +
     '<div id="hs-res" class="search-results x-res" aria-live="polite"' + (hsResults() ? '' : ' hidden') + '>' + hsResults() + '</div></section></div>' +
-    '<div class="x-band">' + ecoleHtml() + '</div>' +
+    '<div class="x-band">' + ecoleIntro() + '</div>' +
     '<section class="x-wrap x-sec" id="rubriques" aria-labelledby="rub-h"><header class="x-sec-head"><h2 id="rub-h">' + esc(x.cH) + '</h2><p>' + esc(x.cP) + '</p></header><div class="x-cards">' +
-    CARDS.map(function (c) { var k = x.cards[c[0]]; return '<a class="x-card" href="' + gl(c[1]) + '"><span class="x-card-ic">' + ic(c[2], 24, '', 1.7) + '</span><h3>' + esc(k[0]) + '</h3><p>' + esc(k[1]) + '</p><span class="x-card-go" aria-hidden="true">' + ic('arrow-right', 18, 'rtl-flip') + '</span></a>'; }).join('') +
+    CARDS.map(function (c) { var k = x.cards[c[0]]; return '<a class="x-card" href="' + gl(c[1]) + '"><span class="x-card-ic">' + ic(c[2], 24, '', 1.7) + '</span><span class="x-card-t"><h3>' + esc(k[0]) + '</h3><p>' + esc(k[1]) + '</p></span><span class="x-card-go" aria-hidden="true">' + ic('arrow-right', 18, 'rtl-flip') + '</span></a>'; }).join('') +
     '</div></section>' +
-    '<section id="explorer" class="x-wrap x-sec x-all" aria-labelledby="all-h"><header class="x-sec-head"><h2 id="all-h">' + esc(x.allH) + '</h2><p>' + esc(x.allP) + '</p></header>' +
-    '<div class="x-chips" role="group" aria-label="' + esc(t.filterAria) + '">' + filters + '</div><div class="x-list">' +
-    list.map(function (g) { return '<a href="' + gl(g.slug) + '"><span class="guide-icon tone-' + g.tone + '">' + gi(g.icon) + '</span><span><strong>' + esc(g.short) + '</strong><small>' + esc(g.description) + '</small></span>' + ic('chevron', 16, 'rtl-flip') + '</a>'; }).join('') +
-    '</div></section>' +
-    '<section class="x-wrap x-help"><div><h2>' + esc(x.helpH) + '</h2><p>' + esc(x.helpP) + '</p></div><div class="x-help-acts"><button type="button" class="x-btn-acc" data-asst-open="1">' + ic('sparkles', 16) + ' ' + esc(x.helpBtn) + '</button><a href="' + gl('aide') + '">' + esc(x.helpLink) + ' ' + ic('arrow-right', 14, 'rtl-flip') + '</a></div></section>' +
+    cursusHtml() +
     '</main>';
 }
 function hubCards(items) {
@@ -1654,10 +1677,22 @@ function formsHtml() {
 SVC.push(['affairs', 'Certificat de scolarité en français|School certificate in French|شهادة مدرسية بالفرنسية', ['Le certificat est habituellement délivré en arabe. Pour l’obtenir en français, remplissez la demande et déposez-la à la scolarité.|The certificate is usually issued in Arabic. To get it in French, fill in the request and hand it in to the registrar.|تُسلَّم الشهادة عادة بالعربية. للحصول عليها بالفرنسية، املأ الطلب وسلّمه لمصلحة التمدرس.', 'Formulaire : <a href="formulaires/demande-certificat-scolarite-francais.docx" download>Word</a> · <a href="formulaires/demande-certificat-scolarite-francais.pdf" target="_blank" rel="noopener">PDF</a>|Form: <a href="formulaires/demande-certificat-scolarite-francais.docx" download>Word</a> · <a href="formulaires/demande-certificat-scolarite-francais.pdf" target="_blank" rel="noopener">PDF</a>|النموذج: <a href="formulaires/demande-certificat-scolarite-francais.docx" download>Word</a> · <a href="formulaires/demande-certificat-scolarite-francais.pdf" target="_blank" rel="noopener">PDF</a>']],
   ['affairs', 'Attestation de classement|Ranking certificate|شهادة الترتيب', ['Pour obtenir une attestation de votre classement dans la promotion pour chaque année étudiée, remplissez la demande (années, niveaux, classements) et déposez-la à la scolarité.|To get a certificate of your class ranking for each year studied, fill in the request (years, levels, rankings) and hand it in to the registrar.|للحصول على شهادة ترتيبك في الدفعة لكل سنة دراسية، املأ الطلب (السنوات، المستويات، الترتيب) وسلّمه لمصلحة التمدرس.', 'Formulaire : <a href="formulaires/demande-attestation-classement.docx" download>Word</a> · <a href="formulaires/demande-attestation-classement.pdf" target="_blank" rel="noopener">PDF</a>|Form: <a href="formulaires/demande-attestation-classement.docx" download>Word</a> · <a href="formulaires/demande-attestation-classement.pdf" target="_blank" rel="noopener">PDF</a>|النموذج: <a href="formulaires/demande-attestation-classement.docx" download>Word</a> · <a href="formulaires/demande-attestation-classement.pdf" target="_blank" rel="noopener">PDF</a>']]);
 
+/* ===== ENSTP 360 · accueil : présentation et cursus ===== */
+function ecoleIntro() {
+  var E = L2(ECO);
+  return '<section id="ecole" class="eco page-width" aria-labelledby="eco-h"><header class="eco-head"><div class="eyebrow">' + esc(E.k) + '</div><h2 id="eco-h">' + esc(E.h) + '</h2><p>' + esc(E.p) + '</p></header>' +
+    (CFG.video ? '<figure class="eco-video"><video controls playsinline preload="none"' + (CFG.poster ? ' poster="' + CFG.poster + '"' : '') + ' src="' + CFG.video + '"></video><figcaption>' + esc(E.vid) + '</figcaption></figure>' : '') +
+    '<h3 class="eco-t">' + esc(E.hist) + '</h3><ol class="eco-tl">' + E.tl.map(function (x) { return '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>'; }).join('') + '</ol></section>';
+}
+function cursusHtml() {
+  var E = L2(ECO);
+  return '<section class="x-wrap x-sec x-cur" id="cursus" aria-labelledby="cur-h"><header class="x-sec-head"><h2 id="cur-h">' + esc(E.cur) + '</h2></header><div class="eco-cur"><article><b>' + esc(E.c1) + '</b><p>' + esc(E.c1p) + '</p></article><article><b>' + esc(E.c2) + '</b><p><strong>DIB</strong> — ' + esc(E.dib) + '<br><strong>DMS</strong> — ' + esc(E.dms) + '</p></article></div></section>';
+}
+
 /* ===== static additions (theme, profile, école, timetable, help) ===== */
 /* Site settings — edit here, nothing else to configure. */
 var CFG = {
-  video: 'media/ecole-mascotte.mp4',          // presentation video ('' hides it)
+  video: '',          // presentation video ('' hides it)
   poster: 'media/ecole-mascotte-poster.jpg',
   community: 'https://guide-enstp.lovable.app/aide', // community app (needs its own server). '' hides the card
   ai: ''                                      // optional: URL of your own AI proxy. Empty = built-in assistant (no credits needed)
