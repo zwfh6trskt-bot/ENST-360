@@ -69,3 +69,14 @@ Open `index.html`, search for `var CFG` — four values:
 - Assistant pictures: `images/assistant/` (`hai`, `bye`, `think`, `loading`).
 - Texts, places, teachers: the data arrays inside `index.html` — the assistant and the search read
   the same data, so they update automatically.
+
+## Round 6 (navigation, emploi du temps, objets trouvés)
+
+- New code lives in `app6.js` / `app6.css` (loaded after the main script; same-named functions replace the old ones).
+- Home: the 8 sections open like a curtain (`var RB6` in `app6.js`); each sub-section has its own page `#/r/<section>/<sub>`.
+  A back arrow (bottom right) returns to the exact previous position.
+- Timetables: `edt6-data.js` (`var EDT6`), copied as-is from the supplied document. To fill a missing time,
+  edit the matching entry (`a`/`b` = start/end, `t` = time as written).
+- Shared data (lost & found, likes/dislikes) uses the SSC Supabase project. **Run `supabase/enstp360.sql` once**
+  in Supabase → SQL Editor. Until then those features work but stay on each device. SSC bookings already work.
+- Women's residences: add photos as `images/residences/*.jpg` and set `photo` / `url` in `var WRES6` (`app6.js`).

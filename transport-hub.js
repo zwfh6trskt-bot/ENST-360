@@ -272,6 +272,9 @@
         ];
 
 
+  /* données partagées avec la page Transport native (app6.js) */
+  window.TH_DATA = { cous: cousFixedData, loop: cousContinuousData, etusa: etusaLinesData, tr: translations };
+  try { document.dispatchEvent(new CustomEvent('th-ready')); } catch (e) {}
   var L = { ar: 'ar', fr: 'fr', en: 'en' };
   var extra = {
     en: { cardCous: 'COUS Student Transport', btnCous: 'View Schedules', cardEtusa: 'ETUSA Public Transit', btnEtusa: 'View Lines', close: 'Close', head: 'Bus schedules', single: 'Single departure' },
