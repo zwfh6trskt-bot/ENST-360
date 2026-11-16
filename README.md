@@ -39,6 +39,12 @@ GitHub's own Pages workflow; it does not stop a deployment and can be ignored.
 - Forms: `formulaires/` (Word + PDF), listed in the procedures page (`var FORMS`).
 - Timetable: live "right now / next class" indicator, refreshed every 30 s, based on the device clock.
 
+## Design & sections (v5)
+
+- Navy & gold art direction (Fraunces + Inter), hero image `images/hero-enstp360.jpg`.
+- Main sections are built from sub-sections that open and close like a curtain (`var RUB` in `index.html`).
+- New texts (Discover ENSTP, FAQ, quick help) live in `DEC`, `FAQD`, `AIDQ`, `R5` — French, English and Arabic.
+
 ## News (Actualités)
 
 Automatic import from Facebook is not possible for a static site without a Meta app approved for the ENSTP page.

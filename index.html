@@ -8,7 +8,7 @@
 <meta name="description" content="ENSTP 360, le guide numérique de l’École Nationale Supérieure des Travaux Publics : informations, lieux, services et vie étudiante au même endroit.">
 <meta name="application-name" content="ENSTP 360">
 <meta name="apple-mobile-web-app-title" content="ENSTP 360">
-<meta name="theme-color" content="#0D3B2E">
+<meta name="theme-color" content="#0f2a5a">
 <link rel="canonical" href="https://zwfh6trskt-bot.github.io/ENST-360/">
 <meta property="og:site_name" content="ENSTP 360">
 <meta property="og:title" content="ENSTP 360 · Une vision, sans angle mort.">
@@ -32,7 +32,7 @@
 <link rel="preload" as="image" href="images/alger-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Noto+Kufi+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap">
 <style>
 
 @layer base{*,::before,::after{box-sizing:border-box}img,svg,iframe{display:block;max-width:100%}img{height:auto}a{color:inherit}button{background:none;border:0;padding:0;color:inherit;cursor:pointer}nav,aside,main,section,header,footer{display:block}blockquote,cite{margin:0}h1,h2,h3{font-size:inherit;font-weight:inherit}html{-webkit-text-size-adjust:100%}}
@@ -770,6 +770,220 @@ html.dark .x-ft-brand>a{background:#fff;padding:10px 14px}
 @media(max-width:900px){.x-ft-in{grid-template-columns:1fr 1fr}.fu{grid-template-columns:1fr}.fu iframe{min-height:240px}}
 @media(max-width:640px){.nw-grid,.nw-grid-page{grid-template-columns:1fr}.nw-grid>.nw-card:nth-child(3){display:flex}.x-ft-in{grid-template-columns:1fr}}
 
+/* =====================================================================
+   ROUND 5 · direction artistique bleu marine & or (reprise du site de référence)
+   ===================================================================== */
+:root{
+  --pine:#0f2a5a; --pine-2:#23417a; --ink:#0f2a5a; --pine-tint:#eef0f4; --chalk:#f6f6f3; --stone:#e6e4de; --slate:#5e6a80;
+  --saffron:#e9b64a; --saffron-tint:#fdf3d6; --gold2:#f6dc9c;
+  --font-serif:'Fraunces',Georgia,'Times New Roman',serif; --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --background:#f6f6f3; --foreground:#16213a; --card:#fff; --primary:#0f2a5a; --primary-foreground:#fff;
+  --muted:#eef0f4; --muted-foreground:#5e6a80; --border:#e6e4de; --mint:#eef0f4; --mint-ink:#0f2a5a; --peach-ink:#8a5a00;
+  --shadow:0 2px 6px #0f2a5a12,0 24px 60px #0f2a5a24; --shadow-s:0 1px 2px #0f2a5a0d,0 8px 28px #0f2a5a12;
+  --r-l:28px; --r-m:18px; --r-s:14px;
+}
+html.dark{--pine:#0f2a5a;--ink:#dfe7f7;--pine-tint:#1a2a47;--chalk:#0c1527;--stone:#22324f;--slate:#9fb0d2;--background:#0c1527;--foreground:#e6ecf8;--card:#121e36;--primary:#e9b64a;--primary-foreground:#0f2a5a;--muted:#1a2a47;--muted-foreground:#9fb0d2;--border:#22324f;--mint:#1a2a47;--mint-ink:#dfe7f7}
+body{font-family:var(--font-sans)}
+h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;letter-spacing:-.01em}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3,[dir=rtl] h4{font-family:'Noto Naskh Arabic','Noto Kufi Arabic',serif;letter-spacing:0}
+.eyebrow{display:inline-flex!important;align-items:center;gap:10px;font:600 12px/1 var(--font-sans)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--muted-foreground)!important;margin:0!important}
+.eyebrow:before{content:'';width:22px;height:2px;background:var(--saffron)}
+[dir=rtl] .eyebrow{letter-spacing:0!important}
+.r5btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--saffron);color:#0f2a5a;border:0;border-radius:10px;padding:12px 20px;font:600 14px/1 var(--font-sans);cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.r5btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px #e9b64a66;color:#0f2a5a}
+.r5out{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);color:var(--ink);border-radius:10px;padding:10px 16px;font:600 14px/1 var(--font-sans);transition:background .15s,color .15s}
+.r5out:hover{background:var(--ink);color:#fff}
+html.dark .r5out:hover{color:#0f2a5a}
+.lnk{font:600 14px var(--font-sans);color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.lnk:after{content:'→';transition:transform .15s}.lnk:hover:after{transform:translateX(3px)}
+[dir=rtl] .lnk:after{content:'←'}[dir=rtl] .lnk:hover:after{transform:translateX(-3px)}
+mark{background:none;color:inherit;position:relative;z-index:0;white-space:nowrap}
+mark:after{content:'';position:absolute;z-index:-1;inset-inline:-.12em;top:.12em;bottom:.04em;background:var(--saffron);transform:rotate(-1.4deg) skewX(-6deg);border-radius:3px}
+
+/* en-tête */
+.x-hd{background:color-mix(in srgb,var(--background) 86%,transparent);border-bottom-color:transparent}
+.x-nav{margin-inline-start:auto;margin-inline-end:6px;gap:4px;align-items:center}
+.x-nav a{height:auto;padding:9px 15px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink)}
+.x-nav a:hover{background:var(--muted)}
+.x-nav a.on{background:var(--ink);color:#fff}
+html.dark .x-nav a.on{color:#0f2a5a}
+.x-nav a.on:after{display:none}
+.x-nav+.x-tools{margin-inline-start:0}
+.x-lang{background:transparent;border:1.5px solid var(--ink)}
+.x-lang button.on{background:var(--ink);color:#fff;box-shadow:none}
+html.dark .x-lang button.on{color:#0f2a5a}
+@media(max-width:1239px){.x-nav{display:none}}
+@media(min-width:1000px) and (max-width:1239px){.x-nav{display:flex}.x-nav a{padding:8px 11px;font-size:14px}.x-burger{display:inline-flex}}
+
+/* accueil */
+.h5{padding-bottom:20px}
+.hero5{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,5vw,64px);align-items:center;padding-top:clamp(24px,5vw,56px)}
+.h5-txt{padding-bottom:150px}
+.hero5 h1{font-size:clamp(40px,5.6vw,72px);line-height:1.05;margin:18px 0 22px!important;letter-spacing:-.02em;color:var(--ink)}
+[dir=rtl] .hero5 h1{line-height:1.3;letter-spacing:0}
+.hero5 .lead{color:var(--muted-foreground);max-width:470px;font-size:18px;line-height:1.6}
+.hfig{position:relative;margin:0}
+.hfig img{width:100%;aspect-ratio:1/1;max-height:560px;object-fit:cover;object-position:center 30%;border-radius:32px;box-shadow:var(--shadow);display:block}
+.hfig .tag{position:absolute;inset-inline-end:-18px;bottom:40px;background:var(--card);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);font-size:13px;color:var(--foreground)}
+.hfig .tag b{font:600 22px var(--font-serif);color:var(--ink);display:block;line-height:1}
+.srch{position:relative;z-index:3;margin:-150px 0 0;width:min(600px,100%);background:var(--card);border-radius:28px;padding:30px 32px;box-shadow:var(--shadow)}
+.srch h2{font-size:28px;margin:0 0 16px!important;color:var(--ink)}
+.sf{display:flex;gap:10px}
+.sf .in{flex:1;min-width:0;position:relative;display:block}
+.sf .in svg{position:absolute;inset-inline-start:16px;top:50%;transform:translateY(-50%);color:var(--muted-foreground);pointer-events:none}
+.sf input{width:100%;height:50px;padding:0 18px 0 46px;border:1.5px solid var(--ink);border-radius:999px;background:var(--card);color:var(--foreground);font:15px var(--font-sans);outline:none;transition:box-shadow .15s}
+[dir=rtl] .sf input{padding:0 46px 0 18px}
+.sf input:focus{box-shadow:0 0 0 4px #e9b64a55}
+.sf .r5btn{height:50px}
+.srch h3{font:600 14px var(--font-sans)!important;margin:20px 0 10px!important;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button,.chips a{font:500 13px var(--font-sans);background:var(--muted);border-radius:999px;padding:7px 14px;color:var(--ink);transition:background .15s}
+.chips button:hover,.chips a:hover{background:#e2e6ee}
+html.dark .chips button:hover{background:#22324f}
+.band{margin-top:56px;padding:56px 0;background:var(--card);border-block:1px solid var(--border)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cd{display:flex;align-items:center;gap:14px;padding:18px;border-radius:14px;background:var(--card);box-shadow:var(--shadow-s);color:var(--ink);transition:transform .18s,box-shadow .18s;border:1px solid #efede8}
+html.dark .cd{border-color:var(--border)}
+.cd:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.cd b{font:600 15px var(--font-sans);display:block;color:var(--ink)}
+.cd small{display:block;font-size:12.5px;color:var(--muted-foreground)}
+.ico{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.sec5{padding-top:72px}
+.sec5>h2,.sec5 .sec-h h2{font-size:clamp(28px,3.4vw,40px);margin:12px 0 22px!important;color:var(--ink)}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.sec-h h2{margin-bottom:0!important}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--border)}
+.figs div{padding:28px 22px;border-inline-end:1px solid var(--border)}
+.figs div:last-child{border:0}
+.figs b{display:block;font:500 clamp(34px,4vw,48px)/1 var(--font-serif);color:var(--ink);margin-bottom:8px}
+.figs span{color:var(--muted-foreground);font-size:14px}
+.eco-cur article{background:var(--card)!important;border:1px solid var(--border);box-shadow:var(--shadow-s);border-radius:var(--r-m)}
+.eco-cur b{color:var(--ink)}
+.loc{display:grid;grid-template-columns:1fr 1.3fr;background:var(--card);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-s);border:1px solid #efede8}
+html.dark .loc{border-color:var(--border)}
+.loc .tx{padding:36px}
+.loc h3{font-size:clamp(22px,2.4vw,28px);margin:12px 0 18px!important;color:var(--ink)}
+.loc iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:saturate(.85);background:var(--muted)}
+.kv{display:grid;gap:12px;margin-bottom:24px}
+.kv div{display:flex;gap:12px;align-items:center;font-size:15px}
+.kv svg{color:var(--ink);flex-shrink:0}
+.kv a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.nw-card{border-radius:var(--r-m);border-color:#efede8}
+.nw-body h3{font-family:var(--font-serif);font-weight:500;font-size:19px;line-height:1.3}
+.nw-body time{color:var(--muted-foreground);text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+.nw-img{background:linear-gradient(135deg,#eef0f4,#fdf3d6);color:#0f2a5a40}
+#homeNow:empty{display:none}
+
+/* pages de rubrique : en-tête, sous-navigation, rideaux */
+.rp{padding-bottom:40px;min-height:70vh}
+.crumb{display:flex;gap:8px;font-size:13.5px;color:var(--muted-foreground);padding-top:26px}
+.crumb a{color:var(--ink)}
+.phd{padding:22px 0 26px}
+.phd h1{font-size:clamp(36px,4.6vw,58px);margin:14px 0 10px!important;letter-spacing:-.02em;color:var(--ink)}
+.phd p{color:var(--muted-foreground);font-size:18px;max-width:640px}
+.sn{position:sticky;top:76px;z-index:10;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:12px 0;margin-bottom:18px;background:color-mix(in srgb,var(--background) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.sn::-webkit-scrollbar{display:none}
+.sn button{flex:none;font:500 14px var(--font-sans);padding:9px 16px;border-radius:999px;color:var(--ink);border:1px solid var(--border);transition:all .15s}
+.sn button:hover{border-color:var(--ink)}
+.accs{display:grid;gap:14px}
+details.acc{background:var(--card);border:1px solid #efede8;border-radius:var(--r-m);box-shadow:var(--shadow-s);overflow:hidden;scroll-margin-top:150px}
+html.dark details.acc{border-color:var(--border)}
+details.acc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:22px 26px;font:500 clamp(20px,2vw,24px)/1.25 var(--font-serif);color:var(--ink)}
+[dir=rtl] details.acc>summary{font-family:'Noto Naskh Arabic','Noto Kufi Arabic',serif}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary:hover{background:color-mix(in srgb,var(--muted) 55%,transparent)}
+.acc-c{margin-inline-start:auto;flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);position:relative;transition:transform .35s cubic-bezier(.22,.7,.2,1),background .2s}
+.acc-c:before,.acc-c:after{content:'';position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .35s,background .2s}
+.acc-c:after{transform:translate(-50%,-50%) rotate(90deg)}
+details.acc[open]>summary .acc-c{background:var(--ink);transform:rotate(180deg)}
+details.acc[open]>summary .acc-c:before{background:#fff}
+details.acc[open]>summary .acc-c:after{transform:translate(-50%,-50%) rotate(0);background:#fff}
+html.dark details.acc[open]>summary .acc-c:before,html.dark details.acc[open]>summary .acc-c:after{background:#0f2a5a}
+.acc-b{padding:4px 26px 28px;border-top:1px solid var(--border)}
+.acc-b>.detail-section{padding:18px 0 0;border:0}
+.acc-b>.detail-section>h2:first-child,.acc-b .stg-tips>h2{display:none}
+.acc-b>.detail-section:first-child{padding-top:14px}
+details.is-anim{overflow:hidden}
+details:not(.acc){transition:none}
+.r5box{background:var(--card);border:1px solid var(--border);border-radius:var(--r-s);padding:20px 22px;margin:14px 0}
+.r5box p{font-size:15.5px;line-height:1.75;color:var(--foreground)}
+.r5box p+p{margin-top:10px!important}
+.r5box h4{font-size:19px;color:var(--ink);margin-bottom:8px!important}
+.acc-b h4{font-size:19px;color:var(--ink);margin:20px 0 8px!important}
+.acc-b>p,.r5p{font-size:15.5px;line-height:1.75;margin:14px 0 4px!important;color:var(--foreground)}
+.r5list{margin:0;padding-inline-start:1.2em;display:grid;gap:6px;font-size:15px}
+.r5ol{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:14px;counter-reset:o}
+.r5ol li{display:grid;gap:4px;padding-inline-start:46px;position:relative;counter-increment:o}
+.r5ol li:before{content:counter(o);position:absolute;inset-inline-start:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--saffron);color:#0f2a5a;display:grid;place-items:center;font-weight:700}
+.r5ol b{color:var(--ink)}
+.r5ol span{color:var(--muted-foreground);line-height:1.65}
+.r5path{list-style:none;padding:0;margin:18px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.r5path li{padding:16px;border-radius:var(--r-s);background:var(--muted);position:relative}
+.r5path b{display:block;font:500 20px var(--font-serif);color:var(--ink)}
+.r5path span{font-size:14px;color:var(--muted-foreground)}
+.r5grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.r5grid2 .r5box,.r5grid3 .r5box{margin:0}
+.r5grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.r5pin{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 12px;border-radius:999px;background:var(--saffron-tint);color:var(--ink);font-weight:600;font-size:13.5px}
+.r5pin:hover{background:var(--saffron)}
+.r5gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:14px}
+.r5ph{position:relative;display:block;border-radius:var(--r-s);overflow:hidden;aspect-ratio:4/3;background:var(--muted);text-align:start}
+.r5ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.r5ph:hover img{transform:scale(1.05)}
+.r5ph span{position:absolute;inset-inline:0;bottom:0;padding:22px 10px 8px;background:linear-gradient(transparent,rgb(15 42 90 / .85));color:#fff;font-size:12.5px;line-height:1.3}
+.r5ph b{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:6px;background:var(--saffron);color:#0f2a5a;margin-inline-end:4px;font-size:11px}
+.r5infos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 18px}
+.r5infos div{padding:14px 16px;border-radius:var(--r-s);background:var(--muted)}
+.r5infos b{display:block;color:var(--ink)}
+.r5infos span{font-size:14px;color:var(--muted-foreground)}
+.r5cant{display:flex;align-items:center;gap:16px;width:100%;text-align:start;margin:16px 0 12px;padding:18px 20px;border-radius:var(--r-s);background:var(--saffron-tint);color:var(--ink)}
+.r5cant span{flex:1}.r5cant b{display:block;font-size:17px}.r5cant small{color:var(--muted-foreground)}.r5cant em{font-style:normal;font-weight:700;display:inline-flex;gap:6px;align-items:center}
+.r5collab{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:18px 20px;border-radius:var(--r-s);background:#0f2a5a;color:#fff;margin-bottom:8px}
+.r5collab span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+.r5collab b{font:500 20px var(--font-serif);flex:1}
+.r5acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.r5chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}
+.r5chips b{min-width:110px;color:var(--ink);text-transform:capitalize}
+.r5chips a{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:999px;background:var(--muted);font-size:13.5px;color:var(--ink)}
+.r5ssc{display:flex;gap:18px;align-items:center;padding:18px;border-radius:var(--r-s);background:var(--muted);margin:16px 0 4px}
+.r5ssc img{border-radius:50%;object-fit:cover;flex-shrink:0}
+.r5ssc b{color:var(--ink);font-size:16px}.r5ssc p{font-size:14.5px;margin:4px 0 10px!important;color:var(--muted-foreground)}
+.acc-b .figs{margin-top:16px}
+.acc-b .eco-tl{margin-top:16px}
+.acc-b .loc{margin-top:14px}
+.acc-b .rf-form{margin-top:14px}
+.acc-b .rf-form input{height:46px}
+/* pages simples restantes */
+.detail-heading h1{font-weight:500;color:var(--ink)}
+.detail-section h2{font-weight:500}
+.xg-tabs button.on,.xg-tabs .xg-tab.on{background:var(--ink)!important;border-color:var(--ink)!important;color:#fff!important}
+html.dark .xg-tabs button.on{color:#0f2a5a!important}
+.btn-default{background:var(--ink);color:#fff}
+.btn-default:hover{background:#23417a}
+.x-card-ic{background:var(--muted)}
+.as-head{background:#0f2a5a}
+/* pied de page */
+.f5{background:#0f2a5a;color:#d6def0;margin-top:96px;font-size:14px}
+.f5 .fg{max-width:1240px;margin:auto;padding:56px 40px 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}
+.f5 .wm{font:500 34px var(--font-serif);color:#fff;line-height:1}
+.f5 .wm i{color:var(--saffron);font-style:normal}
+.f5 p{margin-top:14px!important;max-width:320px;color:#b9c6e2;line-height:1.6}
+.f5 .f5tag{color:#fff;font-weight:600}
+.f5 h2{color:#fff;font:600 13px var(--font-sans)!important;letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px!important}
+[dir=rtl] .f5 h2{letter-spacing:0}
+.f5 nav{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.f5 nav a,.f5 nav button,.f5 nav span{color:#d6def0;font-size:14px;text-align:start;line-height:1.5}
+.f5 nav a:hover,.f5 nav button:hover{color:var(--saffron)}
+.f5 .fb{border-top:1px solid #ffffff1f;max-width:1240px;margin:auto;padding:18px 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#9fb0d2;font-size:13px}
+html.dark .f5{background:#081125}
+/* responsive */
+@media(max-width:1020px){.tiles{grid-template-columns:repeat(2,1fr)}.figs{grid-template-columns:1fr 1fr}.figs div:nth-child(2){border-inline-end:0}.figs div:nth-child(-n+2){border-bottom:1px solid var(--border)}.f5 .fg{grid-template-columns:1fr 1fr}.r5grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.hero5{grid-template-columns:1fr}.h5-txt{padding-bottom:0}.hfig{order:-1}.hfig img{aspect-ratio:4/3;border-radius:24px}.hfig .tag{inset-inline-end:12px;bottom:12px}.srch{margin-top:24px}.loc{grid-template-columns:1fr}.loc iframe{min-height:260px}.r5infos{grid-template-columns:1fr}.r5path{grid-template-columns:1fr}}
+@media(max-width:640px){.srch{padding:22px 18px;border-radius:22px}.sf{flex-direction:column}.sf .r5btn{width:100%}.tiles{grid-template-columns:1fr 1fr;gap:10px}.cd{flex-direction:column;align-items:flex-start;padding:14px;gap:10px}.cd b{font-size:14px}.band{padding:36px 0;margin-top:40px}.sec5{padding-top:52px}.figs div{padding:20px 14px}.loc .tx{padding:24px}.f5 .fg{grid-template-columns:1fr;padding:44px 20px 24px}.f5 .fb{padding:16px 20px}.r5grid2,.r5grid3{grid-template-columns:1fr}details.acc>summary{padding:18px 18px}.acc-b{padding:4px 18px 22px}.sn{top:64px}.phd p{font-size:16px}.r5chips b{min-width:100%}}
+@media(max-width:360px){.tiles{grid-template-columns:1fr}}
+
+@media(max-width:640px){button[data-cant-open]{flex-wrap:wrap}button[data-cant-open]>span:last-child{margin-inline-start:64px}}
+
 </style>
 </head>
 <body>
@@ -866,7 +1080,7 @@ function route() {
   var h = location.hash.replace(/^#/, '') || '/';
   var m = h.match(/^\/guide\/([^\/?#]+)/);
   if (m) return { name: 'guide', slug: decodeURIComponent(m[1]) };
-  if (h.indexOf('/ecole') === 0) st.scroll = 'ecole';
+  if (h.indexOf('/ecole') === 0) return { name: 'guide', slug: 'decouvrir' };
   return { name: 'home' };
 }
 function gl(slug) { return '#/guide/' + slug; }
@@ -1033,9 +1247,9 @@ function header(r) {
   if (st.menu) {
     var gs = guides();
     mobile = '<nav id="header-mobile-nav" class="x-drawer" aria-label="' + esc(x.menu) + '"><div class="x-drawer-in">' +
-      '<a href="#/">' + ic('home', 18) + esc(x.home) + '</a><a href="#/ecole">' + ic('graduation', 18) + esc(x.ecole) + '</a><a href="' + gl('actualites') + '">' + ic('news', 18) + esc(L2(NEWSL).nav) + '</a>' +
-      CARDS.map(function (c) { return '<a href="' + gl(c[1]) + '">' + ic(c[2], 18) + esc(x.cards[c[0]][0]) + '</a>'; }).join('') +
-      '<p class="x-drawer-h">' + esc(x.allH) + '</p><div class="x-drawer-more">' + gs.filter(function (g) { return ['campus', 'salles', 'services', 'pratique', 'vie-etudiante', 'residence', 'stages', 'alger', 'actualites'].indexOf(g.slug) === -1; }).map(function (g) { return '<a href="' + gl(g.slug) + '">' + esc(g.short) + '</a>'; }).join('') + '</div>' +
+      '<a href="#/">' + ic('home', 18) + esc(x.home) + '</a><a href="' + gl('actualites') + '">' + ic('news', 18) + esc(L2(NEWSL).nav) + '</a>' +
+      TILES.map(function (c) { return '<a href="' + gl(c[0]) + '">' + ic(c[1], 18) + esc(R().tiles[c[0]][0]) + '</a>'; }).join('') + '<a href="' + gl('faq') + '">' + ic('faq', 18) + 'FAQ</a>' +
+      '<p class="x-drawer-h">' + esc(x.allH) + '</p><div class="x-drawer-more">' + gs.filter(function (g) { return ['campus', 'salles', 'services', 'pratique', 'vie-etudiante', 'residence', 'stages', 'actualites', 'decouvrir', 'faq'].indexOf(g.slug) === -1; }).map(function (g) { return '<a href="' + gl(g.slug) + '">' + esc(g.short) + '</a>'; }).join('') + '</div>' +
       '<div class="x-drawer-foot">' + langSwitch() + '<button type="button" class="x-dbtn" data-profile="1">' + ic('user', 17) + esc(profile ? profile.name : x.profile) + '</button><button type="button" class="x-dbtn" data-theme="1" aria-pressed="' + dark + '">' + ic(dark ? 'sun' : 'moon', 17) + esc(x.theme) + '</button></div></div></nav>';
   }
   return '<header class="x-hd"><div class="x-hd-in">' +
@@ -1317,7 +1531,7 @@ var TCH=[['cp1',[['Analyse 1','Rima Narimane Bellal',['Maître de conférences �
 ["Anglais 3","Mr Omar",[],"",''],
 ["Technique d’expression","Mr Benyettou",[],"f.benyettou@enstp.edu.dz",'']]]];
 var TCL={fr:{h:'Enseignants et modules · 2026–2027',cp1:'1ère année Prépa (1ACP)',cp2:'2ème année Prépa (2ACP)',all:'Tout'},en:{h:'Teachers and modules · 2026–2027',cp1:'1st year Prep (1ACP)',cp2:'2nd year Prep (2ACP)',all:'All'},ar:{h:'الأساتذة والمقاييس · 2026–2027',cp1:'السنة الأولى تحضيري (1ACP)',cp2:'السنة الثانية تحضيري (2ACP)',all:'الكل'}};
-function tchHtml(){var S=L2(TCL),f=st.tcf||'all';var tabs='<div class="xg-tabs">'+['all','cp1','cp2'].map(function(k){return '<button type="button" class="xg-tab'+(f===k?' on':'')+'" onclick="st.tcf=\''+k+'\';render()">'+esc(S[k])+'</button>';}).join('')+'</div>';
+function tchHtml(){var S=L2(TCL),f=st.tcf||'all';var tabs='<div class="xg-tabs">'+['all','cp1','cp2','dib'].map(function(k){return '<button type="button" class="xg-tab'+(f===k?' on':'')+'" onclick="st.tcf=\''+k+'\';render()">'+esc(S[k])+'</button>';}).join('')+'</div>';
 var body=TCH.filter(function(g){return f==='all'||f===g[0];}).map(function(g){return '<h3 class="tc-y">'+esc(S[g[0]])+'</h3><div class="tc-grid">'+g[1].map(function(t){var ini=t[1].split(' ').map(function(w){return w[0];}).slice(0,2).join('');
 return '<article class="tc-card"><div class="tc-top"><span class="tc-av">'+esc(ini)+'</span><div><span class="tc-mod">'+esc(t[0])+'</span><strong>'+esc(t[1])+'</strong></div></div>'+(t[2].length?'<div class="tc-tags">'+t[2].map(function(x){return '<span>'+esc(x)+'</span>';}).join('')+'</div>':'')+'<div class="tc-acts">'+(t[3]?'<a href="mailto:'+t[3]+'" dir="ltr">✉ '+esc(t[3])+'</a>':'')+(t[4]?'<a href="https://www.linkedin.com/in/'+t[4]+'" target="_blank" rel="noopener noreferrer">in LinkedIn</a>':'')+'</div></article>';}).join('')+'</div>';}).join('');
 return '<section class="detail-section"><h2>'+esc(S.h)+'</h2>'+tabs+body+'</section>';}
@@ -1392,6 +1606,7 @@ function guidePage(slug) {
   if (slug === 'transport') {
     return '<main class="detail-main"><div class="th-wrap" data-transport-hub data-lang="' + lang + '"></div><section aria-label="ENSTP Travel"><iframe id="travelFrame" title="ENSTP Travel" src="travel.html?embed=1&lang=' + lang + '" style="display:block;width:100%;height:2400px;border:0;border-radius:16px" scrolling="no"></iframe></section></main>';
   }
+  if (RUB[slug]) return rubPage(g, RUB[slug](g));
   var sections = g.sections.map(function (s) { return '<section class="detail-section"><h2>' + esc(s.title) + '</h2><p>' + esc(s.text) + '</p></section>'; }).join('');
   if (slug === 'aide') sections = aideHtml(g);
   if (slug === 'salles') sections = sallesHtml(g) + tchHtml();
@@ -1788,6 +2003,283 @@ NP.push(['Cyber & Impression ETUSA', 'Face station ETUSA, Kouba', '', 'prt', 'pr
   ['Photocopie & Cyber Station Kouba', 'Face station ETUSA, Kouba', '', 'prt', 'print', 'Scan, impression et fournitures papier.|Scanning, printing and paper supplies.|مسح ضوئي، طباعة ولوازم ورقية.']);
 SVC.splice(1, 0, ['classroom', 'Compte PROGRES (WebEtu)|PROGRES account (WebEtu)|حساب PROGRES (WebEtu)', ['Application du ministère pour consulter vos notes et déposer un recours.|The ministry’s app to check your grades and file an appeal.|تطبيق الوزارة للاطلاع على النقاط وتقديم الطعون.', 'Identifiant : votre adresse @enstp.edu.dz|Username: your @enstp.edu.dz address|اسم المستخدم: عنوانك @enstp.edu.dz', 'Mot de passe : celui inscrit sur votre relevé de notes du bac|Password: the one printed on your baccalaureate transcript|كلمة المرور: المكتوبة في كشف نقاط البكالوريا', 'Votre adresse @enstp.edu.dz sert aussi pour Classroom, la bibliothèque et pour écrire aux enseignants.|Your @enstp.edu.dz address is also used for Classroom, the library and to email teachers.|يُستعمل عنوانك @enstp.edu.dz أيضًا في Classroom والمكتبة ومراسلة الأساتذة.']]);
 
+
+/* =====================================================================
+   ENSTP 360 · round 5 — direction artistique bleu marine & or,
+   rubriques en sous-rubriques « rideau », contenu enrichi (FR / EN / AR)
+   ===================================================================== */
+HERO_IMG = 'images/hero-enstp360.jpg';
+Object.assign(P, {
+  book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+  fork: '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
+  faq: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+  health: '<path d="M11 2v4"/><path d="M13 2v4"/><path d="M8 6h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M12 11v6"/><path d="M9 14h6"/>'
+});
+D.ui.fr.groups['L’École'] = 'L’École'; D.ui.en.groups['L’École'] = 'The School'; D.ui.ar.groups['L’École'] = 'المدرسة';
+D.ui.fr.groups['FAQ'] = 'FAQ'; D.ui.en.groups['FAQ'] = 'FAQ'; D.ui.ar.groups['FAQ'] = 'أسئلة شائعة';
+
+/* ---------- textes nouveaux ---------- */
+var DEC = {
+  fr: {
+    pres: ['Fondée en 1966, l’École Nationale Supérieure des Travaux Publics (ENSTP) — Francis Jeanson est l’établissement de référence en Algérie dans la formation d’ingénieurs d’État et de chercheurs hautement qualifiés dans les domaines du génie civil, des infrastructures de base et des travaux publics.', 'Située à Kouba (Alger) et placée sous la tutelle du Ministère de l’Enseignement Supérieur et de la Recherche Scientifique, l’ENSTP allie depuis près de six décennies rigueur académique, innovation technologique et ouverture sur le monde socio-économique.', 'Le campus se trouve sur les hauteurs de Kouba, à côté de la résidence universitaire Garidi 1.'],
+    orgP: 'Le cursus de formation à l’ENSTP s’articule autour d’un parcours de 5 ans menant au diplôme d’Ingénieur d’État (ainsi qu’au diplôme de Master), structuré en trois départements pédagogiques :',
+    org: [['Le Département des Classes Préparatoires (2 ans)', 'Il dispense un enseignement scientifique fondamental intensif (mathématiques, physique, chimie, mécanique rationnelle…) destiné à doter les élèves-ingénieurs des bases requises pour intégrer le cycle supérieur.'], ['Le Département des Infrastructures de Base (DIB)', 'Il forme des spécialistes dans la conception, le calcul et l’entretien des grands réseaux et ouvrages de transport (routes, autoroutes, voies ferrées, infrastructures maritimes et aéroportuaires).'], ['Le Département des Matériaux et Structures (DMS)', 'Il axe sa formation sur la mécanique des structures, le génie parasismique, la géotechnique, l’hydraulique et la science des matériaux de construction.']],
+    bref: [['1966', 'Année de création'], ['+6 000', 'Ingénieurs diplômés (dont plus de 300 étudiants internationaux)'], ['57', 'Promotions formées'], ['32', 'Pays, en plus de l’Algérie, pour lesquels l’ENSTP a formé des ingénieurs']],
+    depP: 'L’ENSTP compte trois départements. Vous commencez tous aux Classes Préparatoires, puis vous rejoignez le DIB ou le DMS pour le cycle ingénieur.',
+    path: [['CP', 'Années 1 et 2 · Classes Préparatoires'], ['Orientation', 'Choix entre DIB et DMS, selon vos résultats et vos vœux'], ['DIB · DMS', 'Années 3 à 5 · cycle ingénieur et diplôme']],
+    deps: [[17, 'Classes Préparatoires (1re et 2e années)', 'Deux années de tronc commun : mathématiques, physique, mécanique, dessin technique, informatique et langues. C’est votre département de rattachement à l’arrivée : groupes, emploi du temps, certificats de scolarité.'], [20, 'DIB (3e, 4e et 5e années)', 'Cycle ingénieur orienté infrastructures : routes, ouvrages, géotechnique et sciences de la Terre. Le bâtiment accueille aussi le laboratoire des sciences de la Terre.'], [24, 'DMS (3e, 4e et 5e années)', 'Cycle ingénieur orienté matériaux et structures : calcul des structures, béton, construction métallique.']],
+    bld: 'Bâtiment', onMap: 'sur le plan', arrive: 'À votre arrivée, demandez à l’entrée la scolarité et le département des classes préparatoires.',
+    s: ['ENSTP', 'Organisation pédagogique', 'L’ENSTP en bref', 'Histoire', 'Départements et formations', 'Contact', 'Le campus en images'],
+    seeAll: 'Voir tous les lieux en photos'
+  },
+  en: {
+    pres: ['Founded in 1966, the École Nationale Supérieure des Travaux Publics (ENSTP) — Francis Jeanson is Algeria’s reference institution for training state engineers and highly qualified researchers in civil engineering, basic infrastructure and public works.', 'Located in Kouba (Algiers) under the supervision of the Ministry of Higher Education and Scientific Research, ENSTP has combined academic rigour, technological innovation and openness to the socio-economic world for nearly six decades.', 'The campus sits on the heights of Kouba, next to the Garidi 1 university residence.'],
+    orgP: 'Training at ENSTP is a 5-year programme leading to the State Engineer degree (and a Master’s degree), organised in three teaching departments:',
+    org: [['Preparatory Classes Department (2 years)', 'It provides intensive fundamental science teaching (mathematics, physics, chemistry, rational mechanics…) to give student engineers the foundations needed for the engineering cycle.'], ['Basic Infrastructure Department (DIB)', 'It trains specialists in the design, calculation and maintenance of major transport networks and structures (roads, motorways, railways, maritime and airport infrastructure).'], ['Materials and Structures Department (DMS)', 'Its training focuses on structural mechanics, earthquake engineering, geotechnics, hydraulics and construction materials science.']],
+    bref: [['1966', 'Year founded'], ['+6,000', 'Engineers graduated (including 300+ international students)'], ['57', 'Graduating classes'], ['32', 'Countries besides Algeria for which ENSTP has trained engineers']],
+    depP: 'ENSTP has three departments. Everyone starts in the Preparatory Classes, then joins DIB or DMS for the engineering cycle.',
+    path: [['CP', 'Years 1 and 2 · Preparatory Classes'], ['Orientation', 'Choice between DIB and DMS, based on your results and wishes'], ['DIB · DMS', 'Years 3 to 5 · engineering cycle and degree']],
+    deps: [[17, 'Preparatory Classes (years 1 and 2)', 'Two common-core years: mathematics, physics, mechanics, technical drawing, computer science and languages. It is your home department when you arrive: groups, timetable, school certificates.'], [20, 'DIB (years 3, 4 and 5)', 'Engineering cycle focused on infrastructure: roads, structures, geotechnics and Earth sciences. The building also hosts the Earth sciences laboratory.'], [24, 'DMS (years 3, 4 and 5)', 'Engineering cycle focused on materials and structures: structural design, concrete, steel construction.']],
+    bld: 'Building', onMap: 'on the map', arrive: 'When you arrive, ask at the entrance for the registrar and the preparatory classes department.',
+    s: ['ENSTP', 'Teaching organisation', 'ENSTP at a glance', 'History', 'Departments and programmes', 'Contact', 'The campus in pictures'],
+    seeAll: 'See all places in photos'
+  },
+  ar: {
+    pres: ['تأسست المدرسة الوطنية العليا للأشغال العمومية (ENSTP) — فرانسيس جانسون سنة 1966، وهي المؤسسة المرجعية في الجزائر لتكوين مهندسي الدولة والباحثين ذوي الكفاءة العالية في مجالات الهندسة المدنية والهياكل القاعدية والأشغال العمومية.', 'تقع المدرسة في القبة (الجزائر العاصمة) وتخضع لوصاية وزارة التعليم العالي والبحث العلمي، وتجمع منذ قرابة ستة عقود بين الصرامة الأكاديمية والابتكار التكنولوجي والانفتاح على المحيط الاجتماعي والاقتصادي.', 'يقع الحرم في مرتفعات القبة، بجوار الإقامة الجامعية قاريدي 1.'],
+    orgP: 'يمتد التكوين في المدرسة على 5 سنوات تتوج بشهادة مهندس دولة (وشهادة الماستر)، ويتوزع على ثلاثة أقسام بيداغوجية:',
+    org: [['قسم الأقسام التحضيرية (سنتان)', 'يقدم تكوينًا علميًا أساسيًا مكثفًا (رياضيات، فيزياء، كيمياء، ميكانيك عقلانية…) لتزويد الطلبة المهندسين بالقواعد اللازمة للالتحاق بالطور العالي.'], ['قسم الهياكل القاعدية (DIB)', 'يكوّن مختصين في تصميم وحساب وصيانة شبكات ومنشآت النقل الكبرى (الطرق، الطرق السريعة، السكك الحديدية، المنشآت البحرية والمطارية).'], ['قسم المواد والهياكل (DMS)', 'يركز تكوينه على ميكانيك الهياكل، الهندسة المضادة للزلازل، الجيوتقنية، الهيدروليك وعلم مواد البناء.']],
+    bref: [['1966', 'سنة التأسيس'], ['+6000', 'مهندس متخرج (منهم أكثر من 300 طالب أجنبي)'], ['57', 'دفعة متخرجة'], ['32', 'بلدًا، إضافة إلى الجزائر، كوّنت لها المدرسة مهندسين']],
+    depP: 'تضم المدرسة ثلاثة أقسام. يبدأ الجميع في الأقسام التحضيرية ثم يلتحقون بـ DIB أو DMS لطور المهندس.',
+    path: [['CP', 'السنتان 1 و2 · الأقسام التحضيرية'], ['التوجيه', 'الاختيار بين DIB وDMS حسب النتائج والرغبات'], ['DIB · DMS', 'السنوات 3 إلى 5 · طور المهندس والشهادة']],
+    deps: [[17, 'الأقسام التحضيرية (السنتان 1 و2)', 'سنتان من الجذع المشترك: رياضيات، فيزياء، ميكانيك، رسم تقني، إعلام آلي ولغات. هو قسمك عند الوصول: الأفواج، جدول التوقيت، الشهادات المدرسية.'], [20, 'DIB (السنوات 3 و4 و5)', 'طور مهندس موجه نحو الهياكل القاعدية: الطرق، المنشآت، الجيوتقنية وعلوم الأرض. يضم المبنى أيضًا مخبر علوم الأرض.'], [24, 'DMS (السنوات 3 و4 و5)', 'طور مهندس موجه نحو المواد والهياكل: حساب الهياكل، الخرسانة، البناء المعدني.']],
+    bld: 'المبنى', onMap: 'على المخطط', arrive: 'عند وصولك، اسأل عند المدخل عن مصلحة التمدرس وقسم الأقسام التحضيرية.',
+    s: ['المدرسة', 'التنظيم البيداغوجي', 'المدرسة في أرقام', 'التاريخ', 'الأقسام والتكوين', 'الاتصال', 'الحرم بالصور'],
+    seeAll: 'عرض كل الأماكن بالصور'
+  }
+};
+var FAQD = {
+  fr: [['Où se trouve l’ENSTP ?', 'BP 32, Rue Sidi Garidi, Kouba, 16006 Alger.'], ['Comment contacter l’école ?', 'Tél. +213 (0) 23 70 19 04 · enstp@enstp.edu.dz'], ['Quels sont les horaires de la bibliothèque ?', '09:00 – 15:30, bâtiment 23, salle 25. Inscription en ligne, puis accès avec la carte d’étudiant.'], ['Quels sont les horaires du restaurant universitaire ?', 'Tous les jours, 07:00 – 20:00, avec la carte d’étudiant.'], ['Qui contacter pour un problème administratif ?', 'Affaires étudiantes : Mme Tebani, réception dimanche et mardi.'], ['Où trouver les classes préparatoires, le DIB et le DMS ?', 'Classes préparatoires : bâtiment 17 · DIB : bâtiment 20 · DMS : bâtiment 24 (voir le plan).'], ['Quels outils numériques activer à la rentrée ?', 'Google Classroom, PROGRES (WebEtu), l’email @enstp.edu.dz et la bibliothèque (rubrique Études).'], ['Que faire si j’ai perdu ma carte d’étudiant ?', 'Signalez la perte à la scolarité et demandez le remplacement.'], ['Que faire si une note est incorrecte ?', 'Signalez-la sur PROGRES, puis contactez l’enseignant du module.'], ['Où trouver une attestation ?', 'Au secrétariat de votre département, avec votre carte d’étudiant.'], ['Où sont les clubs étudiants ?', 'Club TEC : en face du département DIB (bâtiment 32). Club LTP : entre les bâtiments 28 et 29, avant l’Amphi B (bâtiment 31).'], ['Où sont les salles de prière ?', 'Bâtiment 33 (hommes) et bâtiment 34 (femmes), voir le plan.']],
+  en: [['Where is ENSTP?', 'BP 32, Rue Sidi Garidi, Kouba, 16006 Algiers.'], ['How do I contact the school?', 'Tel. +213 (0) 23 70 19 04 · enstp@enstp.edu.dz'], ['What are the library hours?', '09:00 – 15:30, building 23, room 25. Register online, then enter with your student card.'], ['What are the university restaurant hours?', 'Every day, 07:00 – 20:00, with your student card.'], ['Who do I contact for an administrative problem?', 'Student affairs: Ms Tebani, reception Sunday and Tuesday.'], ['Where are the preparatory classes, DIB and DMS?', 'Preparatory classes: building 17 · DIB: building 20 · DMS: building 24 (see the map).'], ['Which digital tools should I activate at the start of the year?', 'Google Classroom, PROGRES (WebEtu), your @enstp.edu.dz email and the library (Studies section).'], ['What if I lose my student card?', 'Report the loss to the registrar and ask for a replacement.'], ['What if a grade is wrong?', 'Report it on PROGRES, then contact the module teacher.'], ['Where do I get a certificate (attestation)?', 'At your department’s secretariat, with your student card.'], ['Where are the student clubs?', 'TEC club: opposite the DIB department (building 32). LTP club: between buildings 28 and 29, before Amphi B (building 31).'], ['Where are the prayer rooms?', 'Building 33 (men) and building 34 (women), see the map.']],
+  ar: [['أين تقع المدرسة؟', 'ص.ب 32، شارع سيدي قاريدي، القبة، 16006 الجزائر.'], ['كيف أتصل بالمدرسة؟', 'الهاتف: ‎+213 (0) 23 70 19 04 · enstp@enstp.edu.dz'], ['ما هي أوقات المكتبة؟', '09:00 – 15:30، المبنى 23، القاعة 25. التسجيل عبر الإنترنت ثم الدخول ببطاقة الطالب.'], ['ما هي أوقات المطعم الجامعي؟', 'يوميًا، 07:00 – 20:00، ببطاقة الطالب.'], ['بمن أتصل لمشكل إداري؟', 'شؤون الطلبة: السيدة طباني، الاستقبال يومي الأحد والثلاثاء.'], ['أين أجد الأقسام التحضيرية وDIB وDMS؟', 'الأقسام التحضيرية: المبنى 17 · DIB: المبنى 20 · DMS: المبنى 24 (انظر المخطط).'], ['ما الأدوات الرقمية التي يجب تفعيلها عند الدخول؟', 'Google Classroom وPROGRES (WebEtu) والبريد @enstp.edu.dz والمكتبة (قسم الدراسة).'], ['ماذا أفعل إذا فقدت بطاقة الطالب؟', 'أبلغ مصلحة التمدرس بالضياع واطلب بطاقة بديلة.'], ['ماذا أفعل إذا كانت نقطة خاطئة؟', 'أبلغ عنها عبر PROGRES ثم تواصل مع أستاذ المقياس.'], ['أين أحصل على شهادة؟', 'لدى أمانة قسمك، مع بطاقة الطالب.'], ['أين توجد النوادي الطلابية؟', 'نادي TEC: مقابل قسم DIB (المبنى 32). نادي LTP: بين المبنيين 28 و29، قبل المدرج ب (المبنى 31).'], ['أين قاعات الصلاة؟', 'المبنى 33 (رجال) والمبنى 34 (نساء)، انظر المخطط.']]
+};
+var AIDQ = {
+  fr: { h: 'Aide rapide', off: 'Affaires étudiantes : Mme Tebani, dimanche et mardi.', q: [['J’ai perdu ma carte d’étudiant', 'Scolarité : signalez la perte et demandez le remplacement.'], ['Une note est incorrecte', 'Signalez-la sur PROGRES, puis contactez l’enseignant du module.'], ['J’ai un problème administratif', 'Affaires étudiantes — Mme Tebani (dimanche et mardi).'], ['J’ai besoin d’une attestation', 'Le secrétariat de votre département, avec votre carte d’étudiant.']], s: ['Aide rapide', 'Démarches administratives', 'Demande de document', 'À qui s’adresser'] },
+  en: { h: 'Quick help', off: 'Student affairs: Ms Tebani, Sunday and Tuesday.', q: [['I lost my student card', 'Registrar: report the loss and ask for a replacement.'], ['A grade is wrong', 'Report it on PROGRES, then contact the module teacher.'], ['I have an administrative problem', 'Student affairs — Ms Tebani (Sunday and Tuesday).'], ['I need a certificate (attestation)', 'Your department’s secretariat, with your student card.']], s: ['Quick help', 'Administrative procedures', 'Request a document', 'Who to ask'] },
+  ar: { h: 'مساعدة سريعة', off: 'شؤون الطلبة: السيدة طباني، الأحد والثلاثاء.', q: [['فقدت بطاقة الطالب', 'مصلحة التمدرس: أبلغ عن الضياع واطلب بطاقة بديلة.'], ['نقطة خاطئة', 'أبلغ عنها عبر PROGRES ثم تواصل مع أستاذ المقياس.'], ['لدي مشكل إداري', 'شؤون الطلبة — السيدة طباني (الأحد والثلاثاء).'], ['أحتاج إلى شهادة', 'أمانة قسمك، مع بطاقة الطالب.']], s: ['مساعدة سريعة', 'الإجراءات الإدارية', 'طلب وثيقة', 'إلى من تتوجه'] }
+};
+var R5 = {
+  fr: { home: 'Accueil', eyebrow: 'École Nationale Supérieure des Travaux Publics', h1m: 'Une vision,', h1r: ' sans angle mort.', tagT: 'Kouba, Alger', imgAlt: 'Entrée de l’École Nationale Supérieure des Travaux Publics — ENSTP 360', sH: 'Que cherchez-vous ?', sPh: 'Je cherche…', browse: 'Parcourir',
+    tiles: { decouvrir: ['Découvrir l’ENSTP', '3 départements'], campus: ['Plan de campus', '34 lieux'], salles: ['Études', '8 emplois du temps'], services: ['Démarche et demande de document', 'Aide et documents'], pratique: ['Vie pratique', '4 rubriques'], 'vie-etudiante': ['Vie hors ENSTP et clubs', 'Clubs, sport, sorties'], residence: ['Résidence universitaire', 'Hommes et femmes'], stages: ['Stages', '29 organismes'] },
+    figs: [['1966', 'Année de création'], ['+6 000', 'Ingénieurs diplômés'], ['57', 'Promotions formées'], ['3', 'Départements pédagogiques']],
+    newsE: 'Nos actualités', newsH: 'À la une à l’ENSTP', locE: 'Nous trouver', locH: 'Sur les hauteurs de Kouba', locAff: 'Affaires étudiantes : dimanche et mardi', route: 'Itinéraire vers l’ENSTP', curE: 'Formation',
+    nav: ['Découvrir', 'Études', 'Vie pratique', 'Actualités', 'FAQ'], fExp: 'Explorer', fOff: 'Liens officiels', fCt: 'Contact', fSite: 'Site officiel ENSTP', fNewsOff: 'Actualités officielles', fNews: 'Nos actualités', rights: 'Tous droits réservés', check: 'Informations à vérifier auprès de l’administration en cas de doute.',
+    tools: 'Outils numériques', toolsP: 'Les quatre outils à activer dès la rentrée.', mail: 'Email de l’école', mailP: 'Votre adresse @enstp.edu.dz sert pour Classroom, PROGRES, la bibliothèque et pour écrire aux enseignants.', lib: 'Bibliothèque', libP: 'Inscription en ligne, puis accès au bâtiment 23 · 09:00 – 15:30 avec la carte d’étudiant.',
+    et: ['Emploi du temps', 'Trouver une salle', 'Enseignants', 'Outils numériques', 'Les bons réflexes'], pl: ['Plan interactif', 'Les lieux en photos', 'Nous trouver', 'Un plan qui s’enrichit'], pr: ['Manger', 'Impression et papeterie', 'Transport', 'Santé'], vi: ['Clubs étudiants', 'Sport', 'Activités et sorties', 'Rencontres et entraide'], re: ['Hommes — Résidence Garidi 1', 'Femmes'], st: ['Pro tips', 'Nos recommandations', 'Conseils pour réussir son stage'],
+    infos: [['Restaurant universitaire', 'tous les jours, 07:00 – 20:00 · carte d’étudiant'], ['Bibliothèque', '09:00 – 15:30 · bâtiment 23, salle 25'], ['Affaires étudiantes', 'Mme Tebani · réception dimanche et mardi']],
+    health: 'Recherches Google Maps autour de l’école :', hq: ['hôpital', 'polyclinique', 'clinique', 'pharmacie'], collab: 'Collaboration', order: 'Commander', ssc: 'SSC — Students Sports Community · ENSTP', sscB: 'Ouvrir SSC', sscP: 'La communauté sportive des étudiants de l’ENSTP. Le stade de l’école (bâtiment 9), et les salles et terrains autour.', women: 'Localisation de la résidence universitaire pour femmes.', loc: 'Localisation', transit: 'Mon itinéraire en transport', stops: 'Arrêts de bus proches', travel: 'Ouvrir ENSTP Travel', openR: 'Ouvrir', faqP: 'Les réponses aux questions les plus posées par les étudiants.' },
+  en: { home: 'Home', eyebrow: 'École Nationale Supérieure des Travaux Publics', h1m: 'A vision', h1r: ' with no blind spots.', tagT: 'Kouba, Algiers', imgAlt: 'Entrance of the École Nationale Supérieure des Travaux Publics — ENSTP 360', sH: 'What are you looking for?', sPh: 'I’m looking for…', browse: 'Browse',
+    tiles: { decouvrir: ['Discover ENSTP', '3 departments'], campus: ['Campus map', '34 places'], salles: ['Studies', '8 timetables'], services: ['Procedures & documents', 'Help and documents'], pratique: ['Everyday life', '4 sections'], 'vie-etudiante': ['Life beyond class & clubs', 'Clubs, sport, outings'], residence: ['University residence', 'Men and women'], stages: ['Internships', '29 organisations'] },
+    figs: [['1966', 'Year founded'], ['+6,000', 'Engineers graduated'], ['57', 'Graduating classes'], ['3', 'Teaching departments']],
+    newsE: 'Our news', newsH: 'Headlines at ENSTP', locE: 'Find us', locH: 'On the heights of Kouba', locAff: 'Student affairs: Sunday and Tuesday', route: 'Directions to ENSTP', curE: 'Programmes',
+    nav: ['Discover', 'Studies', 'Everyday life', 'News', 'FAQ'], fExp: 'Explore', fOff: 'Official links', fCt: 'Contact', fSite: 'Official ENSTP website', fNewsOff: 'Official news', fNews: 'Our news', rights: 'All rights reserved', check: 'Check with the administration if in doubt.',
+    tools: 'Digital tools', toolsP: 'The four tools to activate at the start of the year.', mail: 'School email', mailP: 'Your @enstp.edu.dz address is used for Classroom, PROGRES, the library and to email teachers.', lib: 'Library', libP: 'Register online, then access building 23 · 09:00 – 15:30 with your student card.',
+    et: ['Timetable', 'Find a room', 'Teachers', 'Digital tools', 'Good habits'], pl: ['Interactive map', 'Places in photos', 'Find us', 'A map that keeps growing'], pr: ['Eating', 'Printing & stationery', 'Transport', 'Health'], vi: ['Student clubs', 'Sport', 'Activities & outings', 'Meeting people & mutual help'], re: ['Men — Garidi 1 residence', 'Women'], st: ['Pro tips', 'Our recommendations', 'Tips for a successful internship'],
+    infos: [['University restaurant', 'every day, 07:00 – 20:00 · student card'], ['Library', '09:00 – 15:30 · building 23, room 25'], ['Student affairs', 'Ms Tebani · reception Sunday and Tuesday']],
+    health: 'Google Maps searches around the school:', hq: ['hospital', 'polyclinic', 'clinic', 'pharmacy'], collab: 'Partnership', order: 'Order', ssc: 'SSC — Students Sports Community · ENSTP', sscB: 'Open SSC', sscP: 'The ENSTP students’ sports community. The school stadium (building 9), plus the gyms and fields around it.', women: 'Location of the women’s university residence.', loc: 'Location', transit: 'My public-transport route', stops: 'Nearby bus stops', travel: 'Open ENSTP Travel', openR: 'Open', faqP: 'Answers to the questions students ask most.' },
+  ar: { home: 'الرئيسية', eyebrow: 'المدرسة الوطنية العليا للأشغال العمومية', h1m: 'رؤية', h1r: ' بلا زوايا عمياء.', tagT: 'القبة، الجزائر', imgAlt: 'مدخل المدرسة الوطنية العليا للأشغال العمومية — ENSTP 360', sH: 'عمّ تبحث؟', sPh: 'أبحث عن…', browse: 'تصفح',
+    tiles: { decouvrir: ['اكتشف المدرسة', '3 أقسام'], campus: ['مخطط الحرم', '34 مكانًا'], salles: ['الدراسة', '8 جداول توقيت'], services: ['الإجراءات وطلب الوثائق', 'مساعدة ووثائق'], pratique: ['الحياة اليومية', '4 أقسام'], 'vie-etudiante': ['الحياة خارج الدراسة والنوادي', 'نوادٍ، رياضة، خرجات'], residence: ['الإقامة الجامعية', 'رجال ونساء'], stages: ['التربصات', '29 مؤسسة'] },
+    figs: [['1966', 'سنة التأسيس'], ['+6000', 'مهندس متخرج'], ['57', 'دفعة متخرجة'], ['3', 'أقسام بيداغوجية']],
+    newsE: 'أخبارنا', newsH: 'أبرز أخبار المدرسة', locE: 'موقعنا', locH: 'في مرتفعات القبة', locAff: 'شؤون الطلبة: الأحد والثلاثاء', route: 'الطريق إلى المدرسة', curE: 'التكوين',
+    nav: ['اكتشف', 'الدراسة', 'الحياة اليومية', 'الأخبار', 'أسئلة شائعة'], fExp: 'استكشف', fOff: 'روابط رسمية', fCt: 'الاتصال', fSite: 'الموقع الرسمي للمدرسة', fNewsOff: 'الأخبار الرسمية', fNews: 'أخبارنا', rights: 'جميع الحقوق محفوظة', check: 'تحقق من المعلومات لدى الإدارة عند الشك.',
+    tools: 'الأدوات الرقمية', toolsP: 'الأدوات الأربع التي يجب تفعيلها عند الدخول.', mail: 'بريد المدرسة', mailP: 'يُستعمل عنوانك @enstp.edu.dz في Classroom وPROGRES والمكتبة ومراسلة الأساتذة.', lib: 'المكتبة', libP: 'التسجيل عبر الإنترنت ثم الدخول إلى المبنى 23 · 09:00 – 15:30 ببطاقة الطالب.',
+    et: ['جدول التوقيت', 'ابحث عن قاعة', 'الأساتذة', 'الأدوات الرقمية', 'عادات جيدة'], pl: ['المخطط التفاعلي', 'الأماكن بالصور', 'موقعنا', 'مخطط يتطور'], pr: ['الأكل', 'الطباعة والأدوات المكتبية', 'النقل', 'الصحة'], vi: ['النوادي الطلابية', 'الرياضة', 'الأنشطة والخرجات', 'التعارف والتعاون'], re: ['رجال — الإقامة قاريدي 1', 'نساء'], st: ['نصائح', 'توصياتنا', 'نصائح لتربص ناجح'],
+    infos: [['المطعم الجامعي', 'يوميًا، 07:00 – 20:00 · بطاقة الطالب'], ['المكتبة', '09:00 – 15:30 · المبنى 23، القاعة 25'], ['شؤون الطلبة', 'السيدة طباني · الاستقبال الأحد والثلاثاء']],
+    health: 'عمليات بحث على خرائط Google قرب المدرسة:', hq: ['مستشفى', 'عيادة متعددة الخدمات', 'عيادة', 'صيدلية'], collab: 'شراكة', order: 'اطلب', ssc: 'SSC — Students Sports Community · ENSTP', sscB: 'افتح SSC', sscP: 'المجتمع الرياضي لطلبة المدرسة. ملعب المدرسة (المبنى 9)، والقاعات والملاعب المحيطة.', women: 'موقع الإقامة الجامعية للبنات.', loc: 'الموقع', transit: 'مساري بالنقل العمومي', stops: 'محطات الحافلات القريبة', travel: 'افتح ENSTP Travel', openR: 'فتح', faqP: 'أجوبة الأسئلة الأكثر طرحًا من الطلبة.' }
+};
+function R() { return R5[lang] || R5.fr; }
+var TCLX = { fr: 'Département DIB (3e – 5e années)', en: 'DIB department (years 3–5)', ar: 'قسم DIB (السنوات 3–5)' };
+['fr', 'en', 'ar'].forEach(function (l) { TCL[l].dib = TCLX[l]; });
+TCH.push(['dib', [['BADAOUI Azhar', 'a.badaoui@enstp.edu.dz'], ['DERRICHE Zohra', 'z.derriche@enstp.edu.dz'], ['BENAMGHAR Ahcene', 'a.benamghar@enstp.edu.dz'], ['FEDGHOUCHE Ferhat', ''], ['TAKI Mohamed', 'm.taki@enstp.edu.dz'], ['MEHIAOUI Mehdia Yassmine', 'm.mahiaoui@enstp.edu.dz'], ['BERRICHE Yacine', 'y.berriche@enstp.edu.dz'], ['HAMADI Kamel', 'k.hamadi@enstp.edu.dz'], ['MOBARKI Ahmed', 'a.mobarki@enstp.edu.dz'], ['MERDOUD Meriem', 's.merdjani@enstp.edu.dz'], ['AMIEUR Mohamed', 'm.amieur@enstp.edu.dz'], ['OMRACI Kamel', 'k.omraci@enstp.edu.dz'], ['ALAM .S Tassadit', 't.alem@enstp.edu.dz'], ['LARBI Salma', 's.larbi@enstp.edu.dz'], ['TAFRAOUT Salim', 's.tafraout@enstp.edu.dz'], ['BENOUMECHIARA Nawel', 'nal_be@enstp.edu.dz'], ['CHIALI Soumia', 's.chiali@enstp.edu.dz'], ['BELHADJ Fatma Zohra', 'f.belhadj@enstp.edu.dz'], ['ADEM Ahmed Benyoucef', 'a.adem@enstp.edu.dz'], ['BENREDOUANE Mustapha', 'm.benredouane@enstp.edu.dz'], ['KARA Benchohra', 'b.kara@enstp.edu.dz'], ['RAHMANI Douadi', 'd.rahmani@enstp.edu.dz'], ['LAIB Salah Eddine', 's.laib@enstp.edu.dz'], ['KHOUAS Zohra', 'z.khouas@enstp.edu.dz'], ['BOUSSADI Monia', 'm.boussaadi@enstp.edu.dz'], ['ASSAS Takieddine', 't.assas@enstp.edu.dz']].map(function (t) { return ['', t[0], [], t[1], '']; })]);
+NR.push(['Fast Food Le Rapide', 'Garidi', '200 – 600 DA', 'fast', 'tacos', 'Tacos, burgers et fast-food étudiant.|Tacos, burgers and student fast food.|تاكوس وبرغر ووجبات سريعة للطلبة.'],
+  ['Pizzeria Le Feu de Bois', 'Rue Sidi Garidi', '300 – 800 DA', 'pizza', 'pizza', 'Pizza au feu de bois et fast-food près du campus.|Wood-fired pizza and fast food near campus.|بيتزا على الحطب ووجبات سريعة قرب الحرم.'],
+  ['Snack El Hadhri', 'Kouba', '250 – 700 DA', 'fast', 'shawarma', 'Shawarma, sandwichs et frites.|Shawarma, sandwiches and fries.|شاورما وسندويتشات وبطاطا مقلية.'],
+  ['Pizzeria La Gondole', 'Kouba', '300 – 900 DA', 'pizza', 'pizza', 'Pizzas traditionnelles et pâtes au four.|Traditional pizzas and baked pasta.|بيتزا تقليدية ومعكرونة بالفرن.'],
+  ['Tacos King Kouba', 'Kouba', '350 – 850 DA', 'fast', 'tacos', 'Tacos français, burgers et menus.|French tacos, burgers and set meals.|تاكوس فرنسي وبرغر ووجبات كاملة.'],
+  ['Fast Food Le Standard', 'Rue Sidi Garidi', '200 – 500 DA', 'fast', 'panini', 'Paninis et en-cas rapides.|Paninis and quick snacks.|بانيني ووجبات خفيفة سريعة.'],
+  ['Restaurant Le Délice', 'Garidi', '400 – 1000 DA', 'trad', 'meal', 'Plats traditionnels faits maison et grillades.|Home-made traditional dishes and grills.|أطباق تقليدية منزلية ومشويات.'],
+  ['Snack El Baraka', 'Garidi', '200 – 550 DA', 'fast', 'sandwich', 'Sandwichs escalope, merguez et boissons.|Escalope and merguez sandwiches, drinks.|سندويتشات إسكالوب ومرقاز ومشروبات.']);
+D.guides.push(
+  { slug: 'decouvrir', title: 'Découvrir l’ENSTP', short: 'Découvrir l’ENSTP', description: 'Présentation, histoire, départements et contact de l’école.', icon: 'building', tone: 'mint', group: 'L’École', sections: [] },
+  { slug: 'faq', title: 'Questions fréquentes', short: 'FAQ', description: 'Les réponses aux questions les plus posées par les étudiants.', icon: 'faq', tone: 'mint', group: 'FAQ', sections: [] }
+);
+D.tr.en.decouvrir = { title: 'Discover ENSTP', short: 'Discover ENSTP', description: 'The school’s presentation, history, departments and contact.', sections: [] };
+D.tr.ar.decouvrir = { title: 'اكتشف المدرسة', short: 'اكتشف المدرسة', description: 'تقديم المدرسة وتاريخها وأقسامها ومعلومات الاتصال.', sections: [] };
+D.tr.en.faq = { title: 'Frequently asked questions', short: 'FAQ', description: 'Answers to the questions students ask most.', sections: [] };
+D.tr.ar.faq = { title: 'الأسئلة الشائعة', short: 'أسئلة شائعة', description: 'أجوبة الأسئلة الأكثر طرحًا من الطلبة.', sections: [] };
+(function () {
+  var t = { campus: ['Plan de campus', 'Campus map', 'مخطط الحرم', 'Plan interactif et lieux du campus.', 'Interactive map and campus places.', 'المخطط التفاعلي وأماكن الحرم.'], salles: ['Études', 'Studies', 'الدراسة', 'Emplois du temps, enseignants et outils numériques.', 'Timetables, teachers and digital tools.', 'جداول التوقيت والأساتذة والأدوات الرقمية.'], services: ['Démarche et demande de document', 'Procedures & documents', 'الإجراءات وطلب الوثائق', 'Procédures, aide et documents à télécharger.', 'Procedures, help and documents to download.', 'الإجراءات والمساعدة ووثائق للتحميل.'] };
+  Object.keys(t).forEach(function (s) { var g = D.guides.filter(function (x) { return x.slug === s; })[0]; g.title = t[s][0]; g.description = t[s][3]; D.tr.en[s].title = t[s][1]; D.tr.en[s].description = t[s][4]; D.tr.ar[s].title = t[s][2]; D.tr.ar[s].description = t[s][5]; });
+  var p = D.guides.filter(function (x) { return x.slug === 'pratique'; })[0]; p.description = 'Manger, imprimer, se déplacer, se soigner.'; D.tr.en.pratique.description = 'Eating, printing, getting around, health.'; D.tr.ar.pratique.description = 'الأكل، الطباعة، التنقل، الصحة.';
+})();
+
+/* ---------- rideau : ouverture / fermeture animée de toutes les sous-rubriques ---------- */
+function accAnim(d, open) {
+  var s = d.querySelector('summary'); if (!s) { d.open = open; return; }
+  if (d._a) { d._a.cancel(); d._a = null; }
+  if (!d.animate || matchMedia('(prefers-reduced-motion: reduce)').matches) { d.open = open; return; }
+  var from = d.offsetHeight, edge = d.offsetHeight - d.clientHeight;
+  if (open) d.open = true;
+  var to = open ? d.scrollHeight + edge : s.offsetHeight + edge;
+  d.classList.add('is-anim');
+  var a = d.animate({ height: [from + 'px', to + 'px'] }, { duration: open ? 420 : 340, easing: 'cubic-bezier(.22,.7,.2,1)' });
+  d._a = a;
+  a.onfinish = function () { d._a = null; d.classList.remove('is-anim'); if (!open) d.open = false; };
+  a.oncancel = function () { d.classList.remove('is-anim'); };
+}
+document.addEventListener('click', function (e) {
+  var s = e.target.closest && e.target.closest('summary'); if (!s) return;
+  var d = s.parentElement; if (!d || d.tagName !== 'DETAILS' || (e.target.closest('a,button') && e.target.closest('a,button') !== s)) return;
+  e.preventDefault(); accAnim(d, !d.open);
+});
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('[data-acc]'); if (!b) return;
+  var d = document.getElementById(b.getAttribute('data-acc')); if (!d) return;
+  if (!d.open) accAnim(d, true);
+  setTimeout(function () { d.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+});
+
+/* ---------- briques ---------- */
+function acc(id, title, html, open) {
+  return '<details class="acc" id="' + id + '"' + (open ? ' open' : '') + '><summary><span>' + esc(title) + '</span><i class="acc-c" aria-hidden="true"></i></summary><div class="acc-b">' + html + '</div></details>';
+}
+function rubPage(g, subs) {
+  var r = R();
+  return '<main class="rp x-wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="#/">' + esc(r.home) + '</a><span aria-hidden="true">/</span><span>' + esc(g.short) + '</span></nav>' +
+    '<header class="phd"><span class="eyebrow">ENSTP 360</span><h1>' + esc(g.title) + '</h1><p>' + esc(g.description) + '</p></header>' +
+    (subs.length > 1 ? '<nav class="sn" aria-label="' + esc(g.short) + '">' + subs.map(function (s) { return '<button type="button" data-acc="' + s[0] + '">' + esc(s[1]) + '</button>'; }).join('') + '</nav>' : '') +
+    '<div class="accs">' + subs.map(function (s, i) { return acc(s[0], s[1], s[2], i === 0); }).join('') + '</div></main>';
+}
+function box(h) { return '<div class="r5box">' + h + '</div>'; }
+function list(a) { return '<ul class="r5list">' + a.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>'; }
+function pinBtn(n) { var E = L2(DEC); return '<button type="button" class="r5pin" data-pin="' + n + '">' + ic('map-pin', 14) + ' ' + esc(E.bld + ' ' + n + ' ' + E.onMap) + '</button>'; }
+function gallery(max) {
+  var ns = Object.keys(PH).map(Number).sort(function (a, b) { return a - b; }); if (max) ns = ns.slice(0, max);
+  return '<div class="r5gal">' + ns.map(function (n) { var r = cmRow(n); return '<button type="button" class="r5ph" data-pin="' + n + '"><img src="campus/' + n + '.webp" alt="' + esc(r ? cmName(r) : '') + '" loading="lazy"><span><b>' + n + '</b> ' + esc(r ? cmName(r) : '') + '</span></button>'; }).join('') + '</div>';
+}
+function contactBlock(withMap) {
+  var r = R(), ll = GMP.school.join(',');
+  var kv = '<div class="kv"><div>' + ic('map-pin', 18) + '<span>' + esc(CONTACT.addr) + '</span></div><div>' + ic('phone', 18) + '<a href="tel:+21323701904"><bdi dir="ltr">+213 (0) 23 70 19 04</bdi></a></div><div>' + ic('mail', 18) + '<a href="mailto:' + CONTACT.mail + '">' + CONTACT.mail + '</a></div><div>' + ic('clock', 18) + '<span>' + esc(r.locAff) + '</span></div></div>';
+  return '<div class="loc"><div class="tx"><span class="eyebrow">' + esc(r.locE) + '</span><h3>' + esc(r.locH) + '</h3>' + kv + '<a class="r5btn" href="https://www.google.com/maps/dir/?api=1&destination=' + ll + '" target="_blank" rel="noopener noreferrer">' + ic('map-pin', 16) + ' ' + esc(r.route) + '</a></div>' +
+    (withMap ? '<iframe src="https://maps.google.com/maps?q=' + ll + '&z=16&hl=' + (lang === 'ar' ? 'ar' : lang) + '&output=embed" loading="lazy" title="' + esc(r.locE) + '" referrerpolicy="no-referrer-when-downgrade"></iframe>' : '') + '</div>';
+}
+
+/* ---------- rubriques ---------- */
+var RUB = {
+  decouvrir: function () {
+    var E = L2(DEC), O = L2(ECO), s = E.s;
+    return [
+      ['d-enstp', s[0], box(E.pres.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join(''))],
+      ['d-org', s[1], box('<p>' + esc(E.orgP) + '</p><ol class="r5ol">' + E.org.map(function (o) { return '<li><b>' + esc(o[0]) + '</b><span>' + esc(o[1]) + '</span></li>'; }).join('') + '</ol>')],
+      ['d-bref', s[2], '<div class="figs">' + E.bref.map(function (f) { return '<div><b>' + esc(f[0]) + '</b><span>' + esc(f[1]) + '</span></div>'; }).join('') + '</div>'],
+      ['d-hist', s[3], '<ol class="eco-tl">' + O.tl.map(function (x) { return '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>'],
+      ['d-dep', s[4], '<p class="r5p">' + esc(E.depP) + '</p><ol class="r5path">' + E.path.map(function (p) { return '<li><b>' + esc(p[0]) + '</b><span>' + esc(p[1]) + '</span></li>'; }).join('') + '</ol><div class="r5grid3">' + E.deps.map(function (d) { return box('<h4>' + esc(d[1]) + '</h4><p>' + esc(d[2]) + '</p>' + pinBtn(d[0])); }).join('') + '</div>'],
+      ['d-contact', s[5], '<p class="r5p">' + esc(E.arrive) + '</p>' + contactBlock(true)],
+      ['d-img', s[6], gallery(8) + '<p><a class="lnk" href="#/guide/campus">' + esc(E.seeAll) + '</a></p>']
+    ];
+  },
+  campus: function () {
+    var r = R(), x = XT();
+    return [
+      ['p-plan', r.pl[0], cmHtml()],
+      ['p-photos', r.pl[1], gallery()],
+      ['p-find', r.pl[2], '<div class="r5infos">' + r.infos.map(function (i) { return '<div><b>' + esc(i[0]) + '</b><span>' + esc(i[1]) + '</span></div>'; }).join('') + '</div>' + contactBlock(true)],
+      ['p-grow', r.pl[3], '<p class="r5p">' + esc(x.planP) + '</p>']
+    ];
+  },
+  salles: function (g) {
+    var r = R(), S = L2(EDL);
+    var tools = '<p class="r5p">' + esc(r.toolsP) + '</p><div class="r5grid2">' + SVC.filter(function (s) { return s[0] === 'classroom'; }).map(function (s) { return box('<h4>' + esc(LP(s[1])) + '</h4>' + list(s[2].map(function (x) { return LP(x); }))); }).join('') +
+      box('<h4>' + esc(r.mail) + '</h4><p>' + esc(r.mailP) + '</p>') + box('<h4>' + esc(r.lib) + '</h4><p>' + esc(r.libP) + '</p>') + '</div>';
+    return [
+      ['e-edt', r.et[0], '<div id="edBox">' + edInner() + '</div>'],
+      ['e-room', r.et[1], '<form id="rf-form" class="rf-form"><input id="rf-q" autocomplete="off" placeholder="' + esc(S.rfp) + '" value="' + esc(st.rf || '') + '" aria-label="' + esc(S.rf) + '"><button class="r5btn" type="submit">' + ic('search', 14) + ' ' + esc(S.rfb) + '</button></form><div id="rf-out">' + roomAnswer(st.rf) + '</div>'],
+      ['e-tch', r.et[2], tchHtml()],
+      ['e-tools', r.et[3], tools],
+      ['e-tips', r.et[4], g.sections.slice(0, 3).map(function (s) { return '<h4>' + esc(s.title) + '</h4><p>' + esc(s.text) + '</p>'; }).join('')]
+    ];
+  },
+  services: function () {
+    var A = L2(AIDQ);
+    return [
+      ['s-help', A.s[0], '<p class="r5p"><b>' + esc(A.off) + '</b></p><div class="r5grid2">' + A.q.map(function (q) { return box('<h4>' + esc(q[0]) + '</h4><p>' + esc(q[1]) + '</p>'); }).join('') + '</div>'],
+      ['s-proc', A.s[1], svcHtml()],
+      ['s-docs', A.s[2], formsHtml()],
+      ['s-who', A.s[3], whoHtml()]
+    ];
+  },
+  pratique: function () {
+    var r = R(), c = CANT[lang] || CANT.fr, tr = guides().filter(function (x) { return x.slug === 'transport'; })[0], ll = GMP.school.join(',');
+    var eat = '<div class="r5collab"><span>' + esc(r.collab) + '</span><b>ENSTP 360 × Makelty Healthy</b><a class="r5btn" href="https://zwfh6trskt-bot.github.io/MAKELTYX360/" target="_blank" rel="noopener">' + esc(r.order) + ' ' + ic('arrow-up-right', 14) + '</a></div>' + foodHtml();
+    var trans = tr.sections.map(function (s) { return '<h4>' + esc(s.title) + '</h4><p>' + esc(s.text) + '</p>'; }).join('') +
+      '<div class="r5acts"><a class="r5btn" href="https://www.google.com/maps/dir/?api=1&destination=' + ll + '&travelmode=transit" target="_blank" rel="noopener">' + ic('bus', 15) + ' ' + esc(r.transit) + '</a><a class="r5out" href="' + mapsUrl('arrêt de bus ENSTP Kouba Alger') + '" target="_blank" rel="noopener">' + ic('map-pin', 15) + ' ' + esc(r.stops) + '</a><a class="r5out" href="' + gl('transport') + '">' + esc(r.travel) + ' ' + ic('arrow-right', 14, 'rtl-flip') + '</a></div>';
+    var places = ['Kouba', 'Le Ruisseau', 'Les Annassers'];
+    var health = '<p class="r5p">' + esc(r.health) + '</p>' + ['hôpital', 'polyclinique', 'clinique', 'pharmacie'].map(function (q, i) { return '<div class="r5chips"><b>' + esc(r.hq[i]) + '</b>' + places.map(function (p) { return '<a href="' + mapsUrl(q + ' ' + p + ' Alger') + '" target="_blank" rel="noopener">' + ic('map-pin', 13) + ' ' + esc(p) + '</a>'; }).join('') + '</div>'; }).join('') + nearGrid(L2(NL).ph, NH);
+    return [['v-eat', r.pr[0], eat], ['v-print', r.pr[1], printHtml()], ['v-trans', r.pr[2], trans], ['v-health', r.pr[3], health]];
+  },
+  'vie-etudiante': function (g) {
+    var r = R();
+    var sport = '<div class="r5ssc"><img src="images/ssc.jpg" alt="SSC" width="84" height="84" loading="lazy"><div><b>' + esc(r.ssc) + '</b><p>' + esc(r.sscP) + '</p><a class="r5btn" href="https://zwfh6trskt-bot.github.io/SSC/" target="_blank" rel="noopener">' + esc(r.sscB) + ' ' + ic('arrow-up-right', 14) + '</a></div></div>' + spHtml();
+    return [['l-clubs', r.vi[0], clubsHtml()], ['l-sport', r.vi[1], sport], ['l-out', r.vi[2], loisHtml() + algHtml()], ['l-meet', r.vi[3], g.sections.map(function (s) { return '<h4>' + esc(s.title) + '</h4><p>' + esc(s.text) + '</p>'; }).join('')]];
+  },
+  residence: function () {
+    var r = R();
+    return [['r-men', r.re[0], resHtml()], ['r-women', r.re[1], '<p class="r5p">' + esc(r.women) + '</p><a class="r5btn" href="https://maps.app.goo.gl/imEeuauJqftDtdYL7?g_st=ic" target="_blank" rel="noopener">' + ic('map-pin', 15) + ' ' + esc(r.loc) + '</a>']];
+  },
+  stages: function (g) {
+    var r = R(), h = stagesHtml(g), i1 = h.indexOf('<section class="detail-section" id="recommandations">'), i2 = h.indexOf('</section>', i1) + 10;
+    return [['t-tips', r.st[0], h.slice(0, i1)], ['t-reco', r.st[1], h.slice(i1, i2)], ['t-adv', r.st[2], h.slice(i2)]];
+  },
+  faq: function () { return L2(FAQD).map(function (q, i) { return ['q' + (i + 1), q[0], '<p class="r5p">' + esc(q[1]) + '</p>']; }); }
+};
+
+/* ---------- en-tête, accueil, pied de page ---------- */
+var NAV5 = ['decouvrir', 'salles', 'pratique', 'actualites', 'faq'];
+function navLinks(r) {
+  var cur = r.name === 'guide' ? r.slug : '', L = R().nav;
+  return NAV5.map(function (s, k) { return '<a href="' + gl(s) + '"' + (s === cur ? ' class="on" aria-current="page"' : '') + '>' + esc(L[k]) + '</a>'; }).join('');
+}
+var CL5 = [['#ece8fb', '#6b4fd1'], ['#fde8ec', '#d6355b'], ['#e6e8ee', '#3d4b66'], ['#e2f5ec', '#1f9d6b'], ['#fdeedd', '#e07a1f'], ['#e3edfc', '#2a6ad8'], ['#e0f4f4', '#1b8a8f'], ['#fdf3d6', '#c8921a']];
+var TILES = [['decouvrir', 'building'], ['campus', 'map'], ['salles', 'book'], ['services', 'file'], ['pratique', 'fork'], ['vie-etudiante', 'users'], ['residence', 'home'], ['stages', 'briefcase']];
+function home() {
+  var r = R(), x = XT(), t = T();
+  var hello = profile ? '<p class="x-hello">' + esc(GATE[lang].hi) + (lang === 'ar' ? '، ' : ', ') + esc(profile.name.split(' ')[0]) + (yearLabel() ? ' <span>' + esc(yearLabel()) + '</span>' : '') + '</p>' : '';
+  var nw = newsSorted().slice(0, 3);
+  return '<main id="main" class="h5">' +
+    '<section class="x-wrap hero5"><div class="h5-txt">' + hello + '<span class="eyebrow">' + esc(r.eyebrow) + '</span><h1><mark>' + esc(r.h1m) + '</mark>' + esc(r.h1r) + '</h1><p class="lead">' + esc(x.lead) + '</p><div id="homeNow">' + homeNow() + '</div></div>' +
+    '<figure class="hfig"><img src="' + HERO_IMG + '" alt="' + esc(r.imgAlt) + '" width="489" height="489" fetchpriority="high"><div class="tag"><b>1966</b><span>' + esc(r.tagT) + '</span></div></figure></section>' +
+    '<div class="x-wrap"><section class="srch" aria-labelledby="hs-h"><h2 id="hs-h">' + esc(r.sH) + '</h2>' +
+    '<form id="hs-form" class="sf" role="search"><label class="in">' + ic('search', 18) + '<span class="x-sr">' + esc(r.sH) + '</span><input id="hs-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(r.sPh) + '" value="' + esc(st.hq || '') + '"></label><button type="submit" class="r5btn">' + esc(x.sBtn) + '</button></form>' +
+    '<h3>' + esc(r.browse) + '</h3><div class="chips">' + x.chips.map(function (c) { return '<button type="button" data-hs="' + esc(c) + '">' + esc(c) + '</button>'; }).join('') + '</div>' +
+    '<div id="hs-res" class="search-results x-res" aria-live="polite"' + (hsResults() ? '' : ' hidden') + '>' + hsResults() + '</div></section></div>' +
+    '<section class="band" id="rubriques" aria-label="' + esc(x.cH) + '"><div class="tiles x-wrap">' + TILES.map(function (k, i) { var tt = r.tiles[k[0]]; return '<a class="cd" href="' + gl(k[0]) + '"><span class="ico" style="background:' + CL5[i][0] + ';color:' + CL5[i][1] + '">' + ic(k[1], 20, '', 1.8) + '</span><span><b>' + esc(tt[0]) + '</b><small>' + esc(tt[1]) + '</small></span></a>'; }).join('') + '</div></section>' +
+    cursusHtml() +
+    '<section class="x-wrap sec5"><div class="figs">' + r.figs.map(function (f) { return '<div><b>' + esc(f[0]) + '</b><span>' + esc(f[1]) + '</span></div>'; }).join('') + '</div></section>' +
+    (nw.length ? '<section class="x-wrap sec5" id="actualites"><div class="sec-h"><div><span class="eyebrow">' + esc(r.newsE) + '</span><h2>' + esc(r.newsH) + '</h2></div><a class="lnk" href="' + gl('actualites') + '">' + esc(L2(NEWSL).all) + '</a></div><div class="nw-grid">' + nw.map(newsCard).join('') + '</div></section>' : '') +
+    '<section class="x-wrap sec5">' + contactBlock(true) + '</section></main>';
+}
+function cursusHtml() {
+  var E = L2(ECO), r = R();
+  return '<section class="x-wrap sec5" id="cursus" aria-labelledby="cur-h"><span class="eyebrow">' + esc(r.curE) + '</span><h2 id="cur-h">' + esc(E.cur) + '</h2><div class="eco-cur"><article><b>' + esc(E.c1) + '</b><p>' + esc(E.c1p) + '</p></article><article><b>' + esc(E.c2) + '</b><p><strong>DIB</strong> — ' + esc(E.dib) + '<br><strong>DMS</strong> — ' + esc(E.dms) + '</p></article></div></section>';
+}
+function footer() {
+  var t = T(), x = XT(), r = R();
+  return '<footer class="f5"><div class="fg"><div><div class="wm">ENSTP <i>360°</i></div><p>' + esc(x.h1) + ' ' + esc(x.fDesc) + '</p><p class="f5tag">' + esc(t.footerTag) + '</p></div>' +
+    '<nav aria-label="' + esc(r.fExp) + '"><h2>' + esc(r.fExp) + '</h2>' + TILES.map(function (k) { return '<a href="' + gl(k[0]) + '">' + esc(r.tiles[k[0]][0]) + '</a>'; }).join('') + '</nav>' +
+    '<nav aria-label="' + esc(r.fOff) + '"><h2>' + esc(r.fOff) + '</h2><a href="https://enstp.edu.dz/" target="_blank" rel="noreferrer">' + esc(r.fSite) + '</a><a href="https://enstp.edu.dz/fr/news-actualites" target="_blank" rel="noreferrer">' + esc(r.fNewsOff) + '</a><a href="' + FB_URL + '" target="_blank" rel="noopener noreferrer">Facebook ENSTP</a><a href="' + gl('actualites') + '">' + esc(r.fNews) + '</a><a href="' + gl('faq') + '">FAQ</a><a href="' + gl('aide') + '">' + esc(x.helpLink) + '</a><button type="button" data-asst-open="1">' + esc(x.helpBtn) + '</button>' + (profile ? '<button type="button" data-profile="1">' + esc(L2(PF).btn) + '</button>' : '') + '</nav>' +
+    '<nav aria-label="' + esc(r.fCt) + '"><h2>' + esc(r.fCt) + '</h2><span>' + esc(CONTACT.addr) + '</span><a href="tel:+21323701904"><bdi dir="ltr">+213 (0) 23 70 19 04</bdi></a><a href="mailto:' + CONTACT.mail + '">' + CONTACT.mail + '</a><a href="https://www.google.com/maps/dir/?api=1&destination=' + GMP.school.join(',') + '" target="_blank" rel="noopener">' + esc(r.route) + '</a></nav></div>' +
+    '<div class="fb"><span>© ' + new Date().getFullYear() + ' ENSTP 360 · ' + esc(r.rights) + '</span><span>' + esc(r.check) + '</span></div></footer>';
+}
+
 /* ===== static additions (theme, profile, école, timetable, help) ===== */
 /* Site settings — edit here, nothing else to configure. */
 var CFG = {
@@ -1803,7 +2295,7 @@ var dark = false;
 try { dark = localStorage.getItem('enstp-theme') === 'dark'; } catch (e) {}
 function applyTheme() {
   document.documentElement.classList.toggle('dark', dark);
-  var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', dark ? '#0F1A16' : '#0D3B2E');
+  var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', dark ? '#0c1527' : '#0f2a5a');
   Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (f) {
     try { f.contentDocument.documentElement.classList.toggle('dark', dark); } catch (e) {}
   });
