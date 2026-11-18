@@ -80,3 +80,33 @@ Open `index.html`, search for `var CFG` — four values:
 - Shared data (lost & found, likes/dislikes) uses the SSC Supabase project. **Run `supabase/enstp360.sql` once**
   in Supabase → SQL Editor. Until then those features work but stay on each device. SSC bookings already work.
 - Women's residences: add photos as `images/residences/*.jpg` and set `photo` / `url` in `var WRES6` (`app6.js`).
+
+## Round 7 (rubriques, accueil, comptes, objets trouvés partagés, BookSTP)
+
+Nouveaux fichiers : `app7.js`, `app7-data.js`, `app7.css` (chargés après `app6.js`), `images/v7/`, `supabase/enstp360-v7.sql`.
+
+- **Rubriques** : une seule version de chaque rubrique, celle de l'accueil (`RB7`, `rbSubs` dans `app7.js`). Plus de
+  « Continuer l'exploration » ; toute ancienne adresse `#/guide/...` mène à la sous-rubrique correspondante ;
+  la barre et le pied de page ouvrent la rubrique sur l'accueil (`#/rub/<rubrique>`).
+- **Accueil** minimaliste : photo, slogan, citation du Dr. Mobarki Ahmed, recherche, 10 rubriques.
+- **Barre** : Accueil en premier, globe des langues (rideau), Entrepreneuriat (menu au survol), menu mobile à droite.
+- **Contenus** : stages par domaine, Incubateur & CDE, BookSTP (drives, mémoires et PFE relevés en ligne, guides) — dans `app7-data.js`.
+- **Base partagée** (projet Supabase `qsgnglbxgcxrhicdysxy`) : comptes étudiants @enstp.edu.dz, profils (niveau, département, groupe),
+  administrateurs, objets trouvés (photos dans le stockage `lost-found`, temps réel), likes / dislikes par service,
+  annonces de livres, rapports de stage, emplois du temps et annonces modifiables par l'administration (`#/admin`).
+
+### À faire une seule fois dans Supabase
+
+1. **SQL Editor** → coller `supabase/enstp360-v7.sql` → Run (le script peut être relancé sans risque).
+2. **Authentication → Sign In / Providers → Email** : activé, avec **« Confirm email » activé** (indispensable : un compte
+   administrateur ne devient administrateur qu'après confirmation de son adresse).
+3. **Authentication → URL Configuration** : *Site URL* = `https://zwfh6trskt-bot.github.io/ENST-360/`
+   et ajouter la même adresse dans *Redirect URLs* (liens de confirmation et de mot de passe oublié).
+4. **Authentication → SMTP Settings** : le service d'e-mails intégré de Supabase n'envoie que quelques e-mails par heure ;
+   pour une vraie rentrée, branchez un SMTP (Gmail Workspace de l'école, Brevo, Resend…).
+5. Les administrateurs créent leur compte sur le site (bouton profil → Créer un compte) avec
+   `nazim-abdelmalek.daoudi@enstp.edu.dz` ou `ailamlinamalak@gmail.com`. Ajouter un administrateur :
+   `insert into public.admins (email) values ('prenom.nom@enstp.edu.dz');`
+
+Tant que le script n'est pas exécuté, les pages concernées l'indiquent clairement (aucune donnée n'est simulée ni gardée
+seulement sur l'appareil).

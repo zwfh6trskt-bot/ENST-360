@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="preload" as="image" href="images/alger-hero.jpg">
+<link rel="preload" as="image" href="images/v7/hero-portail-enstp.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap">
@@ -986,6 +986,7 @@ html.dark .f5{background:#081125}
 
 </style>
 <link rel="stylesheet" href="app6.css">
+<link rel="stylesheet" href="app7.css?v=7">
 <style>
 /* écran de lancement ENSTP 360 */
 #splash{position:fixed;inset:0;z-index:9999;background:#fff;display:grid;place-items:center;transition:opacity .6s ease,visibility .6s;overflow:hidden}
@@ -2800,9 +2801,9 @@ function aideHtml(g) {
   /* ---- reply ---- */
   var TXT = {
     fr: { hi: 'Salut{n} ! Je suis Saturne, l’assistant d’ENSTP 360. Je réponds à partir du guide : cours du jour, salles, enseignants, démarches, bons plans autour de l’école.', thx: 'Avec plaisir ! Autre chose ?', bye: 'À bientôt, et bon courage pour les cours !', who: 'Je suis Saturne, l’assistant d’ENSTP 360. Je lis tout le site (rubriques, emplois du temps, plan, démarches, stages, adresses) pour vous répondre, directement sur votre appareil.', none: 'Je n’ai rien trouvé là-dessus dans le guide. Reformulez avec d’autres mots, ou essayez un de ces sujets :', more: 'Voir dans le guide', also: 'Voir aussi', ph: 'Posez votre question…', title: 'Saturne · Assistant ENSTP 360', sub: 'Répond à partir de tout le site', open: 'Ouvrir l’assistant', close: 'Fermer', send: 'Envoyer', clear: 'Effacer la conversation',
-      chips: ['Mes cours aujourd’hui', 'Où est la salle 13 ?', 'Où manger ?', 'Justifier une absence'] },
+      chips: ['Où suis-je censé être ?', 'Mon prochain cours', 'Recommande-moi un stage', 'Objets trouvés'] },
     en: { hi: 'Hi{n}! I’m Saturn, the ENSTP 360 assistant. I answer from the guide: today’s classes, rooms, teachers, paperwork and good spots around the school.', thx: 'You’re welcome! Anything else?', bye: 'See you soon, and good luck with your classes!', who: 'I’m Saturn, the ENSTP 360 assistant. I read the whole site (sections, timetables, map, procedures, internships, addresses) to answer you, right on your device.', none: 'I couldn’t find that in the guide. Try other words, or one of these topics:', more: 'See in the guide', also: 'See also', ph: 'Ask your question…', title: 'Saturn · ENSTP 360 assistant', sub: 'Answers from the whole site', open: 'Open the assistant', close: 'Close', send: 'Send', clear: 'Clear the conversation',
-      chips: ['My classes today', 'Where is room 13?', 'Where to eat?', 'Justify an absence'] },
+      chips: ['Where should I be?', 'My next class', 'Recommend an internship', 'Lost & found'] },
     ar: { hi: 'مرحبًا{n}! أنا ساتورن، مساعد ENSTP 360. أجيب انطلاقًا من الدليل: حصص اليوم، القاعات، الأساتذة، الإجراءات وأفضل الأماكن قرب المدرسة.', thx: 'على الرحب والسعة! هل من شيء آخر؟', bye: 'إلى اللقاء، وبالتوفيق في دراستك!', who: 'أنا ساتورن، مساعد ENSTP 360. أقرأ الموقع كله (الأقسام، جداول التوقيت، المخطط، الإجراءات، التربصات، العناوين) لأجيبك مباشرة على جهازك.', none: 'لم أجد شيئًا عن هذا في الدليل. جرّب كلمات أخرى أو أحد هذه المواضيع:', more: 'عرض في الدليل', also: 'انظر أيضًا', ph: 'اكتب سؤالك…', title: 'ساتورن · مساعد ENSTP 360', sub: 'يجيب انطلاقًا من الموقع كله', open: 'افتح المساعد', close: 'إغلاق', send: 'إرسال', clear: 'مسح المحادثة',
       chips: ['حصصي اليوم', 'أين القاعة 13؟', 'أين آكل؟', 'تبرير الغياب'] }
   };
@@ -2842,6 +2843,7 @@ function aideHtml(g) {
   }
   function reply(q) {
     var n = nz(q).replace(/\s+/g, ' ').trim(), T = L2(TXT), p = parseTT(n);
+    if (window.asstHook) { var hk = window.asstHook(q, n); if (hk) return hk; }
     // follow-up to a pending timetable question ("CP1", "Groupe 3", "DMS")
     if (ctx.tt && (p.cls || p.unit != null || p.all || p.dept || p.year) && n.split(' ').length <= 4) return ttAnswer(n, p);
     if (/^(salut|bonjour|bonsoir|coucou|hello|hi|hey|slt|bjr|cc|yo|salam|السلام|سلام|مرحبا|اهلا|صباح|مساء)\b/.test(n) && n.split(' ').length <= 4) return { h: esc(T.hi.replace('{n}', profile ? ' ' + profile.name.split(' ')[0] : '')), chips: T.chips, pose: 'hai' };
@@ -2939,6 +2941,8 @@ render();
 </script>
 <script src="edt6-data.js"></script>
 <script src="app6.js"></script>
+<script src="app7-data.js?v=7"></script>
+<script src="app7.js?v=7"></script>
 <script src="transport-hub.js" defer></script>
 </body>
 </html>
