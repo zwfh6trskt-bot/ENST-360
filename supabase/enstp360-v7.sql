@@ -4,7 +4,8 @@
 -- par service, BookSTP, rapports de stage, emplois du temps modifiables,
 -- annonces.
 --
--- À exécuter UNE SEULE FOIS dans Supabase, projet qsgnglbxgcxrhicdysxy :
+-- Déjà appliqué au projet Supabase « enstp360 » (adzeobrukvnvhgwnupqe).
+-- Pour un autre projet :
 --   Dashboard → SQL Editor → New query → coller tout ce fichier → Run.
 -- Le script peut être relancé sans risque (idempotent).
 --
@@ -190,9 +191,6 @@ alter table public.service_votes enable row level security;
 drop policy if exists "votes : lecture des siens" on public.service_votes;
 create policy "votes : lecture des siens" on public.service_votes for select to authenticated using (voter = auth.uid());
 
-create or replace view public.service_counts with (security_invoker = false) as
-  select service, count(*) filter (where vote = 1)::int as likes, count(*) filter (where vote = -1)::int as dislikes
-    from public.service_votes group by service;
 
 -- p_vote : 1 (like), -1 (dislike), 0 (retirer son vote)
 create or replace function public.svc_vote(p_service text, p_vote int)
@@ -209,7 +207,7 @@ begin
     on conflict (service, voter) do update set vote = excluded.vote, at = now();
   end if;
   return query select p_service, coalesce(c.likes, 0), coalesce(c.dislikes, 0)
-    from (select 1) one left join public.service_counts c on c.service = p_service;
+    from (select 1) one left join (select x.service, count(*) filter (where x.vote = 1)::int as likes, count(*) filter (where x.vote = -1)::int as dislikes from public.service_votes x group by x.service) c on c.service = p_service;
 end $$;
 
 -- ---------------------------------------------------------------------
@@ -298,7 +296,7 @@ create policy "annonces : écriture admin" on public.announcements for all to au
 -- ---------------------------------------------------------------------
 -- 9. Droits et temps réel
 -- ---------------------------------------------------------------------
-grant select on public.lf_items, public.book_offers, public.reports, public.timetable_overrides, public.announcements, public.service_counts to anon, authenticated;
+grant select on public.lf_items, public.book_offers, public.reports, public.timetable_overrides, public.announcements to anon, authenticated;
 grant select, insert, update on public.profiles to authenticated;
 grant insert, delete on public.lf_items, public.book_offers, public.reports to authenticated;
 grant select on public.service_votes to authenticated;
@@ -327,3 +325,39 @@ do $$ begin
     revoke execute on function public.react(text, integer, integer) from anon, authenticated, public;
   end if;
 end $$;
+
+-- ---------------------------------------------------------------------
+-- 11. Durcissement (compteurs publics via fonction, fonctions internes fermées)
+-- ---------------------------------------------------------------------
+drop view if exists public.service_counts;
+create or replace function public.svc_counts(p_services text[])
+returns table (service text, likes int, dislikes int)
+language sql stable security definer set search_path = public as $$
+  select v.service, count(*) filter (where v.vote = 1)::int, count(*) filter (where v.vote = -1)::int
+    from public.service_votes v
+   where v.service = any (p_services[1:200])
+   group by v.service
+$$;
+create or replace function public.svc_vote(p_service text, p_vote int)
+returns table (service text, likes int, dislikes int)
+language plpgsql security definer set search_path = public as $$
+#variable_conflict use_column
+begin
+  if not public.is_member() then raise exception 'not_authenticated'; end if;
+  if p_service !~ '^[a-z0-9-]{2,80}$' or p_vote not in (-1, 0, 1) then raise exception 'bad_input'; end if;
+  if p_vote = 0 then
+    delete from public.service_votes v where v.service = p_service and v.voter = auth.uid();
+  else
+    insert into public.service_votes as v (service, voter, vote) values (p_service, auth.uid(), p_vote)
+    on conflict (service, voter) do update set vote = excluded.vote, at = now();
+  end if;
+  return query select p_service,
+    (select count(*)::int from public.service_votes x where x.service = p_service and x.vote = 1),
+    (select count(*)::int from public.service_votes x where x.service = p_service and x.vote = -1);
+end $$;
+revoke execute on function public.profiles_check(), public.lf_items_limit(), public.tt_stamp() from public, anon, authenticated;
+revoke execute on function public.my_email(), public.is_member(), public.is_admin() from public, anon;
+revoke execute on function public.lf7_claim(uuid), public.svc_vote(text, int) from public, anon;
+grant execute on function public.is_admin(), public.is_member(), public.my_email() to authenticated;
+grant execute on function public.lf7_claim(uuid), public.svc_vote(text, int) to authenticated;
+grant execute on function public.svc_counts(text[]) to anon, authenticated;

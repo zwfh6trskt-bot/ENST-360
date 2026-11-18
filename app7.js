@@ -61,6 +61,9 @@ HERO_IMG = 'images/v7/hero-portail-enstp.jpg';
 /* =====================================================================
    Supabase : session, requêtes REST, stockage, temps réel
    ===================================================================== */
+/* projet Supabase d'ENSTP 360 (comptes, objets trouvés, likes, BookSTP…).
+   Pour utiliser un autre projet : remplacez url et key par ceux du nouveau projet (Settings → API). */
+var SB7 = { url: 'https://adzeobrukvnvhgwnupqe.supabase.co', key: 'sb_publishable_2UTSJ67FPV2wiJdAoOpAyw_9HXDc9yO' };
 var AU = { s: lsGet('enstp7-session', null), prof: null, admin: false, profLoaded: false };
 var ADM7 = ['nazim-abdelmalek.daoudi@enstp.edu.dz', 'ailamlinamalak@gmail.com']; /* affichage seulement : le serveur décide */
 function auUid() { return AU.s && AU.s.user ? AU.s.user.id : ''; }
@@ -77,7 +80,7 @@ function auFresh() {
   if (!AU.s || !AU.s.refresh_token) return Promise.resolve();
   if (AU.s.expires_at && AU.s.expires_at * 1000 > Date.now() + 60000) return Promise.resolve();
   if (auRefreshing) return auRefreshing;
-  auRefreshing = fetch(SB6.url + '/auth/v1/token?grant_type=refresh_token', { method: 'POST', headers: { apikey: SB6.key, 'Content-Type': 'application/json' }, body: JSON.stringify({ refresh_token: AU.s.refresh_token }) })
+  auRefreshing = fetch(SB7.url + '/auth/v1/token?grant_type=refresh_token', { method: 'POST', headers: { apikey: SB7.key, 'Content-Type': 'application/json' }, body: JSON.stringify({ refresh_token: AU.s.refresh_token }) })
     .then(function (r) { return r.text().then(function (t) { if (!r.ok) throw sbErr(r, t); return JSON.parse(t); }); })
     .then(function (j) { auSet(j); })
     .catch(function (e) { if (e.status === 400 || e.status === 401 || e.status === 403) { auSave(null); AU.prof = null; AU.admin = false; } })
@@ -92,18 +95,18 @@ function auSet(j) {
 function sb7(path, opt) {
   opt = opt || {};
   return auFresh().then(function () {
-    var h = { apikey: SB6.key, Accept: 'application/json' };
+    var h = { apikey: SB7.key, Accept: 'application/json' };
     if (AU.s && AU.s.access_token) h.Authorization = 'Bearer ' + AU.s.access_token;
     if (opt.body !== undefined) h['Content-Type'] = 'application/json';
     if (opt.prefer) h.Prefer = opt.prefer;
-    return fetch(SB6.url + path, { method: opt.method || (opt.body !== undefined ? 'POST' : 'GET'), headers: h, body: opt.body !== undefined ? JSON.stringify(opt.body) : undefined });
+    return fetch(SB7.url + path, { method: opt.method || (opt.body !== undefined ? 'POST' : 'GET'), headers: h, body: opt.body !== undefined ? JSON.stringify(opt.body) : undefined });
   }).then(function (r) { return r.text().then(function (t) { if (!r.ok) throw sbErr(r, t); try { return t ? JSON.parse(t) : null; } catch (e) { return null; } }); });
 }
 function rest7(p, opt) { return sb7('/rest/v1/' + p, opt); }
 function auth7(p, body, method) {
-  var h = { apikey: SB6.key, 'Content-Type': 'application/json' };
+  var h = { apikey: SB7.key, 'Content-Type': 'application/json' };
   if (AU.s && AU.s.access_token && method) h.Authorization = 'Bearer ' + AU.s.access_token;
-  return fetch(SB6.url + '/auth/v1/' + p, { method: method || 'POST', headers: h, body: body ? JSON.stringify(body) : undefined })
+  return fetch(SB7.url + '/auth/v1/' + p, { method: method || 'POST', headers: h, body: body ? JSON.stringify(body) : undefined })
     .then(function (r) { return r.text().then(function (t) { if (!r.ok) throw sbErr(r, t); try { return t ? JSON.parse(t) : {}; } catch (e) { return {}; } }); });
 }
 function noDb7(e) { return sbMissing(e) || (e && /relation .* does not exist|schema cache|function .* does not exist/i.test(e.message || '')); }
@@ -114,12 +117,12 @@ function rtOn(table, fn) { (RT7.subs[table] = RT7.subs[table] || []).push(fn); r
 function rtSend(m) { try { if (RT7.ws && RT7.ws.readyState === 1) RT7.ws.send(JSON.stringify(m)); } catch (e) {} }
 function rtConnect() {
   if (RT7.ws || !window.WebSocket) return;
-  var url = SB6.url.replace(/^http/, 'ws') + '/realtime/v1/websocket?apikey=' + encodeURIComponent(SB6.key) + '&vsn=1.0.0', ws;
+  var url = SB7.url.replace(/^http/, 'ws') + '/realtime/v1/websocket?apikey=' + encodeURIComponent(SB7.key) + '&vsn=1.0.0', ws;
   try { ws = new WebSocket(url); } catch (e) { return; }
   RT7.ws = ws;
   ws.onopen = function () {
     RT7.tries = 0;
-    rtSend({ topic: 'realtime:enstp360', event: 'phx_join', ref: String(++RT7.ref), join_ref: '1', payload: { config: { broadcast: { self: false }, presence: { key: '' }, postgres_changes: [{ event: '*', schema: 'public', table: 'lf_items' }, { event: '*', schema: 'public', table: 'book_offers' }] }, access_token: (AU.s && AU.s.access_token) || SB6.key } });
+    rtSend({ topic: 'realtime:enstp360', event: 'phx_join', ref: String(++RT7.ref), join_ref: '1', payload: { config: { broadcast: { self: false }, presence: { key: '' }, postgres_changes: [{ event: '*', schema: 'public', table: 'lf_items' }, { event: '*', schema: 'public', table: 'book_offers' }] }, access_token: (AU.s && AU.s.access_token) || undefined } });
     RT7.hb = setInterval(function () { rtSend({ topic: 'phoenix', event: 'heartbeat', payload: {}, ref: String(++RT7.ref) }); }, 25000);
   };
   ws.onmessage = function (ev) {
@@ -264,7 +267,7 @@ document.addEventListener('click', function (e) {
   if (t.hasAttribute('data-acx')) { if (t.classList.contains('search-overlay') && e.target !== t) return; acClose(); return; }
   if (t.hasAttribute('data-aclogout')) {
     var tok = AU.s && AU.s.access_token;
-    if (tok) fetch(SB6.url + '/auth/v1/logout', { method: 'POST', headers: { apikey: SB6.key, Authorization: 'Bearer ' + tok } }).catch(function () {});
+    if (tok) fetch(SB7.url + '/auth/v1/logout', { method: 'POST', headers: { apikey: SB7.key, Authorization: 'Bearer ' + tok } }).catch(function () {});
     auSave(null); AU.prof = null; AU.admin = false; profile = null; member = null; E6.other = false;
     try { localStorage.removeItem('enstp-go-profile'); localStorage.removeItem('enstp-go-email'); } catch (x) {}
     acClose(); if (route().name === 'admin') location.hash = '#/'; render(); return;
@@ -677,7 +680,7 @@ function svLoad(keys) {
   var need = keys.filter(function (k) { return !(k in SV7.c) && !SV7.pending[k]; });
   need.forEach(function (k) { SV7.pending[k] = 1; });
   if (need.length && !SV7.nodb) {
-    rest7('service_counts?select=service,likes,dislikes&service=in.(' + need.map(encodeURIComponent).join(',') + ')').then(function (rows) {
+    rest7('rpc/svc_counts', { body: { p_services: need } }).then(function (rows) {
       need.forEach(function (k) { SV7.c[k] = { likes: 0, dislikes: 0 }; delete SV7.pending[k]; });
       (rows || []).forEach(function (r) { SV7.c[r.service] = r; });
       need.forEach(svPaint);
@@ -952,16 +955,16 @@ document.addEventListener('submit', function (e) {
   if (!LF7.photo) { msg.textContent = L.need; return; }
   if (!auUid()) { acOpen('login'); return; }
   var v = { what: f.what.value.trim(), place: f.place.value.trim(), pickup: f.pickup.value.trim() };
-  var path = auUid() + '/' + uuid7() + '.jpg', pub = SB6.url + '/storage/v1/object/public/lost-found/' + path;
+  var path = auUid() + '/' + uuid7() + '.jpg', pub = SB7.url + '/storage/v1/object/public/lost-found/' + path;
   btn.disabled = true; msg.textContent = L.sending; msg.classList.add('is-info');
   auFresh().then(function () {
     /* 1. la photo part dans le stockage distant */
-    return fetch(SB6.url + '/storage/v1/object/lost-found/' + path, { method: 'POST', headers: { apikey: SB6.key, Authorization: 'Bearer ' + AU.s.access_token, 'Content-Type': 'image/jpeg', 'x-upsert': 'false', 'cache-control': '31536000' }, body: dataUrlBlob(LF7.photo) })
+    return fetch(SB7.url + '/storage/v1/object/lost-found/' + path, { method: 'POST', headers: { apikey: SB7.key, Authorization: 'Bearer ' + AU.s.access_token, 'Content-Type': 'image/jpeg', 'x-upsert': 'false', 'cache-control': '31536000' }, body: dataUrlBlob(LF7.photo) })
       .then(function (r) { return r.text().then(function (t) { if (!r.ok) throw sbErr(r, t); }); });
   }).then(function () {
     /* 2. la publication (description, lieu, date, URL de la photo) dans la base centrale */
     return rest7('lf_items', { body: { photo_url: pub, photo_path: path, what: v.what || null, place: v.place || null, pickup: v.pickup || null, owner: auUid() }, prefer: 'return=representation' })
-      .catch(function (er) { fetch(SB6.url + '/storage/v1/object/lost-found/' + path, { method: 'DELETE', headers: { apikey: SB6.key, Authorization: 'Bearer ' + AU.s.access_token } }).catch(function () {}); throw er; });
+      .catch(function (er) { fetch(SB7.url + '/storage/v1/object/lost-found/' + path, { method: 'DELETE', headers: { apikey: SB7.key, Authorization: 'Bearer ' + AU.s.access_token } }).catch(function () {}); throw er; });
   }).then(function (j) {
     LF7.photo = ''; if (j && j[0]) LF7.items.unshift(j[0]); location.hash = subHref('objets', 'o-wall');
   }).catch(function (er) {
@@ -986,7 +989,7 @@ document.addEventListener('click', function (e) {
   b.disabled = true;
   rest7(tb + '?id=eq.' + encodeURIComponent(id), { method: 'DELETE', prefer: 'return=representation' }).then(function (j) {
     if (!j || !j.length) throw new Error('Suppression refusée par le serveur.');
-    if (tb === 'lf_items' && path) fetch(SB6.url + '/storage/v1/object/lost-found/' + path, { method: 'DELETE', headers: { apikey: SB6.key, Authorization: 'Bearer ' + AU.s.access_token } }).catch(function () {});
+    if (tb === 'lf_items' && path) fetch(SB7.url + '/storage/v1/object/lost-found/' + path, { method: 'DELETE', headers: { apikey: SB7.key, Authorization: 'Bearer ' + AU.s.access_token } }).catch(function () {});
     if (tb === 'lf_items') { LF7.items = LF7.items.filter(function (x) { return x.id !== id; }); lf7Paint(); }
     if (tb === 'book_offers') { BK7.items = BK7.items.filter(function (x) { return x.id !== id; }); bk7Paint(); }
     if (tb === 'reports') { RP7.items = RP7.items.filter(function (x) { return x.id !== id; }); var el = document.getElementById('rp7-list'); if (el) el.innerHTML = rp7List(); }

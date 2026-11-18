@@ -91,7 +91,7 @@ Nouveaux fichiers : `app7.js`, `app7-data.js`, `app7.css` (chargés après `app6
 - **Accueil** minimaliste : photo, slogan, citation du Dr. Mobarki Ahmed, recherche, 10 rubriques.
 - **Barre** : Accueil en premier, globe des langues (rideau), Entrepreneuriat (menu au survol), menu mobile à droite.
 - **Contenus** : stages par domaine, Incubateur & CDE, BookSTP (drives, mémoires et PFE relevés en ligne, guides) — dans `app7-data.js`.
-- **Base partagée** (projet Supabase `qsgnglbxgcxrhicdysxy`) : comptes étudiants @enstp.edu.dz, profils (niveau, département, groupe),
+- **Base partagée** (projet Supabase « enstp360 » (`adzeobrukvnvhgwnupqe`)) : comptes étudiants @enstp.edu.dz, profils (niveau, département, groupe),
   administrateurs, objets trouvés (photos dans le stockage `lost-found`, temps réel), likes / dislikes par service,
   annonces de livres, rapports de stage, emplois du temps et annonces modifiables par l'administration (`#/admin`).
 
