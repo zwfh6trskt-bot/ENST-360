@@ -167,7 +167,15 @@ details.rb6.pop8:after{content:"";position:absolute;right:18px;top:10px;width:38
 html.dark details.rb6.pop8:after{background:rgb(255 255 255 / .18)}
 /* slogan : « Une vision, » puis, après un court délai, « sans angles morts » */
 .h7 .hero7 h1.h8-wait mark,.h7 .hero7 h1.h8-wait .h8-r{opacity:0}
-.h7 .hero7 h1.h8-go mark{display:inline-block;animation:h8Pop .7s cubic-bezier(.18,1.35,.4,1) .15s both}
-.h7 .hero7 h1.h8-go .h8-r{display:inline-block;animation:h8Pop .7s cubic-bezier(.18,1.35,.4,1) 1.05s both}
-@keyframes h8Pop{from{opacity:0;transform:translateY(18px) scale(.8);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.h7 .hero7 h1.h8-go mark{display:inline-block}
+.h7 .hero7 h1.h8-go .h8-t,.h7 .hero7 h1.h8-go .h8-r{display:inline-block;position:relative;z-index:1;color:transparent;-webkit-text-fill-color:transparent;
+  background:linear-gradient(105deg,var(--ink,#0f2a5a) 0 38%,#c8921a 45%,#ffe9a8 50%,#e9b64a 55%,var(--ink,#0f2a5a) 62% 100%) 100% 0 / 300% 100% no-repeat;
+  -webkit-background-clip:text;background-clip:text}
+.h7 .hero7 h1.h8-go mark{animation:h8Pop .55s cubic-bezier(.18,1.35,.4,1) 0s both}
+.h7 .hero7 h1.h8-go .h8-t{animation:h8Shine 1.5s cubic-bezier(.4,0,.2,1) .55s both,h8Glow 2s ease .5s both}
+.h7 .hero7 h1.h8-go .h8-r{animation:h8Pop .55s cubic-bezier(.18,1.35,.4,1) .35s both,h8Shine 1.5s cubic-bezier(.4,0,.2,1) .75s both,h8Glow 2s ease .7s both}
+@keyframes h8Pop{from{opacity:0;transform:translateY(14px) scale(.85);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes h8Shine{from{background-position:100% 0}to{background-position:0 0}}
+@keyframes h8Glow{0%,100%{filter:drop-shadow(0 0 0 rgb(233 182 74 / 0))}45%{filter:drop-shadow(0 0 10px rgb(233 182 74 / .7))}}
 @media(prefers-reduced-motion:reduce){.h7 .hero7 h1.h8-wait mark,.h7 .hero7 h1.h8-wait .h8-r{opacity:1}.pop8{opacity:1;transform:none;filter:none;transition:none}.h7 .hero7 h1.h8-go mark,.h7 .hero7 h1.h8-go .h8-r{animation:none}}
+.h7 .hero7 h1.h8-go .h8-t{background-image:linear-gradient(105deg,var(--ink,#0f2a5a) 0 38%,#fff3c4 46%,#ffffff 50%,#fff3c4 54%,var(--ink,#0f2a5a) 62% 100%)}

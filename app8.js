@@ -404,6 +404,7 @@ function pop8() {
   if (h && !h.querySelector('.h8-r')) {
     var m = h.querySelector('mark'), t = m && m.nextSibling;
     if (t && t.nodeType === 3) { var sp = document.createElement('span'); sp.className = 'h8-r'; sp.textContent = t.textContent.replace(/^\s+/, ''); h.replaceChild(sp, t); if (/^\s/.test(t.textContent)) h.insertBefore(document.createTextNode(' '), sp); }
+    if (m && !m.querySelector('.h8-t')) { var tt = document.createElement('span'); tt.className = 'h8-t'; while (m.firstChild) tt.appendChild(m.firstChild); m.appendChild(tt); }
     h.classList.add('h8-wait');
     pop8Splash(function () { h.classList.remove('h8-wait'); h.classList.add('h8-go'); });
   }
