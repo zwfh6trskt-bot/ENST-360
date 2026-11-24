@@ -85,7 +85,7 @@ var ENT7 = {
     team: [
       ['M. TAFRAOUT Salim', 'Directeur / Responsable de l’Incubateur de l’ENSTP', 'Enseignant-chercheur à l’ENSTP', 'images/v7/equipe-tafraout-salim.jpg'],
       ['Mme LARBI Selma', 'Membre permanente de l’Incubateur', 'Enseignante-chercheuse à l’ENSTP', 'images/v7/equipe-larbi-selma.jpg'],
-      ['Mme SAADI Samira', 'Membre de l’Incubateur (et liaison CDE)', 'Enseignante-chercheuse à l’ENSTP (Spécialité Géosciences / Génie Civil)', '']],
+      ['Mme SAADI Samira', 'Membre de l’Incubateur (et liaison CDE)', 'Enseignante-chercheuse à l’ENSTP (Spécialité Géosciences / Génie Civil)', 'images/v7/equipe-saadi-samira.jpg']],
     doneH: 'Réalisations et faits marquants',
     done: [
       ['Depuis mai 2023', 'Premières soutenances de Projets Startups', 'Organisation et validation des premières soutenances de mémoires de fin d’études sous le régime de l’arrêté 1275, donnant naissance aux premières startups issues de l’école.'],
@@ -116,7 +116,7 @@ var ENT7 = {
     team: [
       ['M. GASSIS Sofiane', 'Dirige le Centre de Développement de l’Entrepreneuriat de l’ENSTP', 'Enseignant-chercheur à l’ENSTP', 'images/v7/equipe-gassis-sofiane.jpg'],
       ['M. BOUZID Amine', 'Représentant et formateur référent NESDA auprès du CDE', 'Conseiller / Formateur certifié NESDA (ex-ANADE)', 'images/v7/equipe-bouzid-amine.jpg'],
-      ['Mme SAADI Samira', 'Membre du CDE de l’ENSTP', 'Enseignante-chercheuse à l’ENSTP (Spécialité Géosciences / Génie Civil)', ''],
+      ['Mme SAADI Samira', 'Membre du CDE de l’ENSTP', 'Enseignante-chercheuse à l’ENSTP (Spécialité Géosciences / Génie Civil)', 'images/v7/equipe-saadi-samira.jpg'],
       ['Équipe Pédagogique ENSTP', 'Encadrement académique et coordination des sessions', 'Enseignants-chercheurs et formateurs certifiés en entrepreneuriat', '']],
     doneH: 'Réalisations et faits marquants',
     done: [
