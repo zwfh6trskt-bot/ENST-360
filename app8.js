@@ -393,8 +393,28 @@ function nearGrid(h, arr) {
 /* =====================================================================
    Montage après chaque affichage
    ===================================================================== */
+/* =====================================================================
+   Accueil : rubriques en bulles qui apparaissent / disparaissent au défilement
+   ===================================================================== */
+var RB8IO = null;
+function rb8Bubbles() {
+  var band = document.querySelector('.rb6-band'); if (!band) return;
+  if (!band.querySelector('.rb8-bub')) {
+    var b = document.createElement('div'); b.className = 'rb8-bub'; b.setAttribute('aria-hidden', 'true');
+    for (var i = 0; i < 14; i++) b.appendChild(document.createElement('i'));
+    band.insertBefore(b, band.firstChild);
+  }
+  var cards = document.querySelectorAll('details.rb6');
+  if (!('IntersectionObserver' in window)) { Array.prototype.forEach.call(cards, function (d) { d.classList.add('rb8-in'); }); return; }
+  if (RB8IO) RB8IO.disconnect();
+  RB8IO = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.target.classList.toggle('rb8-in', e.isIntersecting); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  Array.prototype.forEach.call(cards, function (d, i) { d.style.setProperty('--rb8i', i % 2 ? 1 : 0); d.classList.add('rb8-b'); RB8IO.observe(d); });
+}
 function after6(r) {
   AFTER7(r);
+  rb8Bubbles();
   if (document.getElementById('cm8')) cm8Mount();
   else if (CM8.fs) { CM8.fs = false; document.body.classList.remove('cm8-lock'); }
 }
