@@ -150,3 +150,6 @@ html.dark .cm8-world img{filter:brightness(.88) saturate(.95)}
 .wr8-av p{display:block!important;font-size:13px!important;line-height:1.6;margin:0 0 10px}
 .cm8:has(.cm8-card.on) .cm8-ctl{bottom:118px}.cm8:has(.cm8-card.on) .cm8-zoom{bottom:126px}
 @media(max-width:640px){.cm8:has(.cm8-card.on) .cm8-ctl{bottom:168px}.cm8:has(.cm8-card.on) .cm8-zoom{bottom:176px}.cm8-card small[lang=ar]{display:none}.cm8-ctl button{width:40px;height:40px}}
+
+/* ---------- Saturne : sur téléphone, laisser de la place autour pour fermer d'un toucher ---------- */
+@media(max-width:700px){#asst .as-panel{height:min(600px,calc(100dvh - 170px))}}

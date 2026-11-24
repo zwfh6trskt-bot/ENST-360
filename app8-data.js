@@ -6,6 +6,7 @@
 var RBS7 = rbSubs;
 var AFTER7 = after6;
 var E6INNER7 = e6Inner;
+var NEARG7 = nearGrid;
 
 /* sessions ouvertes sur l'ancienne base (khkkzz…) : invalides sur la base enstp360 → déconnexion propre */
 (function () {
@@ -19,11 +20,16 @@ var E6INNER7 = e6Inner;
    Liens et détails (adresse précise, prix, photos) à fournir. */
 NB.rest = { fr: 'Restaurant', en: 'Restaurant', ar: 'مطعم' };
 NR.unshift(
-  ['Soumam', 'Kouba · près de l’ENSTP', '', 'rest', 'meal', 'Informations détaillées (adresse, prix, photos) à venir.|Details (address, prices, photos) coming soon.|التفاصيل (العنوان، الأسعار، الصور) قريبًا.'],
-  ['Chouway', 'Kouba · près de l’ENSTP', '', 'rest', 'meal', 'Informations détaillées (adresse, prix, photos) à venir.|Details (address, prices, photos) coming soon.|التفاصيل (العنوان، الأسعار، الصور) قريبًا.'],
+  ['Soummam', 'Kouba · près de l’ENSTP', '', 'rest', 'meal', 'Informations détaillées (adresse, prix, photos) à venir.|Details (address, prices, photos) coming soon.|التفاصيل (العنوان، الأسعار، الصور) قريبًا.'],
+  ['Chouway El Baraka', 'À côté de la boulangerie Soummam', '', 'rest', 'meal', 'Informations détaillées (adresse, prix, photos) à venir.|Details (address, prices, photos) coming soon.|التفاصيل (العنوان، الأسعار، الصور) قريبًا.'],
   ['Kahwa', 'Kouba · à côté de l’école', '', 'fast', 'burger', 'Fast-food situé à côté de l’école. Informations détaillées à venir.|Fast-food spot right next to the school. Details coming soon.|مطعم وجبات سريعة بجانب المدرسة. التفاصيل قريبًا.'],
   ['Restaurant du foyer des garçons', 'Foyer des garçons · ENSTP', '', 'rest', 'meal', 'Restaurant du foyer des garçons. Informations détaillées à venir.|Restaurant of the boys’ hall. Details coming soon.|مطعم مأوى الذكور. التفاصيل قريبًا.']
 );
+
+var NURL8 = {
+  'Soummam': 'https://maps.app.goo.gl/YgxrqAmtGMDADPjA7?g_st=ic',
+  'Kahwa': 'https://maps.app.goo.gl/4eo2Q3TKK2mcZVic9?g_st=ic'
+};
 
 /* ---------- 06 · Résidences des filles : photos, avis, fermeture des portes ---------- */
 var WRES6 = [

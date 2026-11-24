@@ -353,7 +353,7 @@ function svc6Html() {
     cong && svc8Item(cong),
     grp && svc8Item(grp)
   ].filter(Boolean);
-  return '<section class="detail-section"><p class="sv-off">' + ic('check', 13) + ' ' + esc(S.off) + '</p><article class="xg-card lib-card"><h3>' + esc(LP('Inscription à la bibliothèque|Library Registration|التسجيل في المكتبة')) + '</h3><p>' + esc(LP('Inscrivez-vous en ligne pour accéder à la bibliothèque de l’école (09:00 – 15:30, carte d’étudiant obligatoire).|Register online to access the school library (09:00 – 15:30, student card required).|سجّل عبر الإنترنت للوصول إلى مكتبة المدرسة (09:00 – 15:30، بطاقة الطالب إلزامية).')) + '</p><a class="lib-btn" href="https://enstp.edu.dz/" target="_blank" rel="noopener noreferrer">' + esc(LP('S’inscrire en ligne à la bibliothèque|Register Online for Library Access|التسجيل في المكتبة عبر الإنترنت')) + ' ' + ic('arrow-up-right', 14) + '</a></article>' +
+  return '<section class="detail-section">' +
     '<div class="sv-list">' + items.join('') + '</div></section>';
 }
 
@@ -371,6 +371,23 @@ function women6Html() {
       (w.av ? '<details class="wr8-av"><summary>' + esc(T.av) + '</summary><p>' + esc(w.av[li]) + '</p></details>' : '') +
       '<a class="r5btn" href="' + url + '" target="_blank" rel="noopener">' + ic('map-pin', 15) + ' ' + esc(btn) + ' ' + ic('arrow-up-right', 13) + '</a></div></article>';
   }).join('') + '</div>';
+}
+
+/* =====================================================================
+   Saturne : un clic en dehors de la conversation la ferme
+   ===================================================================== */
+document.addEventListener('pointerdown', function (e) {
+  var p = document.querySelector('#asst .as-panel'); if (!p || p.contains(e.target)) return;
+  var x = p.querySelector('[data-asst-close]'); if (x) x.click();
+}, true);
+
+/* =====================================================================
+   05 · Manger : liens Google Maps fournis
+   ===================================================================== */
+function nearGrid(h, arr) {
+  var out = NEARG7(h, arr);
+  arr.forEach(function (x) { var u = NURL8[x[0]]; if (u) out = out.split('href="' + mapsUrl(x[0] + ' ' + x[1] + ' Alger') + '"').join('href="' + u + '"'); });
+  return out;
 }
 
 /* =====================================================================
