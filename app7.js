@@ -63,7 +63,7 @@ HERO_IMG = 'images/v7/hero-portail-enstp.jpg';
    ===================================================================== */
 /* Base v7 (comptes, objets trouvés, likes, livres, rapports, annonces) : projet Supabase ENSTP360.
    SB6 (app6.js, base du SSC) reste utilisé uniquement par les réservations SSC. */
-var SB7 = { url: 'https://khkkzzqknsefykidwzsz.supabase.co', key: 'sb_publishable_XHH2mqd0DgFUECZpBBSrvQ_xNIz8F1e' };
+var SB7 = { url: 'https://adzeobrukvnvhgwnupqe.supabase.co', key: 'sb_publishable_2UTSJ67FPV2wiJdAoOpAyw_9HXDc9yO' };
 var AU = { s: lsGet('enstp7-session', null), prof: null, admin: false, profLoaded: false };
 var ADM7 = ['nazim-abdelmalek.daoudi@enstp.edu.dz', 'ailamlinamalak@gmail.com']; /* affichage seulement : le serveur décide */
 function auUid() { return AU.s && AU.s.user ? AU.s.user.id : ''; }
@@ -680,7 +680,7 @@ function svLoad(keys) {
   var need = keys.filter(function (k) { return !(k in SV7.c) && !SV7.pending[k]; });
   need.forEach(function (k) { SV7.pending[k] = 1; });
   if (need.length && !SV7.nodb) {
-    rest7('service_counts?select=service,likes,dislikes&service=in.(' + need.map(encodeURIComponent).join(',') + ')').then(function (rows) {
+    rest7('rpc/svc_counts', { body: { p_services: need } }).then(function (rows) {
       need.forEach(function (k) { SV7.c[k] = { likes: 0, dislikes: 0 }; delete SV7.pending[k]; });
       (rows || []).forEach(function (r) { SV7.c[r.service] = r; });
       need.forEach(svPaint);

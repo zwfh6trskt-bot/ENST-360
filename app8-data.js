@@ -7,6 +7,14 @@ var RBS7 = rbSubs;
 var AFTER7 = after6;
 var E6INNER7 = e6Inner;
 
+/* sessions ouvertes sur l'ancienne base (khkkzz…) : invalides sur la base enstp360 → déconnexion propre */
+(function () {
+  try {
+    var t = AU.s && AU.s.access_token, p = t ? JSON.parse(atob(t.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))) : null;
+    if (p && String(p.iss || '').indexOf('adzeobrukvnvhgwnupqe') === -1) { auSave(null); AU.prof = null; AU.admin = false; AU.profLoaded = true; }
+  } catch (e) {}
+})();
+
 /* ---------- 05 · Manger : quatre établissements en tête de liste ----------
    Liens et détails (adresse précise, prix, photos) à fournir. */
 NB.rest = { fr: 'Restaurant', en: 'Restaurant', ar: 'مطعم' };
