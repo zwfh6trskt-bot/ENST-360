@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0f2a5a">
 <link rel="canonical" href="https://zwfh6trskt-bot.github.io/ENST-360/">
 <meta property="og:site_name" content="ENSTP 360">
-<meta property="og:title" content="ENSTP 360 · Une vision, sans angle mort.">
+<meta property="og:title" content="ENSTP 360 · Une vision, sans angles morts">
 <meta property="og:description" content="Le guide numérique de l’École Nationale Supérieure des Travaux Publics : informations, lieux, services et vie étudiante au même endroit.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_DZ">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ENSTP 360 · Maqam Echahid, Alger">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ENSTP 360 · Une vision, sans angle mort.">
+<meta name="twitter:title" content="ENSTP 360 · Une vision, sans angles morts">
 <meta name="twitter:description" content="Le guide numérique de l’École Nationale Supérieure des Travaux Publics.">
 <meta name="twitter:image" content="https://zwfh6trskt-bot.github.io/ENST-360/images/og-enstp-360.jpg">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
@@ -987,6 +987,7 @@ html.dark .f5{background:#081125}
 </style>
 <link rel="stylesheet" href="app6.css">
 <link rel="stylesheet" href="app7.css?v=7">
+<link rel="stylesheet" href="app8.css?v=8">
 <style>
 /* écran de lancement ENSTP 360 */
 #splash{position:fixed;inset:0;z-index:9999;background:#fff;display:grid;place-items:center;transition:opacity .6s ease,visibility .6s;overflow:hidden}
@@ -1013,7 +1014,7 @@ html.dark .f5{background:#081125}
 </style>
 </head>
 <body>
-<div id="splash" aria-hidden="true"><div class="sp-grid"></div><div class="sp-c"><svg viewBox="0 0 320 320"><circle class="o1" cx="160" cy="160" r="140"/><circle class="o2" cx="160" cy="160" r="140"/><g class="tk"><line x1="160" y1="14" x2="160" y2="26"/><line x1="294" y1="160" x2="306" y2="160"/><line x1="160" y1="294" x2="160" y2="306"/><line x1="14" y1="160" x2="26" y2="160"/></g><g class="dot"><circle cx="160" cy="20" r="4.5"/><circle cx="160" cy="20" r="9"/></g></svg><img src="images/enstp-360-mark.png" alt="" width="429" height="200"></div><div class="sp-tag"><i></i><span id="sp-tag">Une vision, sans angle mort.</span><i></i></div></div>
+<div id="splash" aria-hidden="true"><div class="sp-grid"></div><div class="sp-c"><svg viewBox="0 0 320 320"><circle class="o1" cx="160" cy="160" r="140"/><circle class="o2" cx="160" cy="160" r="140"/><g class="tk"><line x1="160" y1="14" x2="160" y2="26"/><line x1="294" y1="160" x2="306" y2="160"/><line x1="160" y1="294" x2="160" y2="306"/><line x1="14" y1="160" x2="26" y2="160"/></g><g class="dot"><circle cx="160" cy="20" r="4.5"/><circle cx="160" cy="20" r="9"/></g></svg><img src="images/enstp-360-mark.png" alt="" width="429" height="200"></div><div class="sp-tag"><i></i><span id="sp-tag">Une vision, sans angles morts</span><i></i></div></div>
 <script>window.__splash0=Date.now();try{var l=localStorage.getItem('enstp-go-lang'),t={en:'A vision with no blind spots.',ar:'رؤية بلا زوايا عمياء.'}[l];if(t){var e=document.getElementById('sp-tag');e.textContent=t;if(l==='ar')e.parentNode.style.letterSpacing='0';}}catch(e){}setTimeout(function(){var s=document.getElementById('splash');if(s){s.classList.add('out');setTimeout(function(){if(s.parentNode)s.parentNode.removeChild(s)},700)}},4500);</script>
 <div id="app"></div>
 <div id="overlay"></div><div id="modal"></div>
@@ -1172,7 +1173,7 @@ D.guides.forEach(function (g) { if (g.slug === 'vie-etudiante') { g.title = _vie
 var X = {
   fr: {
     tagline: 'Le guide numérique de l’ENSTP', home: 'Accueil', ecole: 'L’École', menu: 'Menu', closeMenu: 'Fermer le menu', theme: 'Mode sombre', profile: 'Mon profil',
-    h1: 'Une vision, sans angle mort.',
+    h1: 'Une vision, sans angles morts',
     lead: 'ENSTP 360 est le guide numérique de l’École Nationale Supérieure des Travaux Publics : informations, lieux, services et vie étudiante au même endroit.',
     imgAlt: 'Le Mémorial du Martyr (Maqam Echahid) entre les palmiers, à Alger', imgCap: 'Maqam Echahid, Alger',
     sH: 'Que recherchez-vous ?', sPh: 'Une salle, un enseignant, une démarche, un lieu…', sBtn: 'Rechercher', sTry: 'Suggestions',
@@ -1255,7 +1256,7 @@ var X = {
 function XT() { return X[lang] || X.fr; }
 var CARDS = [['plan', 'campus', 'map'], ['etudes', 'salles', 'calendar'], ['demarches', 'services', 'file'], ['pratique', 'pratique', 'coffee'], ['vie', 'vie-etudiante', 'users'], ['residence', 'residence', 'home'], ['stages', 'stages', 'briefcase'], ['alger', 'alger', 'landmark']];
 function brandImg(cls) { return '<img class="x-logo" src="' + LOGO + '" alt="ENSTP 360" width="429" height="200">'; }
-function brandFull() { return '<img class="x-logo-ft" src="' + LOGO_FULL + '" alt="ENSTP 360 · Une vision, sans angle mort." width="565" height="300">'; }
+function brandFull() { return '<img class="x-logo-ft" src="' + LOGO_FULL + '" alt="ENSTP 360 · Une vision, sans angles morts" width="565" height="300">'; }
 function langSwitch() {
   var t = T();
   return '<div class="x-lang" role="group" aria-label="' + esc(t.language) + '">' + LANGS.map(function (l) {
@@ -2096,7 +2097,7 @@ var AIDQ = {
   ar: { h: 'مساعدة سريعة', off: 'شؤون الطلبة: السيدة طباني، الأحد والثلاثاء.', q: [['فقدت بطاقة الطالب', 'مصلحة التمدرس: أبلغ عن الضياع واطلب بطاقة بديلة.'], ['نقطة خاطئة', 'أبلغ عنها عبر PROGRES ثم تواصل مع أستاذ المقياس.'], ['لدي مشكل إداري', 'شؤون الطلبة — السيدة طباني (الأحد والثلاثاء).'], ['أحتاج إلى شهادة', 'أمانة قسمك، مع بطاقة الطالب.']], s: ['مساعدة سريعة', 'الإجراءات الإدارية', 'طلب وثيقة', 'إلى من تتوجه'] }
 };
 var R5 = {
-  fr: { home: 'Accueil', eyebrow: 'École Nationale Supérieure des Travaux Publics', h1m: 'Une vision,', h1r: ' sans angle mort.', tagT: 'Kouba, Alger', imgAlt: 'Entrée de l’École Nationale Supérieure des Travaux Publics — ENSTP 360', sH: 'Que cherchez-vous ?', sPh: 'Je cherche…', browse: 'Parcourir',
+  fr: { home: 'Accueil', eyebrow: 'École Nationale Supérieure des Travaux Publics', h1m: 'Une vision,', h1r: ' sans angles morts', tagT: 'Kouba, Alger', imgAlt: 'Entrée de l’École Nationale Supérieure des Travaux Publics — ENSTP 360', sH: 'Que recherchez-vous ?', sPh: 'Je cherche…', browse: 'Parcourir',
     tiles: { decouvrir: ['Découvrir l’ENSTP', '3 départements'], campus: ['Plan de campus', '34 lieux'], salles: ['Études', '8 emplois du temps'], services: ['Démarche et demande de document', 'Aide et documents'], pratique: ['Vie pratique', '4 rubriques'], 'vie-etudiante': ['Vie hors ENSTP et clubs', 'Clubs, sport, sorties'], residence: ['Résidence universitaire', 'Hommes et femmes'], stages: ['Stages', '29 organismes'] },
     figs: [['1966', 'Année de création'], ['+6 000', 'Ingénieurs diplômés'], ['57', 'Promotions formées'], ['3', 'Départements pédagogiques']],
     newsE: 'Nos actualités', newsH: 'À la une à l’ENSTP', locE: 'Nous trouver', locH: 'Sur les hauteurs de Kouba', locAff: 'Affaires étudiantes : dimanche et mardi', route: 'Itinéraire vers l’ENSTP', curE: 'Formation',
@@ -2943,6 +2944,8 @@ render();
 <script src="app6.js"></script>
 <script src="app7-data.js?v=7b"></script>
 <script src="app7.js?v=7b"></script>
+<script src="app8-data.js?v=8"></script>
+<script src="app8.js?v=8"></script>
 <script src="transport-hub.js" defer></script>
 </body>
 </html>

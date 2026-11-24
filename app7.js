@@ -31,21 +31,21 @@ if (!P.phone) P.phone = '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6
 /* ---------- textes de l'interface ---------- */
 var T7L = {
   fr: {
-    home: 'Accueil', ent: 'Entrepreneuriat', langH: 'Langue', quote: 'Vous avez la chance d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
+    home: 'Accueil', ent: 'Entrepreneuriat', langH: 'Langue', quote: 'Vous avez l’avantage d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
     fExp: 'Explorer', fUse: 'Liens utiles', fCt: 'Contact', fSite: 'Site officiel de l’ENSTP', fMak: 'ENSTP 360 × Makelty Healthy — Commander', fSsc: 'SSC — Students Sports Community · ENSTP',
     fRoute: 'Itinéraire vers l’ENSTP', fDesc: 'Le guide numérique de l’École Nationale Supérieure des Travaux Publics « Francis Jeanson » ENSTP.', rights: 'Tous droits réservés', off: 'Pour toute information officielle, veuillez vous référer à l’administration de l’ENSTP.',
     rubP: 'Touchez « + » pour afficher les sous-rubriques.', news: 'Actualités',
     like: 'J’aime', dislike: 'Je n’aime pas', needLogin: 'Connectez-vous avec votre compte étudiant pour donner votre avis.', noDb: 'Base partagée pas encore activée : exécutez le script supabase/enstp360-v7.sql dans Supabase.'
   },
   en: {
-    home: 'Home', ent: 'Entrepreneurship', langH: 'Language', quote: 'Vous avez la chance d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
+    home: 'Home', ent: 'Entrepreneurship', langH: 'Language', quote: 'Vous avez l’avantage d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
     fExp: 'Explore', fUse: 'Useful links', fCt: 'Contact', fSite: 'Official ENSTP website', fMak: 'ENSTP 360 × Makelty Healthy — Order', fSsc: 'SSC — Students Sports Community · ENSTP',
     fRoute: 'Directions to ENSTP', fDesc: 'The digital guide of the École Nationale Supérieure des Travaux Publics “Francis Jeanson” ENSTP.', rights: 'All rights reserved', off: 'For any official information, please refer to the ENSTP administration.',
     rubP: 'Tap “+” to show the sub-sections.', news: 'News',
     like: 'Like', dislike: 'Dislike', needLogin: 'Sign in with your student account to vote.', noDb: 'Shared database not enabled yet: run supabase/enstp360-v7.sql in Supabase.'
   },
   ar: {
-    home: 'الرئيسية', ent: 'المقاولاتية', langH: 'اللغة', quote: 'Vous avez la chance d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
+    home: 'الرئيسية', ent: 'المقاولاتية', langH: 'اللغة', quote: 'Vous avez l’avantage d’être étudiant', quoteBy: 'Dr. Mobarki Ahmed',
     fExp: 'استكشف', fUse: 'روابط مفيدة', fCt: 'الاتصال', fSite: 'الموقع الرسمي للمدرسة', fMak: 'ENSTP 360 × Makelty Healthy — اطلب', fSsc: 'SSC — Students Sports Community · ENSTP',
     fRoute: 'الطريق إلى المدرسة', fDesc: 'الدليل الرقمي للمدرسة الوطنية العليا للأشغال العمومية « فرانسيس جونسون » ENSTP.', rights: 'جميع الحقوق محفوظة', off: 'لأي معلومة رسمية، يرجى الرجوع إلى إدارة المدرسة.',
     rubP: 'اضغط « + » لعرض الأقسام الفرعية.', news: 'الأخبار',
@@ -486,7 +486,7 @@ function home() {
    ===================================================================== */
 function footer() {
   var y = T7(), r = R();
-  return '<footer class="f5 f7"><div class="fg"><div><div class="wm">ENSTP <i>360°</i></div><p class="f7-tag">' + esc(XT().h1 || 'Une vision, sans angle mort.') + '</p><p>' + esc(y.fDesc) + '</p></div>' +
+  return '<footer class="f5 f7"><div class="fg"><div><div class="wm">ENSTP <i>360°</i></div><p class="f7-tag">' + esc(XT().h1 || 'Une vision, sans angles morts') + '</p><p>' + esc(y.fDesc) + '</p></div>' +
     '<nav aria-label="' + esc(y.fExp) + '"><h2>' + esc(y.fExp) + '</h2><a href="' + rubHref('decouvrir') + '">' + esc(rbTitle('decouvrir')) + '</a><a href="' + rubHref('campus') + '">' + esc(rbTitle('campus')) + '</a><a href="' + rubHref('salles') + '">' + esc(rbTitle('salles')) + '</a><a href="' + rubHref('pratique') + '">' + esc(rbTitle('pratique')) + '</a></nav>' +
     '<nav aria-label="' + esc(y.fUse) + '"><h2>' + esc(y.fUse) + '</h2><a href="https://enstp.edu.dz/" target="_blank" rel="noreferrer">' + esc(y.fSite) + '</a><a href="' + FB_URL + '" target="_blank" rel="noopener noreferrer">Facebook ENSTP</a><a href="' + gl('faq') + '">FAQ</a><a href="' + MAK7 + '" target="_blank" rel="noopener">' + esc(y.fMak) + '</a><a href="' + SSC7 + '" target="_blank" rel="noopener">' + esc(y.fSsc) + '</a></nav>' +
     '<nav aria-label="' + esc(y.fCt) + '"><h2>' + esc(y.fCt) + '</h2><span>BP 32, rue Sidi Garidi, Kouba, 16006 Alger</span><a href="tel:+21323701904"><bdi dir="ltr">+213 (0) 23 70 19 04</bdi></a><a href="mailto:enstp@enstp.edu.dz">enstp@enstp.edu.dz</a><a href="https://www.google.com/maps/dir/?api=1&destination=' + GMP.school.join(',') + '" target="_blank" rel="noopener">' + esc(y.fRoute) + '</a></nav></div>' +

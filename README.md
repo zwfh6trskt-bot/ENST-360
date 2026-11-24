@@ -110,3 +110,18 @@ Nouveaux fichiers : `app7.js`, `app7-data.js`, `app7.css` (chargés après `app6
 
 Tant que le script n'est pas exécuté, les pages concernées l'indiquent clairement (aucune donnée n'est simulée ni gardée
 seulement sur l'appareil).
+
+## Round 8 (accueil en verre, carte du campus, emplois du temps, démarches, résidences)
+
+Nouveaux fichiers : `app8-data.js`, `app8.js`, `app8.css` (chargés après `app7.js`), `images/residences/`.
+
+- **Accueil** : citation « Vous avez l’avantage d’être étudiant », « Que recherchez-vous ? », slogan « Une vision, sans angles morts ».
+  Rubriques en verre translucide ; ouvrir une rubrique referme les autres.
+- **Plan du campus** : carte interactive (`campus7Html`, `CM8` dans `app8.js`) — zoom progressif (pincement, + / −, Ctrl + molette,
+  double-clic), détails qui apparaissent avec le zoom (noms, puis étages et salles), recherche de bâtiments et de salles,
+  photo du lieu en haut à droite, itinéraire, plein écran. Positions : tableau `CM` de `index.html` (pixels de `campus/plan.webp`),
+  photos : `campus/<numéro>.webp`. Pour ajouter un lieu ou corriger un emplacement, modifiez `CM` / `CMN`.
+- **Emplois du temps** : cycle → spécialité → année → groupe (`e6Inner` dans `app8.js`).
+- **Démarches** : nouvelle liste (`svc6Html`, textes dans `SVC8` et `PAY8` de `app8-data.js`) ; sous-rubriques : Démarches administratives et Bourse universitaire.
+- **Manger** : Soumam, Chouway, Kahwa et le restaurant du foyer des garçons en tête (`NR.unshift` dans `app8-data.js`, détails à compléter).
+- **Résidences des filles** : photos, avis, heure de fermeture (`WRES6` dans `app8-data.js`). Photo de Sidi Abdellah à ajouter (`photo:`).
