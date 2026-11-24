@@ -1,0 +1,152 @@
+/* =====================================================================
+   ENSTP 360 · round 8
+   ===================================================================== */
+
+/* ---------- Accueil : rubriques en verre (style iOS) ---------- */
+.rb6-band{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,color-mix(in srgb,var(--card) 70%,transparent),color-mix(in srgb,var(--background,#f6f6f3) 40%,transparent))}
+.rb6-band:before,.rb6-band:after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:rb8Float 18s ease-in-out infinite alternate}
+.rb6-band:before{width:min(520px,70vw);height:min(520px,70vw);left:-8%;top:-10%;background:radial-gradient(circle at 30% 30%,#e9b64a,transparent 65%)}
+.rb6-band:after{width:min(600px,80vw);height:min(600px,80vw);right:-12%;bottom:-25%;background:radial-gradient(circle at 60% 60%,#4a7fe6,transparent 62%);animation-duration:22s;animation-direction:alternate-reverse}
+@keyframes rb8Float{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,6%) scale(1.08)}100%{transform:translate(-3%,2%) scale(.96)}}
+.rb6-grid{gap:14px 18px}
+.rb6-col{border-top:0;display:grid;gap:14px;align-content:start}
+details.rb6{position:relative;border:1px solid rgb(255 255 255 / .65);border-radius:24px;overflow:hidden;
+  background:linear-gradient(140deg,rgb(255 255 255 / .72),rgb(255 255 255 / .38));
+  -webkit-backdrop-filter:blur(20px) saturate(1.7);backdrop-filter:blur(20px) saturate(1.7);
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / .9),inset 0 -1px 0 rgb(15 42 90 / .05),0 10px 30px -12px rgb(15 42 90 / .22);
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.2),box-shadow .35s ease,background .35s ease}
+details.rb6:before{content:"";position:absolute;inset:0 0 auto 0;height:50%;border-radius:24px 24px 60% 60% / 24px 24px 30px 30px;background:linear-gradient(180deg,rgb(255 255 255 / .55),transparent);pointer-events:none;opacity:.7}
+details.rb6:hover{transform:translateY(-2px) scale(1.008);box-shadow:inset 0 1px 0 rgb(255 255 255 / .95),0 16px 40px -14px rgb(15 42 90 / .3)}
+details.rb6:active{transform:scale(.985)}
+details.rb6[open]{background:linear-gradient(140deg,rgb(255 255 255 / .84),rgb(255 255 255 / .5));box-shadow:inset 0 1px 0 rgb(255 255 255 / .95),0 22px 50px -18px rgb(15 42 90 / .35)}
+details.rb6>summary{padding:16px 16px;border-radius:24px;position:relative}
+details.rb6>summary:hover{background:transparent}
+details.rb6 .ico{border-radius:15px;box-shadow:inset 0 1px 0 rgb(255 255 255 / .7),0 4px 12px -4px rgb(15 42 90 / .25);position:relative;overflow:hidden}
+details.rb6 .ico:after{content:"";position:absolute;left:18%;top:8%;width:46%;height:32%;border-radius:50%;background:rgb(255 255 255 / .55);filter:blur(1px)}
+details.rb6 .acc-c{background:rgb(255 255 255 / .55);border:1px solid rgb(255 255 255 / .8);box-shadow:0 2px 6px -2px rgb(15 42 90 / .2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+details.rb6[open]>summary .acc-c{background:var(--ink)}
+.rb6-b{padding:0 16px 16px 92px}
+[dir=rtl] .rb6-b{padding:0 92px 16px 16px}
+details.rb6 a.rb6-l{border-radius:14px}
+details.rb6 a.rb6-l:hover{background:rgb(255 255 255 / .6)}
+details.rb6[open] .rb6-b{animation:rb8Open .45s cubic-bezier(.2,.9,.3,1.15) both}
+@keyframes rb8Open{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+html.dark details.rb6{border-color:rgb(255 255 255 / .12);background:linear-gradient(140deg,rgb(40 56 90 / .55),rgb(20 30 52 / .4));box-shadow:inset 0 1px 0 rgb(255 255 255 / .12),0 12px 32px -14px rgb(0 0 0 / .6)}
+html.dark details.rb6:before{background:linear-gradient(180deg,rgb(255 255 255 / .08),transparent)}
+html.dark details.rb6[open]{background:linear-gradient(140deg,rgb(48 66 104 / .65),rgb(24 36 62 / .5))}
+html.dark details.rb6 a.rb6-l:hover{background:rgb(255 255 255 / .08)}
+html.dark details.rb6 .acc-c{background:rgb(255 255 255 / .12);border-color:rgb(255 255 255 / .18)}
+html.dark .rb6-band:before,html.dark .rb6-band:after{opacity:.3}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){details.rb6{background:var(--card)}}
+@media(max-width:640px){.rb6-b{padding:0 12px 14px 74px}[dir=rtl] .rb6-b{padding:0 74px 14px 12px}details.rb6>summary{padding:14px 12px}.rb6-col{gap:12px}.rb6-grid{gap:12px}}
+@media(prefers-reduced-motion:reduce){.rb6-band:before,.rb6-band:after,details.rb6[open] .rb6-b{animation:none}details.rb6,details.rb6:hover{transition:none;transform:none}}
+
+/* ---------- 01 · Carte interactive du campus ---------- */
+.cm8-tip{max-width:680px}
+.cm8{position:relative;height:clamp(420px,72vh,640px);border-radius:22px;overflow:hidden;border:1px solid var(--border);background:#e9efe4;box-shadow:var(--shadow-s,0 4px 18px rgb(15 42 90 / .1));user-select:none;-webkit-user-select:none}
+.cm8-vp{position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;outline:none}
+.cm8-vp.drag{cursor:grabbing}
+.cm8-vp:focus-visible{box-shadow:inset 0 0 0 3px var(--saffron,#e9b64a)}
+.cm8-world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.cm8-world img{display:block;width:100%;height:100%;pointer-events:none;image-rendering:auto}
+.cm8-rt{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.cm8-rt-bg{fill:none;stroke:#fff;stroke-width:calc(9px * var(--cm8s,1) * 1.6);stroke-linecap:round;stroke-linejoin:round;opacity:.95}
+.cm8-rt-ln{fill:none;stroke:#1f66dd;stroke-width:calc(5px * var(--cm8s,1) * 1.6);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:calc(2px * var(--cm8s,1) * 1.6) calc(9px * var(--cm8s,1) * 1.6);animation:cm8Dash 1s linear infinite}
+@keyframes cm8Dash{to{stroke-dashoffset:calc(-22px * var(--cm8s,1) * 1.6)}}
+/* repères : taille constante à l'écran, détails selon le zoom */
+.cm8-pin{position:absolute;width:0;height:0;padding:0;margin:0;border:0;background:none;transform-origin:0 0;transform:scale(var(--cm8s,1));cursor:pointer;z-index:1}
+.cm8-dot{position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:700 11px/1 var(--font-sans,Inter,sans-serif);color:#fff;background:#0f2a5a;border:2px solid #fff;box-shadow:0 2px 8px rgb(0 0 0 / .35);transition:transform .2s,background .2s}
+.cm8-pin.is-room .cm8-dot{background:#e07a1f}
+.cm8-pin:hover .cm8-dot,.cm8-pin:focus-visible .cm8-dot{transform:scale(1.18)}
+.cm8-pin.on{z-index:3}.cm8-pin.on .cm8-dot{background:#1f66dd;transform:scale(1.35);box-shadow:0 0 0 6px rgb(31 102 221 / .25),0 3px 10px rgb(0 0 0 / .35);animation:cm8Pulse 1.8s ease-out infinite}
+.cm8-pin.is-a .cm8-dot{background:#1d6b52}.cm8-pin.is-b .cm8-dot{background:#e8590c}
+@keyframes cm8Pulse{0%{box-shadow:0 0 0 0 rgb(31 102 221 / .45),0 3px 10px rgb(0 0 0 / .35)}100%{box-shadow:0 0 0 14px rgb(31 102 221 / 0),0 3px 10px rgb(0 0 0 / .35)}}
+.cm8-lb{position:absolute;left:16px;top:-12px;display:none;width:max-content;max-width:150px;padding:4px 8px;border-radius:9px;background:rgb(255 255 255 / .92);color:#0f2a5a;text-align:left;box-shadow:0 2px 8px rgb(0 0 0 / .18);font:600 11px/1.25 var(--font-sans,Inter,sans-serif);pointer-events:none}
+.cm8-lb small{display:none;margin-top:2px;font:500 10px/1.3 var(--font-sans,Inter,sans-serif);color:#4b5a75}
+.cm8[data-lod="1"] .cm8-lb,.cm8[data-lod="2"] .cm8-lb,.cm8-pin.on .cm8-lb{display:block}
+.cm8[data-lod="2"] .cm8-lb small,.cm8-pin.on .cm8-lb small{display:block}
+.cm8[data-lod="2"] .cm8-lb{max-width:190px}
+/* barre du haut : recherche + filtres */
+.cm8-top{position:absolute;left:10px;right:10px;top:10px;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;z-index:5;pointer-events:none}
+.cm8-top>*{pointer-events:auto}
+.cm8-s{position:relative;z-index:2;flex:1 1 240px;max-width:380px}
+.cm8-s label{display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:999px;background:rgb(255 255 255 / .86);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);border:1px solid rgb(255 255 255 / .9);box-shadow:0 6px 20px -8px rgb(15 42 90 / .35);color:#5e6a80}
+.cm8-s input{flex:1;min-width:0;border:0;background:none;outline:none;font:500 14px var(--font-sans,Inter,sans-serif);color:#0f2a5a}
+.cm8-res{position:absolute;left:0;right:0;top:50px;max-height:260px;overflow:auto;padding:6px;border-radius:16px;background:rgb(255 255 255 / .96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 14px 36px -10px rgb(15 42 90 / .4)}
+.cm8-res button{display:flex;gap:8px;align-items:center;width:100%;padding:9px 10px;border:0;border-radius:10px;background:none;text-align:left;font:500 13.5px/1.3 var(--font-sans,Inter,sans-serif);color:#0f2a5a;cursor:pointer}
+.cm8-res button:hover,.cm8-res button:focus-visible{background:#eef3fc}
+.cm8-res button svg{color:#e07a1f;flex-shrink:0}
+.cm8-res p{margin:6px 10px;font-size:13px;color:#5e6a80}
+.cm8-tabs{display:flex;padding:4px;border-radius:999px;background:rgb(255 255 255 / .8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgb(255 255 255 / .9);box-shadow:0 6px 20px -8px rgb(15 42 90 / .35)}
+.cm8-tabs button{border:0;background:none;padding:8px 12px;border-radius:999px;font:600 12.5px var(--font-sans,Inter,sans-serif);color:#3d4b66;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.cm8-tabs button.on{background:#0f2a5a;color:#fff}
+/* photo du lieu, en haut à droite */
+.cm8-ph{position:absolute;right:10px;top:64px;z-index:4;margin:0;width:clamp(132px,26%,220px);border-radius:16px;overflow:hidden;background:#fff;border:2px solid #fff;box-shadow:0 12px 30px -8px rgb(15 42 90 / .5)}
+.cm8-ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.cm8-ph figcaption{padding:6px 9px 8px;font:600 11.5px/1.3 var(--font-sans,Inter,sans-serif);color:#0f2a5a}
+.cm8-ph figcaption small{display:block;font-weight:500;font-size:10.5px;color:#5e6a80}
+.cm8-ph.pop{animation:cm8Pop .35s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes cm8Pop{from{opacity:0;transform:translateY(-6px) scale(.92)}to{opacity:1;transform:none}}
+.cm8-noph{aspect-ratio:4/3;display:grid;place-items:center;align-content:center;gap:6px;background:#eef1f6;color:#8390a8;font-size:11px}
+/* commandes de zoom */
+.cm8-ctl{position:absolute;right:10px;bottom:84px;z-index:4;display:grid;border-radius:16px;overflow:hidden;background:rgb(255 255 255 / .88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgb(255 255 255 / .9);box-shadow:0 8px 24px -8px rgb(15 42 90 / .4)}
+.cm8-ctl button{width:44px;height:44px;display:grid;place-items:center;border:0;background:none;color:#0f2a5a;cursor:pointer}
+.cm8-ctl button+button{border-top:1px solid rgb(15 42 90 / .08)}
+.cm8-ctl button:hover{background:rgb(15 42 90 / .06)}
+.cm8-zoom{position:absolute;left:12px;bottom:92px;z-index:4;width:5px;height:80px;border-radius:9px;background:rgb(255 255 255 / .7);box-shadow:0 1px 4px rgb(0 0 0 / .15);display:flex;align-items:flex-end;overflow:hidden}
+.cm8-zoom i{display:block;width:100%;height:0;background:#1f66dd;border-radius:9px;transition:height .15s}
+.cm8-hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;padding:10px 16px;border-radius:999px;background:rgb(15 42 90 / .82);color:#fff;font:600 13px var(--font-sans,Inter,sans-serif);pointer-events:none}
+/* fiche du lieu */
+.cm8-card{position:absolute;left:10px;right:10px;bottom:10px;z-index:5;display:none;align-items:center;gap:12px;padding:12px 12px 12px 14px;border-radius:18px;background:rgb(255 255 255 / .92);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);border:1px solid rgb(255 255 255 / .95);box-shadow:0 14px 36px -10px rgb(15 42 90 / .45);color:#0f2a5a}
+.cm8-card.on{display:flex;animation:cm8Pop .3s ease}
+.cm8-card>div{flex:1;min-width:0;display:grid;gap:2px}
+.cm8-card b{font:600 15px/1.3 var(--font-sans,Inter,sans-serif)}
+.cm8-card small{font-size:12px;color:#5e6a80}
+.cm8-note{display:flex;gap:4px;align-items:flex-start}
+.cm8-n{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#1f66dd;color:#fff;font:700 13px var(--font-sans,Inter,sans-serif)}
+.cm8-card .r5btn{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:9px 12px}
+.cm8-x{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:0;background:rgb(15 42 90 / .07);color:#0f2a5a;display:grid;place-items:center;cursor:pointer}
+/* itinéraire */
+.cm8-it{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;margin-top:14px;padding:14px 16px;border-radius:16px;border:1px solid var(--border);background:var(--card)}
+.cm8-it>b{display:flex;align-items:center;gap:6px;width:100%;font-size:14px;color:var(--ink)}
+.cm8-it label{display:grid;gap:4px;flex:1 1 200px;font-size:12.5px;color:var(--muted-foreground)}
+.cm8-it select{height:40px;border-radius:10px;border:1px solid var(--border);background:var(--background,#fff);color:var(--foreground,#16213a);padding:0 10px;font:500 14px var(--font-sans,Inter,sans-serif);max-width:100%}
+/* plein écran */
+.cm8.cm8-fs{position:fixed;inset:0;z-index:200;height:auto;border-radius:0;border:0}
+body.cm8-lock{overflow:hidden}
+@media(max-width:640px){
+  .cm8{height:clamp(420px,68vh,560px);border-radius:18px}
+  .cm8-s{flex-basis:100%;max-width:none}
+  .cm8-ph{top:112px;width:132px}
+  .cm8-card{flex-wrap:wrap}.cm8-card .r5btn{order:3;width:100%;justify-content:center}
+  .cm8-card .r5btn span{white-space:normal}
+}
+html.dark .cm8{background:#1b2433}
+html.dark .cm8-world img{filter:brightness(.88) saturate(.95)}
+@media(prefers-reduced-motion:reduce){.cm8-pin.on .cm8-dot,.cm8-rt-ln,.cm8-ph.pop,.cm8-card.on{animation:none}}
+
+/* ---------- 02 · Emplois du temps ---------- */
+.e8-pick .e6-step+.e6-step{animation:rb8Open .3s ease both}
+
+/* ---------- 03 · Démarches ---------- */
+.sv-item:not([open]) .sv8-x,.sv-item:not([open]) .sv8-pay,.sv-item:not([open]) .sv8-h,.sv-item:not([open]) .sv8-btn{display:none}
+.sv8-h{margin:0 0 6px;font-size:.85rem;font-weight:600;color:var(--ink)}
+.sv8-pay{display:grid;gap:8px;margin:0 0 .9rem}
+.sv8-pay a{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:color-mix(in srgb,var(--primary,#0f2a5a) 5%,var(--card));text-decoration:none}
+.sv8-pay a span{display:grid;min-width:0}
+.sv8-pay a b{font-size:.9rem;color:var(--ink)}
+.sv8-pay a small{font-size:.72rem;color:var(--muted-foreground);font-weight:500;overflow-wrap:anywhere}
+.sv8-pay a svg{flex-shrink:0;color:var(--saffron,#e9b64a)}
+.sv8-x{padding:0 0 .8rem;font-size:.92rem}
+.sv8-btn{margin:0 0 .9rem}
+
+/* ---------- 06 · Résidences des filles ---------- */
+.wr8-soon{position:absolute;right:12px;bottom:12px;padding:4px 10px;border-radius:999px;background:rgb(255 255 255 / .9);color:#0f2a5a;font:600 11.5px var(--font-sans,Inter,sans-serif)}
+.wr8 .wr6-b p{flex:0 0 auto}
+.wr8-cl{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--foreground);padding:8px 10px;border-radius:10px;background:color-mix(in srgb,var(--saffron,#e9b64a) 14%,var(--card))}
+.wr8-cl svg{color:var(--saffron,#e9b64a);flex-shrink:0}
+.wr8-av{border:1px solid var(--border);border-radius:12px;padding:0 12px;flex:1}
+.wr8-av summary{cursor:pointer;padding:9px 0;font-weight:600;font-size:13.5px;color:var(--ink)}
+.wr8-av p{display:block!important;font-size:13px!important;line-height:1.6;margin:0 0 10px}
+.cm8:has(.cm8-card.on) .cm8-ctl{bottom:118px}.cm8:has(.cm8-card.on) .cm8-zoom{bottom:126px}
+@media(max-width:640px){.cm8:has(.cm8-card.on) .cm8-ctl{bottom:168px}.cm8:has(.cm8-card.on) .cm8-zoom{bottom:176px}.cm8-card small[lang=ar]{display:none}.cm8-ctl button{width:40px;height:40px}}
