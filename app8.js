@@ -394,27 +394,37 @@ function nearGrid(h, arr) {
    Montage après chaque affichage
    ===================================================================== */
 /* =====================================================================
-   Accueil : rubriques en bulles qui apparaissent / disparaissent au défilement
+   Accueil : chaque bloc apparaît en « pop » au défilement (et disparaît en sortant),
+   du slogan jusqu'aux actualités. Slogan : « Une vision, » … petit délai … « sans angles morts »
    ===================================================================== */
-var RB8IO = null;
-function rb8Bubbles() {
-  var band = document.querySelector('.rb6-band'); if (!band) return;
-  if (!band.querySelector('.rb8-bub')) {
-    var b = document.createElement('div'); b.className = 'rb8-bub'; b.setAttribute('aria-hidden', 'true');
-    for (var i = 0; i < 14; i++) b.appendChild(document.createElement('i'));
-    band.insertBefore(b, band.firstChild);
+var POP8 = null;
+var POP8SEL = '.h7 .hero7 .eyebrow, .h7 .h7-q, .h7 .h7-fig, .h7 .h7-srch, .h7 .rb6-head, .h7 details.rb6, .h7 #cursus .x-sec-head, .h7 .eco-cur > article, .h7 .figs > div, .h7 #actualites .sec-h, .h7 .nw-grid > *';
+function pop8() {
+  var h = document.querySelector('.h7 .hero7 h1');
+  if (h && !h.querySelector('.h8-r')) {
+    var m = h.querySelector('mark'), t = m && m.nextSibling;
+    if (t && t.nodeType === 3) { var sp = document.createElement('span'); sp.className = 'h8-r'; sp.textContent = t.textContent.replace(/^\s+/, ''); h.replaceChild(sp, t); if (/^\s/.test(t.textContent)) h.insertBefore(document.createTextNode(' '), sp); }
+    h.classList.add('h8-wait');
+    pop8Splash(function () { h.classList.remove('h8-wait'); h.classList.add('h8-go'); });
   }
-  var cards = document.querySelectorAll('details.rb6');
-  if (!('IntersectionObserver' in window)) { Array.prototype.forEach.call(cards, function (d) { d.classList.add('rb8-in'); }); return; }
-  if (RB8IO) RB8IO.disconnect();
-  RB8IO = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { e.target.classList.toggle('rb8-in', e.isIntersecting); });
-  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-  Array.prototype.forEach.call(cards, function (d, i) { d.style.setProperty('--rb8i', i % 2 ? 1 : 0); d.classList.add('rb8-b'); RB8IO.observe(d); });
+  var els = document.querySelectorAll(POP8SEL); if (!els.length) return;
+  if (!('IntersectionObserver' in window)) { Array.prototype.forEach.call(els, function (d) { d.classList.add('pop8-in'); }); return; }
+  if (POP8) POP8.disconnect();
+  POP8 = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.target.classList.toggle('pop8-in', e.isIntersecting); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+  var prev = null, k = 0, io = POP8;
+  Array.prototype.forEach.call(els, function (d) {
+    k = d.parentNode === prev ? k + 1 : 0; prev = d.parentNode;
+    d.style.setProperty('--pop8i', Math.min(k, 4)); d.classList.add('pop8');
+  });
+  /* l'écran d'ouverture couvre la page : on attend qu'il parte pour lancer les animations */
+  pop8Splash(function () { if (io === POP8) Array.prototype.forEach.call(els, function (d) { io.observe(d); }); });
 }
+function pop8Splash(fn) { var s = document.getElementById('splash'); if (!s || s.classList.contains('out')) fn(); else setTimeout(function () { pop8Splash(fn); }, 120); }
 function after6(r) {
   AFTER7(r);
-  rb8Bubbles();
+  pop8();
   if (document.getElementById('cm8')) cm8Mount();
   else if (CM8.fs) { CM8.fs = false; document.body.classList.remove('cm8-lock'); }
 }

@@ -154,36 +154,20 @@ html.dark .cm8-world img{filter:brightness(.88) saturate(.95)}
 /* ---------- Saturne : sur téléphone, laisser de la place autour pour fermer d'un toucher ---------- */
 @media(max-width:700px){#asst .as-panel{height:min(600px,calc(100dvh - 170px))}}
 
-/* ---------- Accueil : rubriques en bulles, apparition / disparition au défilement ---------- */
-.rb8-bub{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.rb8-bub i{position:absolute;bottom:-80px;border-radius:50%;
-  background:radial-gradient(circle at 30% 28%,rgb(255 255 255 / .95) 0 8%,rgb(255 255 255 / .25) 22%,rgb(120 160 235 / .14) 60%,rgb(233 182 74 / .22) 100%);
-  border:1px solid rgb(255 255 255 / .7);box-shadow:inset -4px -6px 14px rgb(74 127 230 / .18),inset 3px 4px 10px rgb(255 255 255 / .6);
-  animation:rb8Rise linear infinite}
-.rb8-bub i:nth-child(1){left:4%;width:46px;height:46px;animation-duration:16s}
-.rb8-bub i:nth-child(2){left:14%;width:22px;height:22px;animation-duration:11s;animation-delay:-4s}
-.rb8-bub i:nth-child(3){left:24%;width:70px;height:70px;animation-duration:21s;animation-delay:-9s}
-.rb8-bub i:nth-child(4){left:33%;width:30px;height:30px;animation-duration:13s;animation-delay:-2s}
-.rb8-bub i:nth-child(5){left:42%;width:54px;height:54px;animation-duration:18s;animation-delay:-12s}
-.rb8-bub i:nth-child(6){left:51%;width:18px;height:18px;animation-duration:10s;animation-delay:-6s}
-.rb8-bub i:nth-child(7){left:58%;width:84px;height:84px;animation-duration:24s;animation-delay:-15s}
-.rb8-bub i:nth-child(8){left:66%;width:26px;height:26px;animation-duration:12s;animation-delay:-3s}
-.rb8-bub i:nth-child(9){left:73%;width:60px;height:60px;animation-duration:19s;animation-delay:-7s}
-.rb8-bub i:nth-child(10){left:81%;width:20px;height:20px;animation-duration:9s;animation-delay:-1s}
-.rb8-bub i:nth-child(11){left:88%;width:44px;height:44px;animation-duration:15s;animation-delay:-10s}
-.rb8-bub i:nth-child(12){left:94%;width:28px;height:28px;animation-duration:13s;animation-delay:-5s}
-.rb8-bub i:nth-child(13){left:9%;width:34px;height:34px;animation-duration:17s;animation-delay:-13s}
-.rb8-bub i:nth-child(14){left:47%;width:38px;height:38px;animation-duration:20s;animation-delay:-17s}
-@keyframes rb8Rise{0%{transform:translate(0,0) scale(.8);opacity:0}10%{opacity:.9}50%{transform:translate(18px,-55vh) scale(1)}90%{opacity:.8}100%{transform:translate(-14px,-115vh) scale(1.1);opacity:0}}
-details.rb6.rb8-b{border-radius:32px;opacity:0;transform:translateY(46px) scale(.82);filter:blur(6px);
-  transition:opacity .55s ease calc(var(--rb8i,0) * 90ms),transform .7s cubic-bezier(.18,1.35,.4,1) calc(var(--rb8i,0) * 90ms),filter .55s ease calc(var(--rb8i,0) * 90ms),box-shadow .35s ease,background .35s ease}
-details.rb6.rb8-b.rb8-in{opacity:1;transform:none;filter:none}
-details.rb6.rb8-b.rb8-in:hover{transform:translateY(-3px) scale(1.012)}
-details.rb6.rb8-b.rb8-in:active{transform:scale(.97)}
-details.rb6.rb8-b>summary{border-radius:32px}
-details.rb6.rb8-b:after{content:"";position:absolute;right:18px;top:10px;width:38px;height:14px;border-radius:50%;background:rgb(255 255 255 / .75);filter:blur(2px);transform:rotate(-12deg);pointer-events:none;opacity:.8}
-details.rb6.rb8-b.rb8-in .ico{animation:rb8Bob 4.5s ease-in-out infinite;animation-delay:calc(var(--rb8i,0) * -1.3s)}
-@keyframes rb8Bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-html.dark details.rb6.rb8-b:after{background:rgb(255 255 255 / .18)}
-html.dark .rb8-bub i{opacity:.5}
-@media(prefers-reduced-motion:reduce){.rb8-bub{display:none}details.rb6.rb8-b{opacity:1;transform:none;filter:none;transition:none}details.rb6.rb8-b.rb8-in .ico{animation:none}}
+/* ---------- Accueil : tout apparaît en « pop » au défilement, sans bulles en arrière-plan ---------- */
+.rb6-band:before,.rb6-band:after{display:none}
+.pop8{opacity:0;transform:translateY(40px) scale(.86);filter:blur(5px);
+  transition:opacity .5s ease calc(var(--pop8i,0) * 80ms),transform .65s cubic-bezier(.18,1.35,.4,1) calc(var(--pop8i,0) * 80ms),filter .5s ease calc(var(--pop8i,0) * 80ms)}
+.pop8.pop8-in{opacity:1;transform:none;filter:none}
+details.rb6.pop8{transition:opacity .5s ease calc(var(--pop8i,0) * 80ms),transform .65s cubic-bezier(.18,1.35,.4,1) calc(var(--pop8i,0) * 80ms),filter .5s ease calc(var(--pop8i,0) * 80ms),box-shadow .35s ease,background .35s ease}
+details.rb6.pop8.pop8-in:hover{transform:translateY(-3px) scale(1.012)}
+details.rb6.pop8.pop8-in:active{transform:scale(.97)}
+details.rb6.pop8,details.rb6.pop8>summary{border-radius:32px}
+details.rb6.pop8:after{content:"";position:absolute;right:18px;top:10px;width:38px;height:14px;border-radius:50%;background:rgb(255 255 255 / .75);filter:blur(2px);transform:rotate(-12deg);pointer-events:none;opacity:.8}
+html.dark details.rb6.pop8:after{background:rgb(255 255 255 / .18)}
+/* slogan : « Une vision, » puis, après un court délai, « sans angles morts » */
+.h7 .hero7 h1.h8-wait mark,.h7 .hero7 h1.h8-wait .h8-r{opacity:0}
+.h7 .hero7 h1.h8-go mark{display:inline-block;animation:h8Pop .7s cubic-bezier(.18,1.35,.4,1) .15s both}
+.h7 .hero7 h1.h8-go .h8-r{display:inline-block;animation:h8Pop .7s cubic-bezier(.18,1.35,.4,1) 1.05s both}
+@keyframes h8Pop{from{opacity:0;transform:translateY(18px) scale(.8);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){.h7 .hero7 h1.h8-wait mark,.h7 .hero7 h1.h8-wait .h8-r{opacity:1}.pop8{opacity:1;transform:none;filter:none;transition:none}.h7 .hero7 h1.h8-go mark,.h7 .hero7 h1.h8-go .h8-r{animation:none}}
